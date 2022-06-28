@@ -16,6 +16,10 @@ export default {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2020-present Prabhu Murthy",
     },
+    editLink: {
+      text: "Edit this page on GitHub",
+      pattern: "https://github.com/prabhuignoto/react-chrono-docs/edit/main/docs/:path",
+    },
     sidebar: [
       {
         text: "Introduction",
