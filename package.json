@@ -1,0 +1,20 @@
+{
+  "name": "react-chrono-docs",
+  "version": "0.1.0",
+  "description": "Documentation site for react-chrono",
+  "main": "index.js",
+  "author": "Prabhu Murthy",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.0.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  }
+}
