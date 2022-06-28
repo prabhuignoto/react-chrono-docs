@@ -6,6 +6,10 @@ export default {
   layout: "home",
   search: true,
   themeConfig: {
+    carbonAds: {
+      code: "CEAI427Y",
+      placement: "react-chronovercelapp",
+    },
     socialLinks: [
       {
         icon: "github",
@@ -18,7 +22,8 @@ export default {
     },
     editLink: {
       text: "Edit this page on GitHub",
-      pattern: "https://github.com/prabhuignoto/react-chrono-docs/edit/main/docs/:path",
+      pattern:
+        "https://github.com/prabhuignoto/react-chrono-docs/edit/main/docs/:path",
     },
     sidebar: [
       {
