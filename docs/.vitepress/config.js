@@ -1,4 +1,6 @@
-export default {
+import { defineConfig } from "vitepress";
+
+export default defineConfig({
   title: "React Chrono",
   description: "Smart timeline component for React",
   lang: "en-US",
@@ -6,10 +8,6 @@ export default {
   layout: "home",
   search: true,
   themeConfig: {
-    carbonAds: {
-      code: "CEAI427Y",
-      placement: "react-chronovercelapp",
-    },
     socialLinks: [
       {
         icon: "github",
@@ -92,5 +90,9 @@ export default {
         ],
       },
     ],
+    carbonAds: {
+      code: "CEAI427Y",
+      placement: "react-chronovercelapp",
+    },
   },
-};
+});
