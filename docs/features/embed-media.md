@@ -2,11 +2,11 @@
 
 Media resources such as images, video files and youtube urls can be embedded using the `media` property of the Timeline object.
 
-| name   | description                          |
-| :----- | :----------------------------------- |
-| name   | name of the media                    |
-| source | Object that defines the media source |
-| type   | typ of Media                         |
+| name   | description                           |
+| :----- | :------------------------------------ |
+| name   | name of the media                     |
+| source | Object that defines the media source  |
+| type   | type of Media. can be`IMAGE`, `VIDEO` |
 
 ## Embedding Images
 
