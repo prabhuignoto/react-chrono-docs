@@ -65,6 +65,10 @@ export default defineConfig({
             text: "Slideshow",
             link: "/features/slideshow",
           },
+          {
+            text: "Embedding Media",
+            link: "/features/embed-media",
+          },
         ],
       },
       {
