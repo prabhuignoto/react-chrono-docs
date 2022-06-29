@@ -69,6 +69,14 @@ export default defineConfig({
             text: "Embedding Media",
             link: "/features/embed-media",
           },
+          {
+            text: "Outline",
+            link: "/features/outline",
+          },
+          {
+            text: "Flip layout",
+            link: "/features/flip-layout",
+          },
         ],
       },
       {

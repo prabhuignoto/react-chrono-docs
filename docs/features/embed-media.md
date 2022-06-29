@@ -10,9 +10,9 @@ Media resources such as images, video files and youtube urls can be embedded usi
 
 ## Embedding Images
 
-To embed images in the timeline card, pass a valid image url to the media object. The following example builds a simple timeline with 2 cards.
+To embed images in the Timeline card, pass a valid image url to the `media` object. The following example builds a simple timeline with 2 cards.
 
-Specify the image URL in the source property of the media object, and you will be good to go.
+Specify the image `URL` in the `source` property of the `media` object, and you will be good to go.
 
 ```jsx
 <Chrono
