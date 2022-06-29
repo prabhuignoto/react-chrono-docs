@@ -98,10 +98,10 @@ export default defineConfig({
       code: "CEAI427Y",
       placement: "react-chronovercelapp",
     },
-    // algolia: {
-    //   apiKey: "aa4925727b229e1dd41208d786b40ba1",
-    //   indexName: "react_chrono_index",
-    //   appId: "MWEXEGZM4J",
-    // },
+    algolia: {
+      apiKey: "aa4925727b229e1dd41208d786b40ba1",
+      indexName: "react_chrono_index",
+      appId: "MWEXEGZM4J",
+    },
   },
 });
