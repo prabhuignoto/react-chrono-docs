@@ -1,4 +1,4 @@
-# Button Texts
+# Button Titles
 
 Customize the title value on the buttons with the `buttonTexts` prop.
 

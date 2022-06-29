@@ -1,17 +1,21 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
+  lang: "en-US",
   title: "React Chrono",
   description: "Smart timeline component for React",
-  lang: "en-US",
+
   lastUpdated: true,
-  layout: "home",
-  search: true,
+
   themeConfig: {
     socialLinks: [
       {
         icon: "github",
         link: "https://github.com/prabhuignoto/react-chrono",
+      },
+      {
+        icon: "twitter",
+        link: "https://twitter.com/prabhumurthy2",
       },
     ],
     footer: {
@@ -75,8 +79,8 @@ export default defineConfig({
             link: "/customize/theme",
           },
           {
-            text: "Button Texts",
-            link: "/customize/button-texts",
+            text: "Button Titles",
+            link: "/customize/button-titles",
           },
         ],
       },
@@ -94,5 +98,10 @@ export default defineConfig({
       code: "CEAI427Y",
       placement: "react-chronovercelapp",
     },
+    // algolia: {
+    //   apiKey: "aa4925727b229e1dd41208d786b40ba1",
+    //   indexName: "react_chrono_index",
+    //   appId: "MWEXEGZM4J",
+    // },
   },
 });
