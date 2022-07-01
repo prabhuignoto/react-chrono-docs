@@ -111,9 +111,9 @@ export default defineConfig({
       placement: "react-chronovercelapp",
     },
     algolia: {
-      apiKey: "aa4925727b229e1dd41208d786b40ba1",
-      indexName: "react_chrono_index",
-      appId: "MWEXEGZM4J",
+      apiKey: "d785f8f9320a9690616ca9c8f12ca159",
+      indexName: "react-chrono",
+      appId: "LPXS8A6ILH",
     },
   },
 });
