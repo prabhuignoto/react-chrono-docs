@@ -6,12 +6,12 @@
   "author": "Prabhu Murthy",
   "license": "MIT",
   "devDependencies": {
-    "@types/react": "^18.0.27",
+    "@types/react": "^18.0.28",
     "fast-glob": "^3.2.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sitemap": "^7.1.1",
-    "vitepress": "1.0.0-alpha.45",
+    "vitepress": "1.0.0-alpha.46",
     "vue": "^3.2.47"
   },
   "scripts": {
