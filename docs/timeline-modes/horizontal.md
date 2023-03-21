@@ -1,31 +1,52 @@
-# Horizontal
+# Horizontal Mode
 
-When horizontal mode is selected, the timeline cards will be presented in a horizontal format. You have the option, while in the horizontal mode, to display either just the active card or all of the cards.
+In horizontal mode, React-Chrono displays timeline cards horizontally, providing users with a new and visually distinct way to display events. By default, only one timeline card is displayed at a time. Users can navigate through the cards using the navigation arrows or the keyboard.
 
-## Default
+To display all the timeline cards at once, developers can set the `showAllCardsHorizontal` prop to true. This prop enables users to scroll through the entire timeline horizontally and view all the timeline cards.
 
-In the default mode, only the active card is displayed.
+![horizontal-all](horizontal-all.png)
+
+## Adjusting the Space Between Timeline Cards
+
+React-Chrono's horizontal mode also allows developers to adjust the space between each timeline item using the itemWidth prop. This prop accepts a value in pixels and sets the width of each timeline card, allowing developers to customize the distance between each card.
+
+## Example
 
 ```jsx
-  <Chrono items={data} mode="HORIZONTAL" />
+Copy code
+import React from 'react';
+import { Chrono } from 'react-chrono';
+
+const items = [
+  {
+    title: "January 2022",
+    contentTitle: "Event 1",
+    contentText: "This is the first event on the timeline.",
+  },
+  {
+    title: "February 2022",
+    contentTitle: "Event 2",
+    contentText: "This is the second event on the timeline.",
+  },
+  {
+    title: "March 2022",
+    contentTitle: "Event 3",
+    contentText: "This is the third event on the timeline.",
+  }
+];
+
+const HorizontalChrono = () => {
+  return (
+    <Chrono 
+      items={items}
+      mode="HORIZONTAL"
+      itemWidth={150}
+      showSingle={true}
+    />
+  );
+};
+
+export default HorizontalChrono;
 ```
 
-![horizontal-default](../assets/horizontal-default.png)
-
-[![Edit keen-shannon-gtjwn](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/keen-shannon-gtjwn?fontsize=14&hidenavigation=1&theme=dark)
-
-## Show all cards
-
-use the `showAllCardsHorizontal` property to display all the cards.
-
-```jsx{4}
-  <Chrono
-    items={data}
-    mode="HORIZONTAL"
-    showAllCardsHorizontal
-  />
-```
-
-![horizontal-show-all](../assets/horizontal-show-all.png)
-
-[![Edit show-all-cards](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/show-all-cards-5vuf2x?fontsize=14&hidenavigation=1&theme=dark)
+In the example above, the `itemWidth` prop is set to 150, which creates a space of 150 pixels between each timeline card. The showSingle prop is set to true, which displays only one timeline card at a time.

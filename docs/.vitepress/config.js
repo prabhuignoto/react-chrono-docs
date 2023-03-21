@@ -77,6 +77,14 @@ export default defineConfig({
             text: "Flip layout",
             link: "/features/flip-layout",
           },
+          {
+            text: "Nested Timelines",
+            link: "/features/nested-timelines",
+          },
+          {
+            text: "Text Overlay",
+            link: "/features/text-overlay",
+          },
         ],
       },
       {
