@@ -1,32 +1,81 @@
-# Vertical
+# Vertical Modes
 
-In vertical mode, the timeline cards are arranged vertically. When using the vertical mode, the cards can be rendered in either a single column or in a two-column format with cards placed side-by-side.
+## Vertical Timeline
 
-## Single column
+In VERTICAL mode, events are displayed in a vertical orientation. Each event is represented by a card that contains a title, subtitle, and content. The cards are stacked on top of each other, with the latest event at the top.
 
-In single column mode, the cards are rendered in a single column. set the `mode` to `VERTICAL` to render the timeline in vertical mode.
+Example:
 
-```jsx{3}
-  <Chrono
-    items={data}
-    mode="VERTICAL"
-  />
+```jsx
+Copy code
+import { Chrono } from 'react-chrono';
+
+const events = [
+  {
+    title: 'Event 1',
+    subtitle: 'May 2022',
+    contentTitle: 'Content 1',
+    contentText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.'
+  },
+  {
+    title: 'Event 2',
+    subtitle: 'June 2022',
+    contentTitle: 'Content 2',
+    contentText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.'
+  },
+  {
+    title: 'Event 3',
+    subtitle: 'July 2022',
+    contentTitle: 'Content 3',
+    contentText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.'
+  },
+];
+
+function App() {
+  return (
+    <Chrono items={events} mode="VERTICAL" />
+  );
+}
 ```
 
-![vertical](../assets/vertical.png)
+![vertical](vertical.png)
 
-## Two column
+## Vertically Alternating Timeline
 
-When you need to render Timeline cards side by side, two column rendering comes in handy.
+In VERTICAL_ALTERNATING mode, events are displayed in a vertical orientation, but with alternating positions. This creates a zigzag pattern that can be visually appealing. Each event is represented by a card that contains a title, subtitle, and content. The cards are stacked on top of each other, with the latest event at the top.
 
-To render the cards in two columns, you need to set the `mode` to `VERTICAL_ALTERNATING`.
+Example:
 
-```jsx{3}
-  <Chrono
-    items={data}
-    mode="VERTICAL_ALTERNATING"
-    twoColumns
-  />
+```jsx
+import { Chrono } from "react-chrono";
+
+const events = [
+  {
+    title: "Event 1",
+    subtitle: "May 2022",
+    contentTitle: "Content 1",
+    contentText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.",
+  },
+  {
+    title: "Event 2",
+    subtitle: "June 2022",
+    contentTitle: "Content 2",
+    contentText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.",
+  },
+  {
+    title: "Event 3",
+    subtitle: "July 2022",
+    contentTitle: "Content 3",
+    contentText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.",
+  },
+];
+
+function App() {
+  return <Chrono items={events} mode="VERTICAL_ALTERNATING" />;
+}
 ```
 
-![vertical_alternating](../assets/vertical_alternating.png)
+![vertical_alternating](vertical_alternating.png)

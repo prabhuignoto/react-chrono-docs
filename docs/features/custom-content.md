@@ -1,60 +1,58 @@
-# Render custom content
+# Custom rendering
 
-You can also render custom content and display almost anything inside the timeline cards.
+To use custom rendering , you need to pass the content that you want to render between the `<Chrono>` tags. The custom content will be used instead of the default rendering for each timeline card.
 
-To render custom content, wrap the custom content in a div and pass it as a child element to the `Chrono` component.
+It's important to note that you can use both the items prop and custom rendering in conjunction. For example, if you have an array of 10 items and you pass 4 custom content between the `<Chrono>` tags, the first 4 timeline cards will have the custom content rendered, and the next 6 items will be picked from the items array starting from index 5.
 
-```jsx{4-48}
-  <Chrono
-    mode="VERTICAL"
-  >
-    <div>
-      <div style={{ width: "250px", height: "250px" }}>
-        <img
-          style={{ maxWidth: "100%", maxHeight: "100%" }}
-          alt="test"
-          src="https://cdn.tutsplus.com/net/uploads/2013/08/github-collab-retina-preview.gif"
-        />
-      </div>
-    </div>
-    <div>
-      <h3>This is a List</h3>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Dunkirk</h3>
-      <p>
-        The Battle of Dunkirk (French: Bataille de Dunkerque) was fought
-        in Dunkirk (Dunkerque), France, during the Second World War,
-        between the Allies and Nazi Germany.
-      </p>
-    </div>
-    <div style={{ margin: "1rem" }}>
-      <h3>Table</h3>
-      <table>
-        <thead>
-          <tr>
-            <td>Column 1</td>
-            <td>Column 2</td>
-            <td>Column 3</td>
-            <td>Column 4</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Value 1</td>
-            <td>Value 2</td>
-            <td>Value 3</td>
-            <td>Value 4</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </Chrono>
+## Custom Content Format
+
+The custom content that you pass between the `<Chrono>` tags can be any valid JSX element, such as a `<div>`, `<h1>`, `<p>`, or any other HTML tag. You can also use React components as custom content.
+
+## Custom Rendering Example
+
+Here is an example of how to use custom rendering in React-Chrono:
+
+```jsx
+import React from "react";
+import { Chrono } from "react-chrono";
+
+const customContent = [
+  <div>
+    <h3>Custom Card 1</h3>
+    <p>This is the first custom card</p>
+  </div>,
+  <div>
+    <h3>Custom Card 2</h3>
+    <p>This is the second custom card</p>
+  </div>,
+];
+
+const items = [
+  {
+    title: "Item 1",
+    cardTitle: "Card 1",
+    cardSubtitle: "Subtitle 1",
+    cardDetailedText: "Detailed text 1",
+  },
+  {
+    title: "Item 2",
+    cardTitle: "Card 2",
+    cardSubtitle: "Subtitle 2",
+    cardDetailedText: "Detailed text 2",
+  },
+  // ... more items
+];
+
+function MyTimeline() {
+  return <Chrono items={items}>{customContent}</Chrono>;
+}
 ```
+
+In this example, we define an array of custom content that contains two `<div>` elements with custom content. Then we define an array of items that will be displayed in the timeline. We pass both the items array and the customContent array to the `<Chrono>` component. The first two timeline cards will use the custom content, and the next items will use the default rendering.
+
+::: info
+Custom rendering in React-Chrono provides a powerful way to customize the appearance of your timeline cards. By passing custom content between the `<Chrono>` tags, you can create unique and visually appealing timelines that fit your application's needs.
+:::
 
 ![vertical_custom](../assets/vertical_custom.png)
 

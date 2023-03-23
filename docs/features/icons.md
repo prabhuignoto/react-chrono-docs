@@ -1,42 +1,40 @@
 # Icons
 
-By default, the timeline track shows a simple circle made with CSS for each time point. This can be changed so that each item on the timeline track shows a different icon.
-
-Wrap all the icons in a wrapper with a class name `chrono-icons` and the component will make sure the icons are embedded on each timeline point in the same order as they appear in the code.
+The timeline track usually shows a CSS-generated shape for each time point, but it can be personalized to display distinct icons for each item on the track. To do so, place all the icons inside a wrapper with a chrono-icons class name. The component will then embed the icons on the corresponding timeline points in the same order they appear in the code.
 
 ```jsx
-  <Chrono items={data} mode="VERTICAL_ALTERNATING">
-    <div className="chrono-icons">
-      <img
-        src="https://img.icons8.com/ios-filled/100/000000/twitter.png"
-        alt="twitter"
-      />
-      <img
-        src="https://img.icons8.com/ios-filled/100/000000/about.png"
-        alt="twitter"
-      />
-      <img
-        src="https://img.icons8.com/ios-filled/100/000000/contacts.png"
-        alt="twitter"
-      />
-      <img
-        src="https://img.icons8.com/ios-filled/100/000000/briefcase.png"
-        alt="twitter"
-      />
-      <img
-        src="https://img.icons8.com/ios-filled/100/000000/idea.png"
-        alt="twitter"
-      />
-      <img
-        src="https://img.icons8.com/ios-filled/100/000000/sun.png"
-        alt="twitter"
-      />
-      <img
-        src="https://img.icons8.com/ios-filled/100/000000/info.png"
-        alt="twitter"
-      />
-    </div>
-  </Chrono>
+<Chrono items={data} mode="VERTICAL_ALTERNATING">
+  <div className="chrono-icons">
+    <img
+      src="https://img.icons8.com/ios-filled/100/000000/twitter.png"
+      alt="twitter"
+    />
+    <img
+      src="https://img.icons8.com/ios-filled/100/000000/about.png"
+      alt="twitter"
+    />
+    <img
+      src="https://img.icons8.com/ios-filled/100/000000/contacts.png"
+      alt="twitter"
+    />
+    <img
+      src="https://img.icons8.com/ios-filled/100/000000/briefcase.png"
+      alt="twitter"
+    />
+    <img
+      src="https://img.icons8.com/ios-filled/100/000000/idea.png"
+      alt="twitter"
+    />
+    <img
+      src="https://img.icons8.com/ios-filled/100/000000/sun.png"
+      alt="twitter"
+    />
+    <img
+      src="https://img.icons8.com/ios-filled/100/000000/info.png"
+      alt="twitter"
+    />
+  </div>
+</Chrono>
 ```
 
 ![icons](../assets/icons.png)
