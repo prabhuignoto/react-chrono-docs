@@ -88,7 +88,11 @@ export default defineConfig({
           {
             text: "Control Panel",
             link: "/features/control-panel",
-          }
+          },
+          {
+            text: "Timeline Point",
+            link: "/features/timeline-point",
+          },
         ],
       },
       {

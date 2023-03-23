@@ -14,6 +14,10 @@ For the VERTICAL and HORIZONTAL modes, the default slide show type is `reveal`. 
 
 For the VERTICAL_ALTERNATING mode, the default slide show type is `slide_from_sides`. This means that the timeline cards are animated from both sides of the screen.
 
+## Starting and Stopping the Slideshow
+
+You can start the slideshow by clicking the "Start" button, and stop it by clicking the "Stop" button in the control panel. If you want to cancel the slideshow, you can press the "Escape" key on your keyboard.
+
 ## Example Usage
 
 To enable the slideshow feature on your timeline, simply add the `slideShow` prop to the Chrono component and configure the `slideItemDuration` prop to your desired value.
