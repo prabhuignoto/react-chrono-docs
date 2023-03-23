@@ -2,13 +2,15 @@
 
 The Timeline Point is an interactive point in the timeline track that represents an event or a moment in time.
 
+![timeline-point](timeline-point.png)
+
 ## Supported Shapes
 
 Three different shapes are supported for the timeline points: `circle` (default), `diamond`, or `square`. You can choose any of these shapes by setting the `timelinePointShape` property in the configuration object.
 
 ## Dimension
 
-The size of the timeline point can be changed by setting the `timelinePointDimension` property to a numerical value representing the width and height of the point in pixels. By default, the dimensions are set to 10.
+The size of the timeline point can be changed by setting the `timelinePointDimension` property to a numerical value representing the width and height of the point in pixels.
 
 ## Custom Icons
 
