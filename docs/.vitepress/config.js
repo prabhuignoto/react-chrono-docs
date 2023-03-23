@@ -85,6 +85,10 @@ export default defineConfig({
             text: "Text Overlay",
             link: "/features/text-overlay",
           },
+          {
+            text: "Control Panel",
+            link: "/features/control-panel",
+          }
         ],
       },
       {
