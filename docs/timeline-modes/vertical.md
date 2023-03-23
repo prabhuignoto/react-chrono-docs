@@ -1,6 +1,5 @@
 # Vertical Modes
 
-
 ## Vertical Timeline
 
 In VERTICAL mode, events are displayed in a vertical orientation. Each event is represented by a card that contains a title, subtitle, and content. The cards are stacked on top of each other, with the latest event at the top.
@@ -48,33 +47,34 @@ In VERTICAL_ALTERNATING mode, events are displayed in a vertical orientation, bu
 Example:
 
 ```jsx
-import { Chrono } from 'react-chrono';
+import { Chrono } from "react-chrono";
 
 const events = [
   {
-    title: 'Event 1',
-    subtitle: 'May 2022',
-    contentTitle: 'Content 1',
-    contentText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.'
+    title: "Event 1",
+    subtitle: "May 2022",
+    contentTitle: "Content 1",
+    contentText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.",
   },
   {
-    title: 'Event 2',
-    subtitle: 'June 2022',
-    contentTitle: 'Content 2',
-    contentText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.'
+    title: "Event 2",
+    subtitle: "June 2022",
+    contentTitle: "Content 2",
+    contentText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.",
   },
   {
-    title: 'Event 3',
-    subtitle: 'July 2022',
-    contentTitle: 'Content 3',
-    contentText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.'
+    title: "Event 3",
+    subtitle: "July 2022",
+    contentTitle: "Content 3",
+    contentText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.",
   },
 ];
 
 function App() {
-  return (
-    <Chrono items={events} mode="VERTICAL_ALTERNATING" />
-  );
+  return <Chrono items={events} mode="VERTICAL_ALTERNATING" />;
 }
 ```
 

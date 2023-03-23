@@ -37,7 +37,7 @@ const items = [
 
 const HorizontalChrono = () => {
   return (
-    <Chrono 
+    <Chrono
       items={items}
       mode="HORIZONTAL"
       itemWidth={150}

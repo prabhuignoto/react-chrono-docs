@@ -11,42 +11,42 @@ Nested Timelines in react-chrono is data-driven, which means that you can pass a
 ## Example Usage
 
 ```jsx
-import { Chrono } from 'react-chrono';
+import { Chrono } from "react-chrono";
 
 const items = [
   {
-    title: 'Nested Timeline Example',
-    cardTitle: 'Main Event',
-    cardSubtitle: 'This is the main event',
-    cardDetailedText: 'This is the detailed text for the main event',
+    title: "Nested Timeline Example",
+    cardTitle: "Main Event",
+    cardSubtitle: "This is the main event",
+    cardDetailedText: "This is the detailed text for the main event",
     media: {
-      type: 'IMAGE',
+      type: "IMAGE",
       source: {
-        url: 'https://picsum.photos/800/400',
+        url: "https://picsum.photos/800/400",
       },
     },
     items: [
       {
-        title: 'Nested Item 1',
-        cardTitle: 'Nested Event 1',
-        cardSubtitle: 'This is a nested event',
-        cardDetailedText: 'This is the detailed text for the nested event 1',
+        title: "Nested Item 1",
+        cardTitle: "Nested Event 1",
+        cardSubtitle: "This is a nested event",
+        cardDetailedText: "This is the detailed text for the nested event 1",
         media: {
-          type: 'IMAGE',
+          type: "IMAGE",
           source: {
-            url: 'https://picsum.photos/800/400',
+            url: "https://picsum.photos/800/400",
           },
         },
       },
       {
-        title: 'Nested Item 2',
-        cardTitle: 'Nested Event 2',
-        cardSubtitle: 'This is another nested event',
-        cardDetailedText: 'This is the detailed text for the nested event 2',
+        title: "Nested Item 2",
+        cardTitle: "Nested Event 2",
+        cardSubtitle: "This is another nested event",
+        cardDetailedText: "This is the detailed text for the nested event 2",
         media: {
-          type: 'IMAGE',
+          type: "IMAGE",
           source: {
-            url: 'https://picsum.photos/800/400',
+            url: "https://picsum.photos/800/400",
           },
         },
       },
@@ -55,17 +55,10 @@ const items = [
 ];
 
 function MyChrono() {
-  return (
-    <Chrono
-      items={items}
-      mode="VERTICAL"
-      nestedCardHeight={200}
-    />
-  );
+  return <Chrono items={items} mode="VERTICAL" nestedCardHeight={200} />;
 }
 
 export default MyChrono;
-
 ```
 
 ## Height Adjustments
