@@ -28,15 +28,15 @@ The following is a default theme object used for styling a card UI. The object c
 > Note: library provides a default theme for both light as well as dark mode.
 
 ```jsx
-  <Chrono
-    items={items}
-    theme={{
-      primary: 'red',
-      secondary: 'blue',
-      cardBgColor: 'yellow',
-      cardForeColor: 'violet',
-      titleColor: 'black',
-      titleColorActive: 'red',
-    }}
-  />
+<Chrono
+  items={items}
+  theme={{
+    primary: "red",
+    secondary: "blue",
+    cardBgColor: "yellow",
+    cardForeColor: "violet",
+    titleColor: "black",
+    titleColorActive: "red",
+  }}
+/>
 ```

@@ -19,33 +19,37 @@ If you are not satisfied with the default shapes, you can also use custom icons 
 ## Example
 
 ```jsx
-import React from 'react';
-import { Chrono } from 'react-chrono';
+import React from "react";
+import { Chrono } from "react-chrono";
 
 const items = [
   {
-    title: 'Item 1',
-    cardTitle: 'Card 1',
-    cardSubtitle: 'Subtitle 1',
-    cardDetailedText: 'Detailed text 1',
+    title: "Item 1",
+    cardTitle: "Card 1",
+    cardSubtitle: "Subtitle 1",
+    cardDetailedText: "Detailed text 1",
   },
   {
-    title: 'Item 2',
-    cardTitle: 'Card 2',
-    cardSubtitle: 'Subtitle 2',
-    cardDetailedText: 'Detailed text 2',
+    title: "Item 2",
+    cardTitle: "Card 2",
+    cardSubtitle: "Subtitle 2",
+    cardDetailedText: "Detailed text 2",
   },
   {
-    title: 'Item 3',
-    cardTitle: 'Card 3',
-    cardSubtitle: 'Subtitle 3',
-    cardDetailedText: 'Detailed text 3',
+    title: "Item 3",
+    cardTitle: "Card 3",
+    cardSubtitle: "Subtitle 3",
+    cardDetailedText: "Detailed text 3",
   },
 ];
 
 function MyTimeline() {
   return (
-    <Chrono items={items} timelinePointShape="square"  timelinePointDimension={30} />
+    <Chrono
+      items={items}
+      timelinePointShape="square"
+      timelinePointDimension={30}
+    />
   );
 }
 ```

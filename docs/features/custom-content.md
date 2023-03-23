@@ -13,8 +13,8 @@ The custom content that you pass between the `<Chrono>` tags can be any valid JS
 Here is an example of how to use custom rendering in React-Chrono:
 
 ```jsx
-import React from 'react';
-import { Chrono } from 'react-chrono';
+import React from "react";
+import { Chrono } from "react-chrono";
 
 const customContent = [
   <div>
@@ -29,26 +29,22 @@ const customContent = [
 
 const items = [
   {
-    title: 'Item 1',
-    cardTitle: 'Card 1',
-    cardSubtitle: 'Subtitle 1',
-    cardDetailedText: 'Detailed text 1',
+    title: "Item 1",
+    cardTitle: "Card 1",
+    cardSubtitle: "Subtitle 1",
+    cardDetailedText: "Detailed text 1",
   },
   {
-    title: 'Item 2',
-    cardTitle: 'Card 2',
-    cardSubtitle: 'Subtitle 2',
-    cardDetailedText: 'Detailed text 2',
+    title: "Item 2",
+    cardTitle: "Card 2",
+    cardSubtitle: "Subtitle 2",
+    cardDetailedText: "Detailed text 2",
   },
   // ... more items
 ];
 
 function MyTimeline() {
-  return (
-    <Chrono items={items}>
-      {customContent}
-    </Chrono>
-  );
+  return <Chrono items={items}>{customContent}</Chrono>;
 }
 ```
 
