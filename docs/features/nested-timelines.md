@@ -6,7 +6,7 @@ Nested Timelines is a new feature in react-chrono that allows you to generate ne
 
 Nested Timelines in react-chrono is data-driven, which means that you can pass an items prop inside each item. The card will then render the nested timeline inside the card. This makes it easy to display a nested timeline for each item in your timeline.
 
-![nested](nested.png)
+![nested](./assets/nested.png)
 
 ## Example Usage
 
@@ -18,13 +18,6 @@ const items = [
     title: "Nested Timeline Example",
     cardTitle: "Main Event",
     cardSubtitle: "This is the main event",
-    cardDetailedText: "This is the detailed text for the main event",
-    media: {
-      type: "IMAGE",
-      source: {
-        url: "https://picsum.photos/800/400",
-      },
-    },
     items: [
       {
         title: "Nested Item 1",
@@ -54,11 +47,11 @@ const items = [
   },
 ];
 
-function MyChrono() {
+function NestedTimeline() {
   return <Chrono items={items} mode="VERTICAL" nestedCardHeight={200} />;
 }
 
-export default MyChrono;
+export default NestedTimeline;
 ```
 
 ## Height Adjustments

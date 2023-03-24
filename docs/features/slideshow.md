@@ -23,7 +23,6 @@ You can start the slideshow by clicking the "Start" button, and stop it by click
 To enable the slideshow feature on your timeline, simply add the `slideShow` prop to the Chrono component and configure the `slideItemDuration` prop to your desired value.
 
 ```jsx
-Copy code
 import React from 'react';
 import { Chrono } from 'react-chrono';
 

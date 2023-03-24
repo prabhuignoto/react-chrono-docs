@@ -2,7 +2,7 @@
 
 The control panel provides various controls and options to customize the behavior and appearance of the timeline component. The following is a list of available controls and their functions:
 
-![control-panel](control-panel.png)
+![control-panel](../assets/control-panel.png)
 
 - **Jump to first timeline card**: Clicking on this button will immediately move the timeline to the first card.
 - **Move to previous timeline card**: Clicking on this button will move the timeline to the previous card in the sequence.

@@ -7,35 +7,41 @@ In VERTICAL mode, events are displayed in a vertical orientation. Each event is 
 Example:
 
 ```jsx
-Copy code
 import { Chrono } from 'react-chrono';
 
-const events = [
+const items = [
   {
-    title: 'Event 1',
-    subtitle: 'May 2022',
-    contentTitle: 'Content 1',
-    contentText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.'
+    title: "January 2022",
+    cardTitle: "Event 1",
+    cardSubtitle: "Event 1 Subtitle",
+    cardDetailedText: "This is the first event on the timeline.",
   },
   {
-    title: 'Event 2',
-    subtitle: 'June 2022',
-    contentTitle: 'Content 2',
-    contentText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.'
+    title: "February 2022",
+    cardTitle: "Event 2",
+    cardSubtitle: "Event 2 Subtitle",
+    cardDetailedText: "This is the second event on the timeline.",
   },
   {
-    title: 'Event 3',
-    subtitle: 'July 2022',
-    contentTitle: 'Content 3',
-    contentText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.'
-  },
+    title: "March 2022",
+    cardTitle: "Event 3",
+    cardSubtitle: "Event 3 Subtitle",
+    cardDetailedText: "This is the third event on the timeline.",
+  }
 ];
 
-function App() {
+const VerticalTimeline = () => {
   return (
-    <Chrono items={events} mode="VERTICAL" />
+    <Chrono
+      items={items}
+      mode="VERTICAL"
+      itemWidth={150}
+      showSingle={true}
+    />
   );
-}
+};
+
+export default VerticalTimeline;
 ```
 
 ![vertical](vertical.png)
@@ -49,33 +55,39 @@ Example:
 ```jsx
 import { Chrono } from "react-chrono";
 
-const events = [
+const items = [
   {
-    title: "Event 1",
-    subtitle: "May 2022",
-    contentTitle: "Content 1",
-    contentText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.",
+    title: "January 2022",
+    cardTitle: "Event 1",
+    cardSubtitle: "Event 1 Subtitle",
+    cardDetailedText: "This is the first event on the timeline.",
   },
   {
-    title: "Event 2",
-    subtitle: "June 2022",
-    contentTitle: "Content 2",
-    contentText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.",
+    title: "February 2022",
+    cardTitle: "Event 2",
+    cardSubtitle: "Event 2 Subtitle",
+    cardDetailedText: "This is the second event on the timeline.",
   },
   {
-    title: "Event 3",
-    subtitle: "July 2022",
-    contentTitle: "Content 3",
-    contentText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod blandit ante, sit amet consequat est laoreet vel.",
-  },
+    title: "March 2022",
+    cardTitle: "Event 3",
+    cardSubtitle: "Event 3 Subtitle",
+    cardDetailedText: "This is the third event on the timeline.",
+  }
 ];
 
-function App() {
-  return <Chrono items={events} mode="VERTICAL_ALTERNATING" />;
-}
+const VerticalAlternatingTimeline = () => {
+  return (
+    <Chrono
+      items={items}
+      mode="VERTICAL"
+      itemWidth={150}
+      showSingle={true}
+    />
+  );
+};
+
+export default VerticalAlternatingTimeline;
 ```
 
 ![vertical_alternating](vertical_alternating.png)

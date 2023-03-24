@@ -2,7 +2,7 @@
 
 The `textOverlay` mode is a new feature added to react-chrono library. It allows the timeline cards to be rendered with a new user experience that enhances the presentation of media content.
 
-![text-overlay](text-overlay.png)
+![text-overlay](./assets/text-overlay.png)  
 
 ## Features
 
@@ -16,23 +16,18 @@ The `textOverlay` mode is a new feature added to react-chrono library. It allows
 To enable the textOverlay mode, simply pass the textOverlay prop to your Chrono component. This prop only applies when the timeline items contain media content.
 
 ```jsx
-Copy code
 import { Chrono } from 'react-chrono';
-import img1 from './img1.jpg';
-import img2 from './img2.jpg';
-import img3 from './img3.jpg';
 
-const myTimelineItems = [
+const items = [
   {
     title: 'Item 1',
     cardSubtitle: 'September 2019',
     media: {
       type: 'IMAGE',
       source: {
-        url: img1,
+        url: "https://picsum.photos/800/400",
       },
     },
-    text: 'This is a sample text for Item 1'
   },
   {
     title: 'Item 2',
@@ -40,10 +35,10 @@ const myTimelineItems = [
     media: {
       type: 'IMAGE',
       source: {
-        url: img2,
+        url: "https://picsum.photos/800/400",
+      },
       },
     },
-    text: 'This is a sample text for Item 2'
   },
   {
     title: 'Item 3',
@@ -51,14 +46,13 @@ const myTimelineItems = [
     media: {
       type: 'IMAGE',
       source: {
-        url: img3,
+        url: "https://picsum.photos/800/400",
       },
     },
-    text: 'This is a sample text for Item 3'
   },
 ];
 
-<Chrono items={myTimelineItems} textOverlay={true} />
+<Chrono items={items} textOverlay />
 ```
 
 ![text-overlay-2](text-overlay-2.png)

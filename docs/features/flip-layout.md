@@ -5,7 +5,6 @@ The `flipLayout` prop allows you to flip the layout of the timeline in both `ver
 ## Usage
 
 ```jsx
-Copy code
 import React from 'react';
 import { Chrono } from 'react-chrono';
 
