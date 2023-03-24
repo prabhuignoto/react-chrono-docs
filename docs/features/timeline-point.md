@@ -2,7 +2,7 @@
 
 The Timeline Point is an interactive point in the timeline track that represents an event or a moment in time.
 
-![timeline-point](timeline-point.png)
+![timeline-point](./assets/timeline-point.png)
 
 ## Supported Shapes
 

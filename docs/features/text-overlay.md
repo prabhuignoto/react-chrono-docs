@@ -55,4 +55,4 @@ const items = [
 <Chrono items={items} textOverlay />
 ```
 
-![text-overlay-2](text-overlay-2.png)
+![text-overlay-2](./assets/text-overlay-2.png)
