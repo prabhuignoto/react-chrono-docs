@@ -1,6 +1,8 @@
 # Theme
 
-The following is a default theme object used for styling a card UI. The object contains various key-value pairs that define the colors used for different parts of the card.
+React-Chrono provides a simple way to customize the appearance of your timeline cards by using the `theme` object. This object allows you to modify the colors of various elements in the card, such as the title, subtitle, detailed text, and media.
+
+To customize the card's appearance, you can pass the `theme` object as a prop to the React-Chrono component. The `theme` object consists of key-value pairs that map to specific styles. For example, if you want to change the color of the title text, you can use the `titleColor` key and assign it a new color value.
 
 ## Theme Object
 
@@ -40,3 +42,5 @@ The following is a default theme object used for styling a card UI. The object c
   }}
 />
 ```
+
+By using the `theme` object, you can easily tailor the look and feel of your timeline to match the style of your project or brand.
