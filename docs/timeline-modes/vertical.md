@@ -35,8 +35,6 @@ const VerticalTimeline = () => {
     <Chrono
       items={items}
       mode="VERTICAL"
-      itemWidth={150}
-      showSingle={true}
     />
   );
 };
@@ -82,7 +80,6 @@ const VerticalAlternatingTimeline = () => {
       items={items}
       mode="VERTICAL"
       itemWidth={150}
-      showSingle={true}
     />
   );
 };

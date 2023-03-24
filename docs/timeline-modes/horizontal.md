@@ -43,7 +43,7 @@ const HorizontalTimeline = () => {
       items={items}
       mode="HORIZONTAL"
       itemWidth={150}
-      showSingle={true}
+      showSingle
     />
   );
 };
