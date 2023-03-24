@@ -4,7 +4,6 @@
 
 This property sets the default active timeline item that should be displayed when the component loads.
 
-
 ## allowDynamicUpdate
 
 This property allows timeline items to be updated dynamically.
