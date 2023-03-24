@@ -2,112 +2,114 @@
 
 ## activeItemIndex
 
-Selects the active timeline item on load.
+This property sets the default active timeline item that should be displayed when the component loads.
+
 
 ## allowDynamicUpdate
 
-Allows timeline items to be updated dynamically.
+This property allows timeline items to be updated dynamically.
 
 ## borderLessCards
 
-Removes the border & shadow from the timeline cards.
+By enabling this property, the border and shadow on the timeline cards can be removed.
 
 ## cardHeight
 
-Sets the minimum height of the timeline card.
+This property sets the minimum height of the timeline card.
 
 ## cardLess
 
-Disables timeline cards on both horizontal and vertical modes.
+This property disables the display of timeline cards in both horizontal and vertical modes.
 
 ## cardPositionHorizontal
 
-Positions the card in HORIZONTAL mode. can be either `TOP` or `BOTTOM`.
+This property positions the timeline card in horizontal mode. The value can be either TOP or BOTTOM.
 
 ## cardWidth
 
-Sets the maximum width of the timeline card.
+This property sets the maximum width of the timeline card.
 
 ## disableAutoScrollOnClick
 
-Disables the timeline from auto-scrolling when a timeline card is clicked.
+This property disables the timeline from auto-scrolling when a timeline card is clicked.
 
 ## disableClickOnCircle
 
-Disables click action on the circular points.
+This property disables click action on the circular points.
 
 ## disableNavOnKey
 
-Disables keyboard navigation.
+This property disables keyboard navigation.
 
 ## enableOutline
 
-Enables the outline menu on `VERTICAL` and `VERTICAL_ALTERNATING` mode.
+Enabling this property displays the outline menu on VERTICAL and VERTICAL_ALTERNATING modes.
 
 ## flipLayout
 
-Flips the layout (RTL).
+This property flips the layout to right-to-left (RTL).
 
 ## hideControls
 
-Hides the navigation controls.
+
+Enabling this property hides the navigation controls.
 
 ## itemWidth
 
-Width of the timeline section in `HORIZONTAL` mode.
+This property sets the width of the timeline section in HORIZONTAL mode.
 
 ## items
 
-Collection of Timeline Item Model.
+This property contains a collection of Timeline Item Models.
 
 ## lineWidth
 
-Prop to customize the width of the timeline track line.
+This property is used to customize the width of the timeline track line.
 
 ## mode
 
-Sets the mode of the component. can be HORIZONTAL, VERTICAL or VERTICAL_ALTERNATING.
+This property sets the mode of the timeline component. The value can be HORIZONTAL, VERTICAL, or VERTICAL_ALTERNATING.
 
 ## onItemSelected
 
-Callback invoked on a item selection. passes all of the data pertinent to the item.
+This property is a callback function invoked on item selection. It passes all of the data pertinent to the item.
 
 ## onScrollEnd
 
-Use the `onScrollEnd` to detect the end of the timeline.
+This property is used to detect the end of the timeline using the onScrollEnd callback function.
 
 ## scrollable
 
-Makes the timeline scrollable (applicable for `VERTICAL` & `VERTICAL_ALTERNATING`).
+This property makes the timeline scrollable in VERTICAL and VERTICAL_ALTERNATING modes.
 
 ## showAllCardsHorizontal
 
-In horizontal mode, only the active card is displayed. With this prop, you can display all the cards.
+Enabling this property in horizontal mode displays all the cards instead of only the active one.
 
 ## slideItemDuration
 
-Duration (in ms), the timeline card is active during a `slideshow`.
+This property sets the duration (in ms) for which the timeline card is active during a slideshow.
 
 ## slideShow
 
-Enables the slideshow control.
+Enabling this property displays the slideshow control.
 
 ## theme
 
-Prop to customize the colors.
+This property is used to customize the colors of the timeline component.
 
 ## timelineCircleDimension
 
-Dimensions of the circular points on the timeline.
+This property sets the dimensions of the circular points on the timeline.
 
 ## useReadMore
 
-Enables or disables the "read more" button. The "read more" button is only available if the text content on the card is taller than the card itself.
+Enabling this property displays the "read more" button, which is only available if the text content on the card is taller than the card itself.
 
 ## fontSizes
 
-property to customize the font sizes
+This property is used to customize the font sizes.
 
 ## buttonTexts
 
-Customize the alt text for all buttons.
+This property is used to customize the alt text for all buttons.
