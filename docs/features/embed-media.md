@@ -1,6 +1,6 @@
 # Embedding Media
 
-Media resources such as images, video files and youtube urls can be embedded using the `media` property of the Timeline object.
+The `media` property of the Timeline object enables the integration of different forms of media resources, such as images, video files, and YouTube URLs, into the timeline. This functionality simplifies the process of inserting media content into the timeline, as users only need to indicate the specific media resource they want to include using this property. With this capability, users can elevate the visual impact of their timeline and furnish it with multimedia components.
 
 | name   | description                           |
 | :----- | :------------------------------------ |
@@ -10,9 +10,7 @@ Media resources such as images, video files and youtube urls can be embedded usi
 
 ## Embedding Images
 
-To embed images in the Timeline card, pass a valid image url to the `media` object. The following example builds a simple timeline with 2 cards.
-
-Specify the image `URL` in the `source` property of the `media` object, and you will be good to go.
+To add images to your timeline, you can use the media property of the Timeline object and provide a valid image URL to the source property of the media object. This example demonstrates how to create a simple timeline with two cards using images.
 
 ```jsx
 <Chrono
@@ -55,7 +53,7 @@ Specify the image `URL` in the `source` property of the `media` object, and you 
 
 ## Embedding Video
 
-`react-chrono` allows you to embed either valid YouTube urls or local video files. The example that follows demonstrates how to add YouTube videos to timeline cards.
+You can also embed YouTube videos or local video files. The next example shows how to add YouTube videos to your timeline cards.
 
 ```jsx
 <Chrono

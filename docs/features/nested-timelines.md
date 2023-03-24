@@ -63,10 +63,10 @@ export default MyChrono;
 
 ## Height Adjustments
 
-With the nestedCardHeight prop, you can adjust the height of the nested card. This allows you to control the amount of space that the nested timeline takes up within the parent timeline.
+With the `nestedCardHeight` prop, you can adjust the height of the nested card. This allows you to control the amount of space that the nested timeline takes up within the parent timeline.
 
 ## Derived Attributes
 
-Other attributes, such as mediaHeight and contentDetailsHeight, are derived from the parent timeline. This makes it easy to create a nested timeline that looks and feels like part of the parent timeline.
+Other attributes, such as `mediaHeight` and `contentDetailsHeight`, are derived from the parent timeline. This makes it easy to create a nested timeline that looks and feels like part of the parent timeline.
 
-It is a powerful and flexible feature that allows you to create complex timelines with ease. Whether you're displaying data for a project, organizing events, or tracking progress.
+Nesting is a powerful and flexible feature that allows you to create complex timelines with ease. Whether you're displaying data for a project, organizing events, or tracking progress.
