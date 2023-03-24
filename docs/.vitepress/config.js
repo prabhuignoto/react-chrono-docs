@@ -107,8 +107,8 @@ export default defineConfig({
             link: "/customize/theme",
           },
           {
-            text: "Button Titles",
-            link: "/customize/button-titles",
+            text: "Button Texts",
+            link: "/customize/button-text",
           },
         ],
       },
