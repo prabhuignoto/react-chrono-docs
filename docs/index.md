@@ -19,15 +19,21 @@ hero:
 
 features:
 - icon: ⚡️
-  title: Render timelines in three different modes
-  details: Support for 3 unique timeline modes.
+  title: Three Unique Timeline Modes
+  details: Render your timelines in three distinct modes - Horizontal, Vertical, and Tree - to suit your needs and enhance the user experience.
 - icon: 🖖
-  title: Data driven API
-  details: Intuitive API to customize the timeline
+  title: Intuitive Data-Driven API
+  details: With React-Chrono's simple yet powerful API, you can easily create and customize your timeline with data-driven components.
 - icon: 🎨
-  title: Theme Support
-  details: Change the colors of the timeline components with ease
+  title:  Customizable Themes
+  details: Change the colors and styles of the timeline components to match your brand or project's aesthetic.
 - icon: 💪
   title: Built with Typescript
-  details: Brings all the goodness of Typescript
+  details: Benefit from enhanced code quality, improved developer productivity, and better documentation.
+- icon: 🌿
+  title: Nested Timelines
+  details: Create timelines within timelines for a more detailed and organized view of your data with nested timelines
+- icon: 🎬
+  title: Slideshow Support
+  details: Display your data as a slideshow with multiple animation types to choose from, such as reveal, slide
 ---

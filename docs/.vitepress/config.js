@@ -110,6 +110,10 @@ export default defineConfig({
             text: "Button Texts",
             link: "/customize/button-text",
           },
+          {
+            text: "Card dimensions",
+            link: "/customize/card-dimensions",
+          },
         ],
       },
       {
