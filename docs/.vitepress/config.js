@@ -93,6 +93,10 @@ export default defineConfig({
             text: "Timeline Point",
             link: "/features/timeline-point",
           },
+          {
+            text: "Timeline Titles",
+            link: "/features/timeline-titles",
+          },
         ],
       },
       {
