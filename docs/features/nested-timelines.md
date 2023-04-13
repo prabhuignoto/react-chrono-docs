@@ -56,7 +56,7 @@ export default NestedTimeline;
 
 ## Height Adjustments
 
-With the nestedCardHeight prop, you can adjust the height of the nested card. This allows you to control the amount of space that the nested timeline takes up within the parent timeline.
+With the `nestedCardHeight` prop, you can adjust the height of the nested card. This allows you to control the amount of space that the nested timeline takes up within the parent timeline.
 
 ## Derived Attributes
 

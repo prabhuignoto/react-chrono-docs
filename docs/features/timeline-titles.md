@@ -2,7 +2,7 @@
 
 As you create a timeline using the React-Chrono library, it's essential to understand how to label each timeline item. Typically, the `title` prop of the timeline item is utilized to achieve this. However, an alternative approach is to use the `date` prop to generate date labels. This prop accepts a date object and utilizes the powerful [Day.js](https://day.js.org/) library to format and render an appropriate title.
 
-If you wish to customize the date format of your timeline item titles, the `titleDateFormat` prop allows you to pass a custom format string. By doing so, you can tailor the date presentation to suit your needs. Here is an example of how to use titleDateFormat to format the date in a way that highlights the day of the week and the month:
+If you wish to customize the date format of your timeline item titles, the `titleDateFormat` prop allows you to pass a custom format string. By doing so, you can tailor the date presentation to suit your needs. Here is an example of how to use `titleDateFormat` to format the date in a way that highlights the day of the week and the month:
 
 ::: info
   when `date` prop is used, the `title` prop is ignored.
