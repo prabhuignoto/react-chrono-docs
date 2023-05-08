@@ -15,6 +15,7 @@ To customize the card's appearance, you can pass the `theme` object as a prop to
 | `cardSubtitleColor`           | The color of the card subtitle                                |
 | `cardTitleColor`              | The color of the card title                                   |
 | `detailsColor`                | The color of the text in the details section                  |
+| `iconBackgroundColor`         | The background color of the icon                              |
 | `nestedCardBgColor`           | The background color of a nested card                         |
 | `nestedCardDetailsBackGround` | The background color of the details section of a nested card  |
 | `nestedCardDetailsColor`      | The color of the text in the details section of a nested card |
