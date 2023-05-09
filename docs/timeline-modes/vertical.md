@@ -78,7 +78,7 @@ const VerticalAlternatingTimeline = () => {
   return (
     <Chrono
       items={items}
-      mode="VERTICAL"
+      mode="VERTICAL_ALTERNATING"
       itemWidth={150}
     />
   );
