@@ -35,7 +35,16 @@ const VerticalTimeline = () => {
     <Chrono
       items={items}
       mode="VERTICAL"
-    />
+    >
+<img
+        src="https://assets.ccbp.in/frontend/react-js/csk-logo-img.png"
+        alt="chennai-super-kings"
+      />
+      <div>
+        <h1>Mumbai Indians</h1>
+        <p>IPL Team winner for the year 2019 is Mumbai Indians.</p>
+      </div>
+</Chrono>
   );
 };
 
