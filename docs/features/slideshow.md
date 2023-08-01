@@ -1,6 +1,6 @@
 # Slideshow
 
-The `slideShow` prop enables the slideshow function on all modes - VERTICAL, VERTICAL_ALTERNATING, and HORIZONTAL. With the `slideshow` prop, you can create an automated timeline presentation that transitions between timeline cards at a set interval.
+The `slideShow` prop enables the slideshow function on all modes - VERTICAL, VERTICAL_ALTERNATING, and HORIZONTAL. With the `slideShow` prop, you can create an automated timeline presentation that transitions between timeline cards at a set interval.
 
 ## Slide Item Duration
 
@@ -58,7 +58,7 @@ const MyTimeline = () => {
     <Chrono
       items={items}
       slideItemDuration={5000}
-      slideshow
+      slideShow
     />
   );
 };
@@ -66,6 +66,6 @@ const MyTimeline = () => {
 export default MyTimeline;
 ```
 
-In the example above, the Chrono component is configured to show each timeline card for 5 seconds before moving on to the next one. The `slideshow` prop is also set to true, enabling the automated slideshow feature.
+In the example above, the Chrono component is configured to show each timeline card for 5 seconds before moving on to the next one. The `slideShow` prop is also set to true, enabling the automated slideshow feature.
 
-The `slideshow` prop is a useful feature for creating automated timeline presentations. With the ability to configure the `slideItemDuration` prop and choose from three different slide show types, you can easily customize the slideshow to fit your needs.
+The `slideShow` prop is a useful feature for creating automated timeline presentations. With the ability to configure the `slideItemDuration` prop and choose from three different slide show types, you can easily customize the slideshow to fit your needs.
