@@ -1,6 +1,6 @@
 # Slideshow
 
-The `slideShow` prop enables the slideshow function on all modes - VERTICAL, VERTICAL_ALTERNATING, and HORIZONTAL. With the `slideshow` prop, you can create an automated timeline presentation that transitions between timeline cards at a set interval.
+The `slideShow` prop enables the slideshow function on all modes - VERTICAL, VERTICAL_ALTERNATING, and HORIZONTAL. With the `slideShow` prop, you can create an automated timeline presentation that transitions between timeline cards at a set interval.
 
 ## Slide Item Duration
 
@@ -23,8 +23,8 @@ You can start the slideshow by clicking the "Start" button, and stop it by click
 To enable the slideshow feature on your timeline, simply add the `slideShow` prop to the Chrono component and configure the `slideItemDuration` prop to your desired value.
 
 ```jsx
-import React from 'react';
-import { Chrono } from 'react-chrono';
+import React from "react";
+import { Chrono } from "react-chrono";
 
 const items = [
   {
@@ -35,9 +35,9 @@ const items = [
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/id/1018/1000"
-      }
-    }
+        url: "https://picsum.photos/id/1018/1000",
+      },
+    },
   },
   {
     title: "Event 2",
@@ -47,25 +47,19 @@ const items = [
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/id/1015/1000"
-      }
-    }
-  }
+        url: "https://picsum.photos/id/1015/1000",
+      },
+    },
+  },
 ];
 
 const MyTimeline = () => {
-  return (
-    <Chrono
-      items={items}
-      slideItemDuration={5000}
-      slideshow
-    />
-  );
+  return <Chrono items={items} slideItemDuration={5000} slideShow />;
 };
 
 export default MyTimeline;
 ```
 
-In the example above, the Chrono component is configured to show each timeline card for 5 seconds before moving on to the next one. The `slideshow` prop is also set to true, enabling the automated slideshow feature.
+In the example above, the Chrono component is configured to show each timeline card for 5 seconds before moving on to the next one. The `slideShow` prop is also set to true, enabling the automated slideshow feature.
 
-The `slideshow` prop is a useful feature for creating automated timeline presentations. With the ability to configure the `slideItemDuration` prop and choose from three different slide show types, you can easily customize the slideshow to fit your needs.
+The `slideShow` prop is a useful feature for creating automated timeline presentations. With the ability to configure the `slideItemDuration` prop and choose from three different slide show types, you can easily customize the slideshow to fit your needs.
