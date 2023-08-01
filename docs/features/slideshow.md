@@ -23,8 +23,8 @@ You can start the slideshow by clicking the "Start" button, and stop it by click
 To enable the slideshow feature on your timeline, simply add the `slideShow` prop to the Chrono component and configure the `slideItemDuration` prop to your desired value.
 
 ```jsx
-import React from 'react';
-import { Chrono } from 'react-chrono';
+import React from "react";
+import { Chrono } from "react-chrono";
 
 const items = [
   {
@@ -35,9 +35,9 @@ const items = [
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/id/1018/1000"
-      }
-    }
+        url: "https://picsum.photos/id/1018/1000",
+      },
+    },
   },
   {
     title: "Event 2",
@@ -47,20 +47,14 @@ const items = [
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/id/1015/1000"
-      }
-    }
-  }
+        url: "https://picsum.photos/id/1015/1000",
+      },
+    },
+  },
 ];
 
 const MyTimeline = () => {
-  return (
-    <Chrono
-      items={items}
-      slideItemDuration={5000}
-      slideShow
-    />
-  );
+  return <Chrono items={items} slideItemDuration={5000} slideShow />;
 };
 
 export default MyTimeline;
