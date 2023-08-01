@@ -4,7 +4,7 @@ The outline functionality  allows you to quickly jump to a specific timeline ite
 
 ## Usage
 
-To use the outline functionality, add the `outline` prop to your React-Chrono component and set it to true. Here's an example:
+To use the outline functionality, add the `enableOutline` prop to your React-Chrono component and set it to true. Here's an example:
 
 ```jsx
 import React from 'react';
@@ -30,7 +30,7 @@ const events = [
 
 function MyComponent() {
   return (
-    <Chrono items={events} mode="VERTICAL" outline />
+    <Chrono items={events} mode="VERTICAL" enableOutline />
   );
 }
 
@@ -40,7 +40,7 @@ export default MyComponent;
 In this example, the outline functionality is enabled for a vertical timeline.
 
 ::: info
-It's important to note that the outline functionality is only supported on the vertical and vertical_alternating modes. If you use the outline prop with the horizontal mode, it will be ignored.
+It's important to note that the outline functionality is only supported on the vertical and vertical_alternating modes. If you use the enableOutline prop with the horizontal mode, it will be ignored.
 :::
 
 ## Popover menu
