@@ -24,6 +24,10 @@ This property disables the display of timeline cards in both horizontal and vert
 
 This property positions the timeline card in horizontal mode. The value can be either TOP or BOTTOM.
 
+## cardDetailedText
+
+Sets the text content for the timeline card. Accepts a string or an array of strings, where the string can be a HTML markup.
+
 ## cardWidth
 
 This property sets the maximum width of the timeline card.
@@ -112,3 +116,15 @@ This property is used to customize the font sizes.
 ## buttonTexts
 
 This property is used to customize the alt text for all buttons.
+
+## highlightCardsOnHover
+
+Enabling this property highlights the timeline card on hover.
+
+## disableInteraction
+
+Enabling this property disables all interactions with the timeline.
+
+## parseDetailsAsHTML
+
+Enabling this property parses the details text as HTML.
