@@ -5,14 +5,13 @@
   "main": "index.js",
   "author": "Prabhu Murthy",
   "license": "MIT",
-  "type": "module",
   "devDependencies": {
     "@types/react": "^18.2.47",
     "fast-glob": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sitemap": "^7.1.1",
-    "vitepress": "1.0.0-rc.35",
+    "vitepress": "1.0.0-beta.1",
     "vue": "^3.4.5"
   },
   "scripts": {
