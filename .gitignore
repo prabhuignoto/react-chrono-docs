@@ -94,6 +94,7 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+cache
 
 # Gatsby files
 .cache/
@@ -156,4 +157,7 @@ sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react,node
 
-.vitepress
+# .vitepress
+
+# vitepress/dist
+# vitepress/cache

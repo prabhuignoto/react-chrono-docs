@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Prabhu Murthy",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "@types/react": "^18.2.47",
     "fast-glob": "^3.3.2",
