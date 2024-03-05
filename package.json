@@ -7,12 +7,12 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "@types/react": "^18.2.62",
+    "@types/react": "^18.2.63",
     "fast-glob": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sitemap": "^7.1.1",
-    "vitepress": "1.0.0-beta.1",
+    "vitepress": "1.0.0-rc.44",
     "vue": "^3.4.21"
   },
   "scripts": {
