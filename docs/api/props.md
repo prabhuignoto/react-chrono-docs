@@ -54,7 +54,6 @@ This property flips the layout to right-to-left (RTL).
 
 ## hideControls
 
-
 Enabling this property hides the navigation controls.
 
 ## itemWidth
@@ -128,3 +127,23 @@ Enabling this property disables all interactions with the timeline.
 ## parseDetailsAsHTML
 
 Enabling this property parses the details text as HTML.
+
+## toolbarPosition
+
+This property sets the position of the toolbar. The value can be either `TOP` or `BOTTOM`.
+
+## enableBreakPoint
+
+Enabling this property enables the breakpoint for the timeline. This only applies for the vertical and vertical_alternating mode.
+
+## responsiveBreakPoint
+
+Responsive breakpoint in pixels. This only applies for the vertical and vertical_alternating mode. This works only if the `enableBreakPoint` is set to true.
+
+## enableLayoutSwitch
+
+Enabling this property enables the layout switcher for the timeline. Switches the vertical timeline to vertical_alternating and vice versa. Switches the horizontal timeline to horizontal_all and vice versa.
+
+## enableQuickJump
+
+Enabling this property enables the quick jump feature for the timeline. When enabled, the user can jump to a specific timeline item.

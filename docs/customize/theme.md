@@ -6,27 +6,30 @@ To customize the card's appearance, you can pass the `theme` object as a prop to
 
 ## Theme Object
 
-| Key                           | Description                                                   |
-| :---------------------------- | :------------------------------------------------------------ |
-| `cardBgColor`                 | The background color of the card                              |
-| `cardDetailsBackGround`       | The background color of the card details                      |
-| `cardDetailsColor`            | The color of the text in the card details                     |
-| `cardMediaBgColor`            | The background color of the media in the card                 |
-| `cardSubtitleColor`           | The color of the card subtitle                                |
-| `cardTitleColor`              | The color of the card title                                   |
-| `detailsColor`                | The color of the text in the details section                  |
-| `iconBackgroundColor`         | The background color of the icon                              |
-| `nestedCardBgColor`           | The background color of a nested card                         |
-| `nestedCardDetailsBackGround` | The background color of the details section of a nested card  |
-| `nestedCardDetailsColor`      | The color of the text in the details section of a nested card |
-| `nestedCardSubtitleColor`     | The color of the subtitle in a nested card                    |
-| `nestedCardTitleColor`        | The color of the title in a nested card                       |
-| `primary`                     | The primary color used throughout the UI                      |
-| `secondary`                   | The secondary color used throughout the UI                    |
-| `titleColorActive`            | The color of the title of the active card                     |
-| `titleColor`                  | The color of the title of the card                            |
+| Property                    | Description                                                             |
+| --------------------------- | ----------------------------------------------------------------------- |
+| cardBgColor                 | Specifies the background color of the card.                             |
+| cardDetailsBackGround       | Indicates the background color of the card details.                     |
+| cardDetailsColor            | Defines the color of the text in the card details.                      |
+| cardMediaBgColor            | Specifies the background color of the media in the card.                |
+| cardSubtitleColor           | Specifies the color of the card subtitle.                               |
+| cardTitleColor              | Determines the color of the card title.                                 |
+| detailsColor                | Specifies the color of the text in the details section.                 |
+| iconBackgroundColor         | Determines the background color of the icon.                            |
+| nestedCardBgColor           | Specifies the background color of a nested card.                        |
+| nestedCardDetailsBackGround | Indicates the background color of the details section of a nested card. |
+| nestedCardDetailsColor      | Defines the color of the text in the details section of a nested card.  |
+| nestedCardSubtitleColor     | Specifies the color of the subtitle in a nested card.                   |
+| nestedCardTitleColor        | Determines the color of the title in a nested card.                     |
+| primary                     | Specifies the primary color used throughout the UI.                     |
+| secondary                   | Specifies the secondary color used throughout the UI.                   |
+| titleColor                  | Specifies the color of the title of the card.                           |
+| titleColorActive            | Indicates the color of the title of the active card.                    |
+| toolbarBgColor              | Specifies the background color of the toolbar.                          |
+| toolbarBtnBgColor           | Specifies the background color of the toolbar buttons.                  |
+| toolbarTextColor            | Specifies the text color of the toolbar buttons.                        |
 
-## Example Usage
+## Example Usagef
 
 > Note: library provides a default theme for both light as well as dark mode.
 
