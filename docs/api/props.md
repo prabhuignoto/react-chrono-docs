@@ -52,10 +52,6 @@ Enabling this property displays the outline menu on VERTICAL and VERTICAL_ALTERN
 
 This property flips the layout to right-to-left (RTL).
 
-## hideControls
-
-Enabling this property hides the navigation controls.
-
 ## itemWidth
 
 This property sets the width of the timeline section in HORIZONTAL mode.
@@ -147,3 +143,7 @@ Enabling this property enables the layout switcher for the timeline. Switches th
 ## enableQuickJump
 
 Enabling this property enables the quick jump feature for the timeline. When enabled, the user can jump to a specific timeline item.
+
+## disableToolbar
+
+Enabling this property disables and hide the toolbar.
