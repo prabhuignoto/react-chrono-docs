@@ -1,40 +1,83 @@
-# Timeline Titles
+# Customizing Timeline Item Titles
 
-As you create a timeline using the React-Chrono library, it's essential to understand how to label each timeline item. Typically, the `title` prop of the timeline item is utilized to achieve this. However, an alternative approach is to use the `date` prop to generate date labels. This prop accepts a date object and utilizes the powerful [Day.js](https://day.js.org/) library to format and render an appropriate title.
+In React Chrono, the title for each timeline item (displayed on the timeline track or near the point) can be set in two primary ways: using the `title` prop directly or by providing a `date` prop, which can then be formatted.
 
-If you wish to customize the date format of your timeline item titles, the `titleDateFormat` prop allows you to pass a custom format string. By doing so, you can tailor the date presentation to suit your needs. Here is an example of how to use `titleDateFormat` to format the date in a way that highlights the day of the week and the month:
+## Using the `title` Prop
 
-::: info
-  when `date` prop is used, the `title` prop is ignored.
-:::
+The most straightforward way to set a title for a timeline item is by using the `title` string prop within each item object:
 
 ```jsx
+const items = [
+  {
+    title: "Q1 Update", // This text will be displayed as the item's title
+    cardTitle: "Quarter 1 Review",
+    // ... other properties
+  },
+  {
+    title: "Project Milestone",
+    cardTitle: "Milestone Achieved",
+    // ... other properties
+  }
+];
+```
+
+## Using the `date` Prop for Titles
+
+Alternatively, you can provide a `date` prop for each timeline item. React Chrono uses the [Day.js](https://day.js.org/) library to format this date into a readable title.
+
+-   The `date` prop can accept:
+    -   A JavaScript `Date` object.
+    -   A string representing a date (parsable by Day.js, e.g., "2023-03-25").
+    -   A Unix timestamp (milliseconds).
+
+::: info Note
+When both `title` and `date` props are present in an item, the `date` prop (and its formatting via `titleDateFormat`) will take precedence for generating the timeline item's title. The `title` prop will be ignored in this scenario for the on-track title.
+:::
+
+### Customizing Date Format with `titleDateFormat`
+
+If you use the `date` prop, you can customize the format of the displayed date title using the `titleDateFormat` prop on the `<Chrono>` component. This prop accepts a format string compatible with Day.js.
+
+-   **Default Format**: If `titleDateFormat` is not provided, Day.js will use a default format (e.g., `MMM DD, YYYY` like "Mar 25, 2023").
+
+### Example: Using `date` and `titleDateFormat`
+
+```jsx
+import React from "react";
 import { Chrono } from "react-chrono";
 
-function Timeline() {
-  const items = [
+function TimelineWithDateTitles() {
+  const itemsWithDates = [
     {
-      date: new Date("2022-03-25T10:00:00Z"),
-      cardTitle: "Card Title 1",
-      cardSubTitle: "Card Subtitle 1",
+      date: new Date("2023-03-25T10:00:00Z"), // Using a Date object
+      cardTitle: "Spring Festival",
+      cardSubtitle: "Community Gathering",
     },
     {
-      date: new Date("2022-03-28T14:00:00Z"),
-      cardTitle: "Card Title 2",
-      cardSubTitle: "Card Subtitle 2",
+      date: "2023-07-15", // Using a date string
+      cardTitle: "Summer Conference",
+      cardSubtitle: "Annual Tech Meetup",
     },
   ];
 
-  const titleDateFormat = "YYYY-MM-DD";
+  // Custom format for the timeline item titles
+  const customDateFormat = "dddd, MMMM D, YYYY"; // e.g., "Saturday, March 25, 2023"
 
   return (
-    <Chrono items={items} titleDateFormat={titleDateFormat} mode="VERTICAL" />
+    <Chrono
+      items={itemsWithDates}
+      mode="VERTICAL"
+      titleDateFormat={customDateFormat} // Apply the custom date format
+    />
   );
 }
+
+export default TimelineWithDateTitles;
 ```
 
-::: info
-The `titleDateFormat` prop is optional. If you do not pass a value to this prop, the default date format will be used `MMM DD, YYYY`.
-:::
+In this example:
+- The first item's title will be formatted from `new Date("2023-03-25T10:00:00Z")`.
+- The second item's title will be formatted from the string `"2023-07-15"`.
+- Both will use the `dddd, MMMM D, YYYY` format due to the `titleDateFormat` prop.
 
-In this example, we pass a custom date format string to the `titleDateFormat` prop, which uses the [Day.js](https://day.js.org/) library to format the date object for each timeline item.
+Choosing between `title` and `date` for your timeline item titles depends on whether you need simple text labels or formatted date representations. The `titleDateFormat` prop offers fine-grained control when using dates.

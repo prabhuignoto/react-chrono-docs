@@ -100,7 +100,11 @@ export default defineConfig({
           {
             text: "Render HTML",
             link: "/features/render-html",
-          }
+          },
+          {
+            text: "Search",
+            link: "/features/search",
+          },
         ],
       },
       {

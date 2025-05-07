@@ -1,82 +1,104 @@
 # Embedding Media
 
-Media resources such as images, video files and youtube urls can be embedded using the `media` property of the Timeline object.
+React Chrono supports embedding various media types like images and videos directly into timeline cards using the `media` property within each timeline item object.
 
-| name   | description                           |
-| :----- | :------------------------------------ |
-| name   | name of the media                     |
-| source | Object that defines the media source  |
-| type   | type of Media. can be`IMAGE`, `VIDEO` |
+## Media Object Properties
+
+The `media` object has the following structure:
+
+| Property | Type   | Description                                   |
+| :------- | :----- | :-------------------------------------------- |
+| `name`   | string | A descriptive name or alt text for the media. |
+| `source` | object | An object containing the URL of the media.    |
+| `type`   | string | The type of media: `IMAGE` or `VIDEO`.        |
+
+### `source` Object
+
+| Property | Type   | Description              |
+| :------- | :----- | :----------------------- |
+| `url`    | string | The URL of the media file. |
 
 ## Embedding Images
 
-To embed images in the Timeline card, pass a valid image url to the `media` object. The following example builds a simple timeline with 2 cards.
+To display an image in a timeline card, provide a valid image URL within the `media.source.url` property and set `media.type` to `IMAGE`.
 
-Specify the image `URL` in the `source` property of the `media` object, and you will be good to go.
+### Example: Image Embedding
 
 ```jsx
-<Chrono
-  items={[
+import React from "react";
+import { Chrono } from "react-chrono";
+
+const itemsWithImages = [
   {
     title: "May 1940",
-    cardTitle: "Dunkirk",
+    cardTitle: "Dunkirk Evacuation",
     media: {
-      name: "dunkirk beach",
+      name: "Dunkirk beach during evacuation",
       source: {
-        url:
-          "https://i2-prod.mirror.co.uk/incoming/article10847802.ece/ALTERNATES/s810/PAY-Dunkirk-in-colour.jpg"
+        url: "https://i2-prod.mirror.co.uk/incoming/article10847802.ece/ALTERNATES/s810/PAY-Dunkirk-in-colour.jpg",
       },
-      type: "IMAGE"
+      type: "IMAGE",
     },
-    cardSubtitle:
-      "Men of the British Expeditionary Force (BEF) wade out to a destroyer during the evacuation from Dunkirk.",
-    cardDetailedText: `On 10 May 1940, Hitler began his long-awaited offensive in the west by invading neutral Holland and Belgium and attacking northern France. Holland capitulated after only five days of fighting, and the Belgians surrendered on 28 May. With the success of the German ‘Blitzkrieg’, the British Expeditionary Force and French troops were in danger of being cut off and destroyed.`
+    cardSubtitle: "British Expeditionary Force (BEF) evacuating from Dunkirk.",
+    cardDetailedText: "On 10 May 1940, Germany launched an offensive in the west. Allied forces, including the BEF, were pushed back to Dunkirk, leading to a massive sea evacuation.",
   },
   {
-    title: "25 July 1940",
-    cardTitle: "The Battle of Britain",
+    title: "July 1940",
+    cardTitle: "The Battle of Britain Begins",
     media: {
-      name: "Battle of britain",
+      name: "RAF Spitfires during the Battle of Britain",
       source: {
-        url:
-          "https://thumbs-prod.si-cdn.com/NbOmrVrVAO-uSo0O8kVNdpqVyCk=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/c6/b0/c6b0f904-ae9c-47e5-86a9-493dfaefd43c/spitfire_1.jpg"
+        url: "https://thumbs-prod.si-cdn.com/NbOmrVrVAO-uSo0O8kVNdpqVyCk=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/c6/b0/c6b0f904-ae9c-47e5-86a9-493dfaefd43c/spitfire_1.jpg",
       },
-      type: "IMAGE"
+      type: "IMAGE",
     },
-    cardSubtitle: `RAF Spitfire pilots scramble for their planes`,
-    cardDetailedText: `After France’s surrender in June 1940, Churchill told the British people, “Hitler knows that he will have to break us in this island or lose the war”. To mount a successful invasion, the Germans had to gain air superiority. The first phase of the battle began on 10 July with Luftwaffe attacks on shipping in the Channel.
-      The following month, RAF Fighter Command airfields and aircraft factories came under attack. Under the dynamic direction of Lord Beaverbrook, production of Spitfire and Hurricane fighters increased, and despite its losses in pilots and planes, the RAF was never as seriously weakened as the Germans supposed.`
-  }]}
-  mode="VERTICAL"
-/>
+    cardSubtitle: "RAF Spitfire pilots scramble for their planes.",
+    cardDetailedText: "After France's surrender, Britain stood alone. The Luftwaffe aimed to achieve air superiority for an invasion. The RAF defended British skies in what became known as the Battle of Britain.",
+  },
+];
+
+function ImageTimeline() {
+  return <Chrono items={itemsWithImages} mode="VERTICAL" />;
+}
+
+export default ImageTimeline;
 ```
 
-![media-images](../assets/media-images.png)
+![Timeline with Embedded Images](../assets/media-images.png)
 
-## Embedding Video
+## Embedding Videos
 
-`react-chrono` allows you to embed either valid YouTube urls or local video files. The example that follows demonstrates how to add YouTube videos to timeline cards.
+React Chrono allows embedding videos from YouTube or local video files. To embed a video, provide the video URL (e.g., a YouTube embed URL or a direct link to a video file) in `media.source.url` and set `media.type` to `VIDEO`.
+
+### Example: Video Embedding (YouTube)
 
 ```jsx
-<Chrono
-  items={[
-    {
-      title: "25 July 1940",
-      cardTitle: "The Battle of Britain",
-      media: {
-        name: "Battle of britain",
-        source: {
-          url: "https://www.youtube.com/embed/gPMgYC0sXos"
-        },
-        type: "VIDEO"
+import React from "react";
+import { Chrono } from "react-chrono";
+
+const itemsWithVideo = [
+  {
+    title: "July 1940",
+    cardTitle: "The Battle of Britain",
+    media: {
+      name: "Battle of Britain documentary excerpt",
+      source: {
+        url: "https://www.youtube.com/embed/gPMgYC0sXos", // YouTube embed URL
       },
-      cardSubtitle: `RAF Spitfire pilots scramble for their planes`,
-      cardDetailedText: `After France’s surrender in June 1940, Churchill told the British people, “Hitler knows that he will have to break us in this island or lose the war”. To mount a successful invasion, the Germans had to gain air superiority. The first phase of the battle began on 10 July with Luftwaffe attacks on shipping in the Channel.
-        The following month, RAF Fighter Command airfields and aircraft factories came under attack. Under the dynamic direction of Lord Beaverbrook, production of Spitfire and Hurricane fighters increased, and despite its losses in pilots and planes, the RAF was never as seriously weakened as the Germans supposed.`
-    }
-  ]}
-  mode="VERTICAL"
-/>
+      type: "VIDEO",
+    },
+    cardSubtitle: "Documentary footage of the Battle of Britain.",
+    cardDetailedText: "The Battle of Britain was a pivotal air campaign fought between the Royal Air Force (RAF) and the German Luftwaffe. This video provides insights into the conflict.",
+  },
+];
+
+function VideoTimeline() {
+  return <Chrono items={itemsWithVideo} mode="VERTICAL" />;
+}
+
+export default VideoTimeline;
 ```
 
-![media-video](../assets/media-video.png)
+![Timeline with Embedded Video](../assets/media-video.png)
+
+By utilizing the `media` property, you can enrich your timelines with relevant images and videos, making them more engaging and informative.

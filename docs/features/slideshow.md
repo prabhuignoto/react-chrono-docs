@@ -1,65 +1,103 @@
-# Slideshow
+# Slideshow Mode
 
-The `slideShow` prop enables the slideshow function on all modes - VERTICAL, VERTICAL_ALTERNATING, and HORIZONTAL. With the `slideShow` prop, you can create an automated timeline presentation that transitions between timeline cards at a set interval.
+React Chrono includes a slideshow feature that automatically transitions through timeline cards. This is available in all timeline modes: `VERTICAL`, `VERTICAL_ALTERNATING`, and `HORIZONTAL`.
 
-## Slide Item Duration
+## Enabling Slideshow
 
-The `slideItemDuration` prop allows you to configure how long each timeline card is shown before moving to the next one. This prop accepts a number value in milliseconds.
+To activate the slideshow, add the `slideShow` boolean prop to the `<Chrono>` component and set it to `true`.
 
-## Slide Show Types
+```jsx
+<Chrono items={items} slideShow={true} />
+```
 
-The React-Chrono component supports three slide show types: `reveal`, `slide_id`, and `slide_from_sides`. The component automatically sets the slide show type depending on the mode.
+## Configuring Slide Duration
 
-For the VERTICAL and HORIZONTAL modes, the default slide show type is `reveal`. This means that the timeline cards are revealed one after the other in a sequential order.
+The `slideItemDuration` prop controls how long each timeline card is displayed before transitioning to the next. This value is specified in milliseconds.
 
-For the VERTICAL_ALTERNATING mode, the default slide show type is `slide_from_sides`. This means that the timeline cards are animated from both sides of the screen.
+```jsx
+<Chrono items={items} slideShow={true} slideItemDuration={3000} /> // Each card shows for 3 seconds
+```
 
-## Starting and Stopping the Slideshow
+## Slideshow Animation Types
 
-You can start the slideshow by clicking the "Start" button, and stop it by clicking the "Stop" button in the control panel. If you want to cancel the slideshow, you can press the "Escape" key on your keyboard.
+React Chrono offers different animation types for slideshow transitions. The component automatically selects a default type based on the active timeline `mode`:
+
+-   **`reveal`**: (Default for `VERTICAL` and `HORIZONTAL` modes)
+    Timeline cards are revealed one after another, typically with a fade-in or similar effect.
+-   **`slide_from_sides`**: (Default for `VERTICAL_ALTERNATING` mode)
+    Timeline cards animate in from alternating sides of the screen, complementing the alternating layout.
+-   **`slide_in`**: (Can be manually set if needed, though often covered by `reveal` or `slide_from_sides` depending on context)
+    Cards slide into view. The exact behavior might vary.
+
+While these are default behaviors, specific customization of animation types beyond the defaults might require deeper configuration or CSS overrides if supported by the library version.
+
+## Controlling the Slideshow
+
+Users can typically control the slideshow via the control panel (if enabled):
+-   **Play/Pause Button**: Starts or stops the automatic progression of the slideshow.
+-   **Escape Key**: Pressing the "Escape" key on the keyboard usually stops/cancels the slideshow.
 
 ## Example Usage
 
-To enable the slideshow feature on your timeline, simply add the `slideShow` prop to the Chrono component and configure the `slideItemDuration` prop to your desired value.
+Here’s how to set up a basic slideshow:
 
 ```jsx
 import React from "react";
 import { Chrono } from "react-chrono";
 
-const items = [
+const slideshowItems = [
   {
-    title: "Event 1",
-    cardTitle: "Card Title 1",
-    cardSubtitle: "Card Subtitle 1",
-    cardDetailedText: "Card Detailed Text 1",
+    title: "2020 - The Beginning",
+    cardTitle: "Project Inception",
+    cardSubtitle: "Ideas and Concepts",
+    cardDetailedText: "Initial brainstorming and planning phase for the new project.",
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/id/1018/1000",
+        url: "https://picsum.photos/id/1018/1000/600", // Placeholder image
       },
     },
   },
   {
-    title: "Event 2",
-    cardTitle: "Card Title 2",
-    cardSubtitle: "Card Subtitle 2",
-    cardDetailedText: "Card Detailed Text 2",
+    title: "2021 - Development",
+    cardTitle: "Building the Core",
+    cardSubtitle: "Coding and Prototyping",
+    cardDetailedText: "Intensive development period, focusing on core features and functionality.",
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/id/1015/1000",
+        url: "https://picsum.photos/id/1015/1000/600", // Placeholder image
+      },
+    },
+  },
+  {
+    title: "2022 - Launch",
+    cardTitle: "Product Release",
+    cardSubtitle: "Going Live",
+    cardDetailedText: "Successful launch of the product to the market, gathering user feedback.",
+    media: {
+      type: "IMAGE",
+      source: {
+        url: "https://picsum.photos/id/1016/1000/600", // Placeholder image
       },
     },
   },
 ];
 
-const MyTimeline = () => {
-  return <Chrono items={items} slideItemDuration={5000} slideShow />;
-};
+function MyTimelineSlideshow() {
+  return (
+    <Chrono
+      items={slideshowItems}
+      mode="HORIZONTAL" // Example mode
+      slideShow={true}
+      slideItemDuration={4000} // Each item displays for 4 seconds
+    />
+  );
+}
 
-export default MyTimeline;
+export default MyTimelineSlideshow;
 ```
 
-In the example above, the Chrono component is configured to show each timeline card for 5 seconds before moving on to the next one. The `slideShow` prop is also set to true, enabling the automated slideshow feature.
+In this example, the timeline will automatically cycle through `slideshowItems`, displaying each for 4 seconds.
 
-The `slideShow` prop is a useful feature for creating automated timeline presentations. With the ability to configure the `slideItemDuration` prop and choose from three different slide show types, you can easily customize the slideshow to fit your needs.
+The slideshow feature is excellent for creating automated presentations or guided tours of timeline events, making your content more dynamic and engaging.

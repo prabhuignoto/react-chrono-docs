@@ -1,58 +1,75 @@
-# Render HTML content in the timeline cards
+# Rendering HTML in Card Details
 
-The `parseDetailsAsHTML` property allows you to render HTML content in the timeline cards. This can be useful for displaying formatted text, images, videos, and other media.
+React Chrono provides the `parseDetailsAsHTML` prop to render HTML content directly within the `cardDetailedText` section of timeline cards. This allows for rich text formatting, embedding links, lists, and other HTML elements.
 
-## Usage
+## Enabling HTML Rendering
 
-To use the `parseDetailsAsHTML` property, set it to `true` in your React-Chrono component. Here's an example:
+To enable this feature, set the `parseDetailsAsHTML` prop to `true` on the `<Chrono>` component.
 
 ```jsx
 import React from "react";
 import { Chrono } from "react-chrono";
 
-const events = [
+const eventsWithHTML = [
   {
-    title: 'May 1945',
-    cardTitle: 'Dunkirk',
-    url: 'http://www.history.com',
+    title: 'May 1940',
+    cardTitle: 'Dunkirk Evacuation',
+    url: 'https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-Evacuation-of-Dunkirk/', // Example URL for the card
     media: {
-      name: 'dunkirk beach',
+      name: 'Dunkirk beach',
       source: {
         url: 'https://i2-prod.mirror.co.uk/incoming/article10847802.ece/ALTERNATES/s810/PAY-Dunkirk-in-colour.jpg',
       },
       type: 'IMAGE',
     },
-    cardSubtitle:
-      'Men of the British Expeditionary Force (BEF) wade out to a destroyer during the evacuation from Dunkirk.',
+    cardSubtitle: 'Men of the British Expeditionary Force (BEF) wade out to a destroyer.',
+    // cardDetailedText can be a string or an array of strings with HTML
     cardDetailedText: [
-      `On 10 May 1940, <a href="http://www.google.com">Hitler</a> began his <strong>long-awaited</strong> offensive in the west by invading neutral Holland and Belgium and attacking northern France.
-      <br>`,
-      `<ul>
-        <li>Holland capitulated after only five days of fighting, and the Belgians surrendered on 28 May.</li>
-        <li>With the success of the German ‘Blitzkrieg’, the British Expeditionary Force and French troops were in danger of being cut off and destroyed.</li>
-        <li>
-          Germany’s armoured spearheads reached the Channel coast on 20 May, and the British began to evacuate their troops from Dunkirk
-        </li>
-        <li>
-        The evacuation was codenamed ‘Operation Dynamo’ and was directed by Admiral Bertram Ramsay from his headquarters deep in the cliffs at Dover.
-        </li>
+      `On 10 May 1940, <a href="https://www.britannica.com/biography/Adolf-Hitler" target="_blank" rel="noopener noreferrer">Hitler</a> began his <strong>long-awaited</strong> offensive in the west. <br>`,
+      `Key points:
+      <ul>
+        <li>Holland capitulated after only five days.</li>
+        <li>Belgians surrendered on 28 May.</li>
+        <li>British and French troops were in danger of being cut off.</li>
+        <li>The evacuation, codenamed 'Operation Dynamo', began.</li>
       </ul>
       `,
+      `<p>Read more about <a href="https://www.iwm.org.uk/history/the-evacuation-of-dunkirk" target="_blank" rel="noopener noreferrer">Operation Dynamo</a>.</p>`
     ],
   },
+  // ... more events
 ];
 
-function MyComponent() {
-  return <Chrono items={events} mode="VERTICAL" enableOutline  parseDetailsAsHTML/>;
+function TimelineWithHTMLContent() {
+  return (
+    <Chrono
+      items={eventsWithHTML}
+      mode="VERTICAL"
+      parseDetailsAsHTML={true} // Enable HTML parsing
+      enableOutline // Example of combining with other features
+    />
+  );
 }
 
-export default MyComponent;
+export default TimelineWithHTMLContent;
 ```
 
-In this example, the `parseDetailsAsHTML` property is set to `true` for a vertical timeline.
+## How It Works
 
-::: info
-`parseDetailsAsHTML` is not enabled by default, so you must set it to `true` if you want to render HTML content in the timeline cards. The library uses xss to sanitize the HTML content, so you don't have to worry about malicious code being injected into your application.
+When `parseDetailsAsHTML` is `true`:
+- The content of `cardDetailedText` (whether a single string or an array of strings) is parsed as HTML.
+- You can use various HTML tags like `<a>`, `<strong>`, `<em>`, `<ul>`, `<li>`, `<br>`, `<p>`, etc.
+
+::: tip Security Note
+React Chrono uses the `xss` library to sanitize the HTML content before rendering it. This helps protect against cross-site scripting (XSS) attacks by filtering out potentially malicious code. However, always be mindful of the source of your HTML content.
 :::
 
-![renderhtml](../assets/render-html.png)
+## Important Considerations
+
+-   **Default Behavior**: By default, `parseDetailsAsHTML` is `false`. If not enabled, HTML tags in `cardDetailedText` will be rendered as plain text.
+-   **Content Source**: Ensure that the HTML content you provide is well-formed.
+-   **Styling**: You might need to add custom CSS to style the rendered HTML elements to match your timeline's design.
+
+![Timeline Card with Rendered HTML Content](../assets/render-html.png)
+
+Using `parseDetailsAsHTML` offers a flexible way to include richly formatted descriptions, links to external resources, or any other HTML-based information directly within your timeline cards.

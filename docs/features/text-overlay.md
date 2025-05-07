@@ -1,61 +1,71 @@
-# Text Overlay
+# Text Overlay on Media
 
-The `textOverlay` mode is a new feature added to react-chrono library. It allows the timeline cards to be rendered with a new user experience that enhances the presentation of media content.
+React Chrono offers a `textOverlay` mode, which enhances the presentation of timeline cards that contain media (images or videos). When enabled, the card's text content (like title, subtitle, and detailed text) is overlaid directly on top of the media.
 
-![text-overlay](./assets/text-overlay.png)  
+This mode provides a modern and immersive user experience, especially for media-rich timelines.
 
-## Features
+![Text Overlay Example 1](./assets/text-overlay.png)
 
-- When the `textOverlay` prop is enabled, the text associated with each timeline card will be overlaid on top of the media content. This results in a visually appealing presentation that allows the user to quickly and easily view both the media and associated text.
-- For example, let's say you have a timeline item that displays an image of a scenic view with some text describing the location. In the past, you might have had to place the text below the image or in a separate column, which could make the timeline card look cluttered or unbalanced. With `textOverlay` mode, the text can be overlaid on top of the image, creating a more visually appealing and balanced presentation.
-- In addition, the `textOverlay` mode includes new UI controls that allow the user to maximize or minimize the text display. This is useful when the media content is particularly engaging or distracting, and the user wants to focus on viewing the media content. The new controls allow the user to easily toggle the text display on and off, giving them full control over the timeline card's presentation.
-- Overall, the `textOverlay` mode completely overhauls how timeline cards with media content are rendered, resulting in a more modern and engaging user experience. With the `textOverlay` prop, you can create visually stunning timelines that highlight your media content and provide your users with an engaging and immersive experience.
+## Key Features of Text Overlay Mode
+
+-   **Integrated Display**: Text content is rendered on top of the media, creating a cohesive visual unit. This is particularly effective for visually striking images or videos where the text can provide context without distracting from the media itself.
+-   **Enhanced User Experience**: Offers a more engaging way to present information, allowing users to consume both media and text simultaneously.
+-   **UI Controls for Text Visibility**: Includes UI controls (often appearing on hover or interaction) that allow users to maximize or minimize the text display. This gives users control over how much text is visible, enabling them to focus on the media when desired.
 
 ## Usage
 
-To enable the Text overlay mode, simply pass the `textOverlay` prop to the component. This prop only applies when the timeline items contain media content.
+To enable text overlay, add the `textOverlay` boolean prop to the `<Chrono>` component and set it to `true`. This prop primarily affects timeline items that include a `media` object.
 
 ```jsx
+import React from "react";
 import { Chrono } from "react-chrono";
 
-const items = [
+const itemsWithMediaForOverlay = [
   {
-    title: "Item 1",
-    cardSubtitle: "September 2019",
+    title: "Discovery - 2021",
+    cardTitle: "Exploring New Horizons",
+    cardSubtitle: "A journey into the unknown",
+    cardDetailedText: "This phase involved extensive research and exploration, uncovering new possibilities and challenges. The visual media captures the essence of this discovery period.",
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/800/400",
+        url: "https://picsum.photos/seed/discovery/800/400", // Placeholder image
       },
     },
   },
   {
-    title: "Item 2",
-    cardSubtitle: "October 2019",
+    title: "Innovation - 2022",
+    cardTitle: "Breakthrough Ideas",
+    cardSubtitle: "Transforming concepts into reality",
+    cardDetailedText: "Key innovations were developed during this period, leading to significant advancements. The overlay text provides context to the visual representation of these breakthroughs.",
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/800/400",
+        url: "https://picsum.photos/seed/innovation/800/400", // Placeholder image
       },
     },
   },
-  {
-    title: "Item 3",
-    cardSubtitle: "November 2019",
-    media: {
-      type: "IMAGE",
-      source: {
-        url: "https://picsum.photos/800/400",
-      },
-    },
-  },
+  // ... more items
 ];
 
-const Timeline = () => {
-  return <Chrono items={items} textOverlay />;
-};
+function TimelineWithTextOverlay() {
+  return (
+    <Chrono
+      items={itemsWithMediaForOverlay}
+      mode="VERTICAL" // Works in all modes
+      textOverlay={true} // Enable text overlay
+    />
+  );
+}
 
-export default Timeline;
+export default TimelineWithTextOverlay;
 ```
 
-![text-overlay-2](./assets/text-overlay-2.png)
+## How It Affects Presentation
+
+-   When `textOverlay` is active, the layout of the card changes significantly. Instead of text appearing beside or below the media, it's layered on top.
+-   The feature is designed to be responsive and visually appealing, but you may need to consider the contrast between your text color and media content for readability. Theme customizations might be necessary.
+
+![Text Overlay Example 2 with UI Controls](./assets/text-overlay-2.png)
+
+The `textOverlay` mode is a powerful tool for creating visually stunning timelines that prioritize media content while still providing essential textual information in an integrated manner.

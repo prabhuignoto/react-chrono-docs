@@ -1,59 +1,83 @@
-# Custom rendering
+# Custom Card Rendering
 
-To use custom rendering , you need to pass the content that you want to render between the `<Chrono>` tags. The custom content will be used instead of the default rendering for each timeline card.
+React Chrono allows for custom rendering of timeline cards. By passing JSX elements as children to the `<Chrono>` component, you can replace the default card rendering with your own custom content.
 
-It's important to note that you can use both the items prop and custom rendering in conjunction. For example, if you have an array of 10 items and you pass 4 custom content between the `<Chrono>` tags, the first 4 timeline cards will have the custom content rendered, and the next 6 items will be picked from the items array starting from index 5.
+This feature offers flexibility in how timeline data is presented, enabling unique and tailored user experiences.
+
+## How It Works
+
+When you provide child elements to the `<Chrono>` component, these elements are used to render the timeline cards sequentially.
+
+-   If you pass custom content, it will be used for the initial cards.
+-   If the number of custom content elements is less than the total number of items in the `items` prop, the remaining cards will be rendered using the default mechanism, picking data from the `items` array.
+
+For instance, if you have an `items` array with 10 entries and provide 4 custom JSX elements, the first 4 cards will display your custom content. The subsequent 6 cards will render based on the data from `items[4]` to `items[9]`.
 
 ## Custom Content Format
 
-The custom content that you pass between the `<Chrono>` tags can be any valid JSX element, such as a `<div>`, `<h1>`, `<p>`, or any other HTML tag. You can also use React components as custom content.
+Any valid JSX can be used for custom content. This includes:
 
-## Custom Rendering Example
+-   Standard HTML tags (e.g., `<div>`, `<h1>`, `<p>`)
+-   Custom React components
 
-Here is an example of how to use custom rendering in React-Chrono:
+## Example
+
+Below is an example demonstrating how to use custom rendering:
 
 ```jsx
 import React from "react";
 import { Chrono } from "react-chrono";
 
+// Define custom content for the first two cards
 const customContent = [
-  <div>
+  <div key="card1">
     <h3>Custom Card 1</h3>
-    <p>This is the first custom card</p>
+    <p>This is the first custom card with unique content.</p>
   </div>,
-  <div>
+  <div key="card2">
     <h3>Custom Card 2</h3>
-    <p>This is the second custom card</p>
+    <p>This is the second custom card, also uniquely rendered.</p>
   </div>,
 ];
 
+// Define data for the timeline (can be more than custom content)
 const items = [
   {
-    title: "Item 1",
-    cardTitle: "Card 1",
-    cardSubtitle: "Subtitle 1",
-    cardDetailedText: "Detailed text 1",
+    title: "Event 1", // Corresponds to customContent[0]
+    // Other props for item 1 can be provided but won't be used for default rendering if custom content is present
   },
   {
-    title: "Item 2",
-    cardTitle: "Card 2",
-    cardSubtitle: "Subtitle 2",
-    cardDetailedText: "Detailed text 2",
+    title: "Event 2", // Corresponds to customContent[1]
+  },
+  {
+    title: "Event 3",
+    cardTitle: "Default Card 3",
+    cardSubtitle: "Subtitle for Card 3",
+    cardDetailedText: "Detailed text for the third card, rendered by default.",
   },
   // ... more items
 ];
 
 function MyTimeline() {
-  return <Chrono items={items}>{customContent}</Chrono>;
+  // Pass items and customContent as children
+  return (
+    <Chrono items={items} mode="VERTICAL">
+      {customContent}
+    </Chrono>
+  );
 }
+
+export default MyTimeline;
 ```
 
-In this example, we define an array of custom content that contains two `<div>` elements with custom content. Then we define an array of items that will be displayed in the timeline. We pass both the items array and the customContent array to the `<Chrono>` component. The first two timeline cards will use the custom content, and the next items will use the default rendering.
+In this example:
+- The first two timeline cards will render `customContent[0]` and `customContent[1]`.
+- The third card (and any subsequent cards) will use the default rendering mechanism based on the `items` array.
 
-::: info
-Custom rendering in React-Chrono provides a powerful way to customize the appearance of your timeline cards. By passing custom content between the `<Chrono>` tags, you can create unique and visually appealing timelines that fit your application's needs.
+::: tip
+Custom rendering is a powerful feature for tailoring the visual appearance and structure of your timeline cards. It allows for the integration of complex components or specific layouts that go beyond the default card structure.
 :::
 
-![vertical_custom](../assets/vertical_custom.png)
+![Vertical Timeline with Custom Content](../assets/vertical_custom.png)
 
 [![Edit react-chrono-vertical-custom](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-chrono-vertical-custom-qepnm?fontsize=14&hidenavigation=1&theme=dark)

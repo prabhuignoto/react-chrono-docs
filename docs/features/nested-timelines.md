@@ -1,65 +1,88 @@
 # Nested Timelines
 
-Nested Timelines is a new feature in react-chrono that allows you to generate nested timelines on all modes. With this feature, you can create timelines within timelines, making it easy to organize and display complex data.
+React Chrono supports creating nested timelines, allowing you to embed a timeline within a card of a parent timeline. This feature is available in all timeline modes (`VERTICAL`, `VERTICAL_ALTERNATING`, `HORIZONTAL`) and is ideal for organizing and displaying complex, hierarchical data.
 
-## Data-Driven
+## Data-Driven Nesting
 
-Nested Timelines in react-chrono is data-driven, which means that you can pass an items prop inside each item. The card will then render the nested timeline inside the card. This makes it easy to display a nested timeline for each item in your timeline.
+Nested timelines are configured directly within your data. To create a nested timeline, include an `items` array property within a specific timeline item object of the parent timeline. This inner `items` array will define the events for the nested timeline, which will then be rendered inside the corresponding parent card.
 
-![nested](./assets/nested.png)
+![Nested Timelines Example](./assets/nested.png)
 
 ## Example Usage
 
+Here's how to implement a nested timeline:
+
 ```jsx
+import React from "react";
 import { Chrono } from "react-chrono";
 
-const items = [
+const mainTimelineItems = [
   {
-    title: "Nested Timeline Example",
-    cardTitle: "Main Event",
-    cardSubtitle: "This is the main event",
+    title: "Main Event - Q1 2023",
+    cardTitle: "Project Alpha Kickoff",
+    cardSubtitle: "Start of a major initiative",
+    // Nested timeline items for this main event
     items: [
       {
-        title: "Nested Item 1",
-        cardTitle: "Nested Event 1",
-        cardSubtitle: "This is a nested event",
-        cardDetailedText: "This is the detailed text for the nested event 1",
+        title: "Jan 2023",
+        cardTitle: "Phase 1: Planning",
+        cardSubtitle: "Initial planning and team formation",
+        cardDetailedText: "Detailed planning sessions, resource allocation, and defining project scope.",
         media: {
           type: "IMAGE",
           source: {
-            url: "https://picsum.photos/800/400",
+            url: "https://picsum.photos/seed/phase1/800/400", // Placeholder image
           },
         },
       },
       {
-        title: "Nested Item 2",
-        cardTitle: "Nested Event 2",
-        cardSubtitle: "This is another nested event",
-        cardDetailedText: "This is the detailed text for the nested event 2",
+        title: "Feb 2023",
+        cardTitle: "Phase 2: Prototyping",
+        cardSubtitle: "Development of initial prototypes",
+        cardDetailedText: "Building and testing proof-of-concept models.",
         media: {
           type: "IMAGE",
           source: {
-            url: "https://picsum.photos/800/400",
+            url: "https://picsum.photos/seed/phase2/800/400", // Placeholder image
           },
         },
       },
     ],
   },
+  {
+    title: "Main Event - Q2 2023",
+    cardTitle: "Project Beta Launch",
+    // This item does not have a nested timeline
+  }
 ];
 
-function NestedTimeline() {
-  return <Chrono items={items} mode="VERTICAL" nestedCardHeight={200} />;
+function MyNestedTimeline() {
+  return (
+    <Chrono
+      items={mainTimelineItems}
+      mode="VERTICAL"
+      nestedCardHeight={250} // Optional: Adjust height of cards within the nested timeline
+    />
+  );
 }
 
-export default NestedTimeline;
+export default MyNestedTimeline;
 ```
 
-## Height Adjustments
+In this example:
+- The "Project Alpha Kickoff" card in the main timeline will contain a nested timeline defined by its `items` property.
+- The "Project Beta Launch" card will render as a standard card since it does not have an `items` property.
 
-With the `nestedCardHeight` prop, you can adjust the height of the nested card. This allows you to control the amount of space that the nested timeline takes up within the parent timeline.
+## Height Adjustment for Nested Cards
+
+You can control the height of the cards within the nested timeline using the `nestedCardHeight` prop on the main `<Chrono>` component. This prop accepts a numerical value representing the height in pixels.
+
+```jsx
+<Chrono items={items} mode="VERTICAL" nestedCardHeight={200} />
+```
 
 ## Derived Attributes
 
-Other attributes, such as mediaHeight and contentDetailsHeight, are derived from the parent timeline. This makes it easy to create a nested timeline that looks and feels like part of the parent timeline.
+Certain visual attributes for the nested timeline, such as `mediaHeight` and `contentDetailsHeight`, are automatically derived from the parent timeline's configuration. This helps maintain a consistent look and feel between the parent and nested timelines.
 
-It is a powerful and flexible feature that allows you to create complex timelines with ease. Whether you're displaying data for a project, organizing events, or tracking progress.
+Nested timelines offer a powerful way to present detailed sub-events or related information within the context of a larger event, making complex datasets more manageable and understandable.

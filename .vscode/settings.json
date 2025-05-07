@@ -1,0 +1,7 @@
+{
+    "deepscan.enable": true,
+    "sonarlint.connectedMode.project": {
+        "connectionId": "prabhuignoto",
+        "projectKey": "prabhuignoto_react-chrono"
+    }
+}
