@@ -26,12 +26,54 @@ To generate a timeline, you must provide an array of Timeline objects, each of w
 
 | Name             | Description                                                                    | Type                       |
 | :--------------- | :----------------------------------------------------------------------------- | :------------------------- |
-| title            | The title of the timeline item.                                                | String                     |
-| cardTitle        | The title displayed on the timeline card.                                      | String                     |
-| cardSubtitle     | The text displayed in the timeline card.                                       | String                     |
-| cardDetailedText | Detailed text displayed in the timeline card.                                  | String or Array of Strings |
-| media            | An object that allows you to set media (image or video) for the timeline item. | Object                     |
-| url              | The URL to be used in the title of the timeline item.                          | String                     |
+| title            | The title of the timeline item (often a date or short label).                  | String or ReactNode        |
+| cardTitle        | The title displayed on the timeline card.                                      | String or ReactNode        |
+| cardSubtitle     | The subtitle text displayed on the timeline card.                              | String or ReactNode        |
+| cardDetailedText | Detailed text for the card. An array of strings will render each string as a separate paragraph. | String, String[], ReactNode, or ReactNode[] |
+| media            | Object to configure image or video display.                                    | TimelineMediaModel         |
+| url              | URL associated with the timeline item's title. Clicking the title will navigate to this URL. | String |
+| date             | Date to be used in the title. If provided, this will override the title property for display purposes. | Date or String |
+| timelineContent  | Custom React content to render inside the card. Overrides cardDetailedText.    | ReactNode                  |
+| items            | Array of timeline items for creating Nested Timelines.                         | TimelineItemModel[]        |
+| hasNestedItems   | Automatically set to indicate if this item contains nested sub-items.          | Boolean                    |
+| active           | If true, this item will be initially active (only for the first matching item). | Boolean                   |
+| id               | A unique identifier for the timeline item.                                     | String                     |
+| visible          | Controls the visibility of the timeline item.                                  | Boolean                    |
+
+### Media Object Structure
+
+The `media` object within a Timeline Item configures images or videos:
+
+| Property | Type | Description |
+| :------- | :--- | :---------- |
+| type     | 'IMAGE' or 'VIDEO' | Specifies the type of media |
+| source   | { url: string, type?: string } | url: URL of the image or video. type (for video): e.g., 'mp4', 'webm' |
+| name     | string | Alt text for images or a descriptive name for videos |
+| active   | boolean | (Video only) If true, video will attempt to play when its card becomes active |
+| id       | string | A unique ID for the media element |
+
+**Image Example:**
+```javascript
+media: {
+  type: "IMAGE",
+  name: "dunkirk beach",
+  source: {
+    url: "http://someurl/image.jpg"
+  }
+}
+```
+
+**Video Example:**
+```javascript
+media: {
+  type: "VIDEO",
+  name: "Pearl Harbor",
+  source: {
+    url: "/pearl-harbor.mp4",
+    type: "mp4"
+  }
+}
+```
 
 ::: info
 It is important to ensure that the array of Timeline objects passed to the component is structured correctly and contains all the necessary properties. The data type of each property must also match the specified type to avoid errors.
@@ -39,7 +81,7 @@ It is important to ensure that the array of Timeline objects passed to the compo
 
 ## Timeline Modes
 
-React-Chrono offers three distinct timeline modes: `HORIZONTAL`, `VERTICAL`, and `VERTICAL_ALTERNATING`. By default, the component operates in `VERTICAL_ALTERNATING` mode. However, if you prefer to display timeline cards Horizontally, you can select `HORIZONTAL` or `VERTICAL` mode.
+React-Chrono offers three distinct timeline modes: `HORIZONTAL`, `VERTICAL`, and `VERTICAL_ALTERNATING`. By default, the component operates in `HORIZONTAL` mode. However, if you prefer to display timeline cards vertically, you can select `VERTICAL` or `VERTICAL_ALTERNATING` mode.
 
 Simply specify the desired mode as a prop when rendering the React-Chrono component. This flexibility makes it easy to customize your timeline to fit your project's specific layout requirements.
 
@@ -50,7 +92,7 @@ To build the timeline, you need to pass in an array of [Timeline](#timeline-obje
 Let's build a simple vertical timeline with 3 items.
 
 ::: info
-The default mode of the component is `VERTICAL_ALTERNATING`.
+The default mode of the component is `HORIZONTAL`. To use vertical mode, explicitly set `mode="VERTICAL"`.
 :::
 
 ```jsx

@@ -24,7 +24,7 @@ const Timeline1 = () => {
       cardHeight={200} // sets the height of the timeline card to 200px
       mediaHeight={100} // sets the height of the media element to 100px
       contentDetailsHeight={80} // sets the height of the detailed text to 80px
-      readMore={true} // enables the readMore function for larger chunks of text
+      useReadMore={true} // enables the readMore function for larger chunks of text
     />
   );
 };

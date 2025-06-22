@@ -1,102 +1,404 @@
 # Properties
 
-## activeItemIndex
+## Core Props
+
+### activeItemIndex
+
+**Type:** `number`  
+**Default:** `0`
 
 This property sets the default active timeline item that should be displayed when the component loads.
 
-## allowDynamicUpdate
+### allowDynamicUpdate
 
-This property allows timeline items to be updated dynamically.
+**Type:** `boolean`  
+**Default:** `false`
 
-## borderLessCards
+This property allows timeline items to be updated dynamically. If true, changes to the items prop will re-render the timeline.
 
-By enabling this property, the border and shadow on the timeline cards can be removed.
+### items
 
-## cardHeight
+**Type:** `TimelineItemModel[]`  
+**Default:** `[]`
 
-This property sets the minimum height of the timeline card.
+An array of Timeline Item objects to display. Each item can contain properties like `title`, `cardTitle`, `cardSubtitle`, `cardDetailedText`, `media`, `url`, `date`, `timelineContent`, `items` (for nested timelines), and more.
 
-## cardLess
+### mode
 
-This property disables the display of timeline cards in both horizontal and vertical modes.
+**Type:** `'HORIZONTAL' | 'VERTICAL' | 'VERTICAL_ALTERNATING'`  
+**Default:** `'HORIZONTAL'`
 
-## cardPositionHorizontal
+Sets the layout mode of the timeline. Changed to HORIZONTAL from VERTICAL_ALTERNATING for new projects.
 
-This property positions the timeline card in horizontal mode. The value can be either TOP or BOTTOM.
+### theme
 
-## cardDetailedText
+**Type:** `Theme`  
+**Default:** `{...}`
 
-Sets the text content for the timeline card. Accepts a string or an array of strings, where the string can be a HTML markup.
+Enhanced theming with 15+ new dark mode properties for complete visual customization. See Theming & Styling for details.
 
-## cardWidth
+## Layout & Sizing
 
-This property sets the maximum width of the timeline card.
+### cardHeight
 
-## disableAutoScrollOnClick
+**Type:** `number`  
+**Default:** `200`
 
-This property disables the timeline from auto-scrolling when a timeline card is clicked.
+Minimum height (in pixels) of timeline cards.
 
-## disableClickOnCircle
+### cardWidth
 
-This property disables click action on the circular points.
+**Type:** `number`  
+**Default:** `450`
 
-## disableNavOnKey
+Maximum width (in pixels) of timeline cards.
 
-This property disables keyboard navigation.
+### itemWidth
 
-## enableOutline
+**Type:** `number`  
+**Default:** `200`
 
-Enabling this property displays the outline menu on VERTICAL and VERTICAL_ALTERNATING modes.
+Width (in pixels) of each timeline section in HORIZONTAL mode.
 
-## flipLayout
+### contentDetailsHeight
 
-This property flips the layout to right-to-left (RTL).
+**Type:** `number`  
+**Default:** `150`
 
-## itemWidth
+Height (in pixels) of the detailed content area within a card if cardDetailedText is used.
 
-This property sets the width of the timeline section in HORIZONTAL mode.
+### lineWidth
 
-## items
+**Type:** `number`  
+**Default:** `3`
 
-This property contains a collection of Timeline Item Models.
+Width (in pixels) of the main timeline track line.
 
-## lineWidth
+### timelinePointDimension
 
-This property is used to customize the width of the timeline track line.
+**Type:** `number`  
+**Default:** `16`
 
-## mode
+Diameter (in pixels) of the circular points on the timeline.
 
-This property sets the mode of the timeline component. The value can be HORIZONTAL, VERTICAL, or VERTICAL_ALTERNATING.
+### nestedCardHeight
 
-## onItemSelected
+**Type:** `number`  
+**Default:** `150`
 
-This property is a callback function invoked on item selection. It passes all of the data pertinent to the item.
+Height (in pixels) of cards within a nested timeline.
 
-## onScrollEnd
+### scrollable
 
-This property is used to detect the end of the timeline using the onScrollEnd callback function.
+**Type:** `boolean | { scrollbar: boolean }`  
+**Default:** `{ scrollbar: false }`
 
-## scrollable
+Makes VERTICAL and VERTICAL_ALTERNATING modes scrollable. Set to `{ scrollbar: true }` to show the scrollbar.
 
-This property makes the timeline scrollable in VERTICAL and VERTICAL_ALTERNATING modes.
+### enableBreakPoint
 
-## showAllCardsHorizontal
+**Type:** `boolean`  
+**Default:** `true`
 
-Enabling this property in horizontal mode displays all the cards instead of only the active one.
+If true, VERTICAL_ALTERNATING mode automatically switches to VERTICAL mode when responsiveBreakPoint is reached.
 
-## slideItemDuration
+### responsiveBreakPoint
 
-This property sets the duration (in ms) for which the timeline card is active during a slideshow.
+**Type:** `number`  
+**Default:** `768`
 
-## slideShow
+Viewport width (in pixels) at which VERTICAL_ALTERNATING mode switches to VERTICAL if enableBreakPoint is true.
 
-Enabling this property displays the slideshow control.
+### cardPositionHorizontal
 
-## theme
+**Type:** `'TOP' | 'BOTTOM'`
 
-This property is used to customize the colors of the timeline component.
+Positions the card above or below the timeline in HORIZONTAL mode.
 
-## timelineCircleDimension
+### flipLayout
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Reverses the layout direction (e.g., Right-to-Left for horizontal, or swaps sides for vertical alternating).
+
+### showAllCardsHorizontal
+
+**Type:** `boolean`  
+**Default:** `false`
+
+In HORIZONTAL mode, displays all cards simultaneously instead of only the active one.
+
+## Navigation & Interaction
+
+### disableNavOnKey
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Disables keyboard navigation (LEFT/RIGHT for Horizontal, UP/DOWN for Vertical).
+
+### disableClickOnCircle
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Disables click action on timeline points/circles.
+
+### disableAutoScrollOnClick
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Prevents auto-scrolling to the active card when a timeline card or point is clicked.
+
+### onItemSelected
+
+**Type:** `function`
+
+Callback function invoked when a timeline item is selected. Passes item data and index.
+
+### onScrollEnd
+
+**Type:** `function`
+
+Callback function invoked when the end of the timeline is reached during scrolling.
+
+### focusActiveItemOnLoad
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Automatically scrolls to and focuses on the activeItemIndex when the timeline loads.
+
+### disableInteraction
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Disables all user interactions with the timeline (clicks, keyboard navigation).
+
+### enableQuickJump
+
+**Type:** `boolean`  
+**Default:** `true`
+
+Allows quick jumping to a timeline item via controls (if toolbar is enabled).
+
+### useReadMore
+
+**Type:** `boolean`  
+**Default:** `true`
+
+Enables a "read more" button if card content exceeds available space. Set to false to always show all text.
+
+### semanticTags
+
+**Type:** `SemanticTagsConfig`
+
+Configure semantic HTML tags for card elements to improve accessibility and SEO.
+
+```typescript
+interface SemanticTagsConfig {
+  cardTitle?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
+  cardSubtitle?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
+}
+```
+
+## Media Handling
+
+### mediaSettings
+
+**Type:** `{ align?: 'left' | 'right' | 'center'; fit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down' }`  
+**Default:** `{ align: 'left', fit: 'cover' }`
+
+Controls global media display alignment and CSS object-fit property for images.
+
+## Content & Display
+
+### borderLessCards
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Removes borders and shadows from timeline cards for a flatter look.
+
+### cardLess
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Hides timeline cards, showing only titles/points. Useful for a very compact timeline.
+
+### disableTimelinePoint
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Hides the circular points on the timeline track.
+
+### timelinePointShape
+
+**Type:** `'circle' | 'square' | 'diamond'`  
+**Default:** `'circle'`
+
+Configures the shape of the points on the timeline.
+
+### textOverlay
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Displays text content as an overlay on top of media elements. Requires text property in timeline items.
+
+### parseDetailsAsHTML
+
+**Type:** `boolean`  
+**Default:** `false`
+
+If true, cardDetailedText will be parsed as HTML. Use with caution due to XSS risks if content is user-supplied.
+
+### titleDateFormat
+
+**Type:** `string`  
+**Default:** `'MMM DD, YYYY'`
+
+Date format for item titles when using the date property in items. Supports all day.js formats.
+
+### textDensity
+
+**Type:** `'LOW' | 'HIGH'`  
+**Default:** `'HIGH'`
+
+Configures the amount of text displayed in cards. 'LOW' might truncate more aggressively.
+
+## Slideshow
+
+### slideShow
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Enables slideshow mode and shows play/pause controls in the toolbar.
+
+### slideItemDuration
+
+**Type:** `number`  
+**Default:** `2500`
+
+Duration (in milliseconds) each timeline item remains active during a slideshow.
+
+### slideShowType
+
+**Type:** `'reveal' | 'slide_from_sides' | 'slide_in'`
+
+Type of animation for slideshow transitions. Defaults: VERTICAL -> 'reveal', VERTICAL_ALTERNATING -> 'slide_from_sides', HORIZONTAL -> 'slide_in'.
+
+### showOverallSlideshowProgress
+
+**Type:** `boolean`  
+**Default:** `true` (when slideShow is enabled)
+
+Shows a line-based progress bar at the top of the screen during slideshow mode, indicating overall progress across all timeline items.
+
+## Search
+
+### searchPlaceholder
+
+**Type:** `string`  
+**Default:** `"Search..."`
+
+Placeholder text for the search input in the toolbar.
+
+### searchAriaLabel
+
+**Type:** `string`  
+**Default:** `"Search timeline"`
+
+ARIA label for the search input for accessibility.
+
+### clearSearch
+
+**Type:** `string`  
+**Default:** `"Clear search"`
+
+Text/ARIA label for the clear search button.
+
+## Theming & Styling
+
+### enableDarkToggle
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Adds a toggle switch to the toolbar for enabling dark mode (if dark theme is configured).
+
+### onThemeChange
+
+**Type:** `function`
+
+Callback invoked when the theme changes, e.g., via the dark mode toggle. Passes the new theme object.
+
+### fontSizes
+
+**Type:** `{ cardSubtitle?: string; cardText?: string; cardTitle?: string; title?: string; }`
+
+Adjust font sizes for card elements.
+
+### buttonTexts
+
+**Type:** `ButtonTexts`
+
+Customize button text and accessibility labels for all interactive elements.
+
+### classNames
+
+**Type:** `{ card?: string; cardMedia?: string; cardSubTitle?: string; cardText?: string; cardTitle?: string; controls?: string; title?: string; }`
+
+Apply custom CSS classes to various parts of the timeline.
+
+### highlightCardsOnHover
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Highlights timeline cards on mouse hover.
+
+## Miscellaneous
+
+### noUniqueId
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Prevents generating a unique ID for the timeline wrapper. Use with uniqueId if you need to set a specific ID.
+
+### uniqueId
+
+**Type:** `string`
+
+Sets a custom unique ID for the timeline wrapper. Useful with noUniqueId={true}.
+
+### disableToolbar
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Hides the entire toolbar/control panel.
+
+### toolbarPosition
+
+**Type:** `'top' | 'bottom'`  
+**Default:** `'top'`
+
+Positions the toolbar at the top or bottom of the timeline.
+
+### enableLayoutSwitch
+
+**Type:** `boolean`  
+**Default:** `true`
+
+Enables the layout switcher for the timeline. Switches the vertical timeline to vertical_alternating and vice versa. Switches the horizontal timeline to horizontal_all and vice versa.
 
 This property sets the dimensions of the circular points on the timeline.
 

@@ -23,13 +23,36 @@ The `slideItemDuration` prop controls how long each timeline card is displayed b
 React Chrono offers different animation types for slideshow transitions. The component automatically selects a default type based on the active timeline `mode`:
 
 -   **`reveal`**: (Default for `VERTICAL` and `HORIZONTAL` modes)
-    Timeline cards are revealed one after another, typically with a fade-in or similar effect.
+    Timeline cards are revealed one after another, typically with a fade-in effect.
 -   **`slide_from_sides`**: (Default for `VERTICAL_ALTERNATING` mode)
     Timeline cards animate in from alternating sides of the screen, complementing the alternating layout.
--   **`slide_in`**: (Can be manually set if needed, though often covered by `reveal` or `slide_from_sides` depending on context)
-    Cards slide into view. The exact behavior might vary.
+-   **`slide_in`**: (Alternative animation type)
+    Cards slide into view.
 
-While these are default behaviors, specific customization of animation types beyond the defaults might require deeper configuration or CSS overrides if supported by the library version.
+You can override the default animation type by setting the `slideShowType` prop:
+
+```jsx
+<Chrono 
+  items={items} 
+  slideShow={true} 
+  slideShowType="slide_from_sides" 
+/>
+```
+
+## Overall Progress Bar
+
+React Chrono includes an overall progress bar that shows the global progress across all timeline items during slideshow mode. This can be controlled with the `showOverallSlideshowProgress` prop:
+
+```jsx
+<Chrono
+  items={items}
+  slideShow={true}
+  slideItemDuration={3000}
+  showOverallSlideshowProgress={true} // Default: true when slideShow is enabled
+/>
+```
+
+The progress bar appears at the top of the screen and can be disabled by setting `showOverallSlideshowProgress={false}`.
 
 ## Controlling the Slideshow
 
