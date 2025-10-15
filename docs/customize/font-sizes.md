@@ -1,6 +1,12 @@
 # Font Sizes
 
-The `fontSizes` prop allows you to customize the font sizes of different text elements within the timeline. You can specify custom font sizes for card titles, subtitles, detailed text, and the main timeline item titles.
+Customize the font sizes of different text elements within the timeline.
+
+::: tip v3.0 Grouped API & Google Fonts
+In v3.0, font sizes are configured through `style.fontSizes`. Additionally, v3.0 introduces `style.googleFonts` for dynamic Google Fonts integration with per-element weight and size control.
+
+See [Grouped Configuration API](/api/grouped-config#style-configuration) for more details.
+:::
 
 All font size properties are optional and will use the component's default sizes if not specified.
 
@@ -15,7 +21,7 @@ All font size properties are optional and will use the component's default sizes
 
 ## Usage
 
-### Basic Font Size Customization
+### Basic Font Size Customization (v3.0)
 
 ```jsx
 import React from 'react';
@@ -26,13 +32,13 @@ const data = [
     title: "January 2023",
     cardTitle: "Project Launch",
     cardSubtitle: "Phase 1 Complete",
-    cardDetailedText: "Successfully launched the first phase of our project with initial features and user feedback collection.",
+    cardDetailedText: "Successfully launched the first phase of our project.",
   },
   {
     title: "March 2023",
     cardTitle: "Feature Expansion",
     cardSubtitle: "Phase 2 Development",
-    cardDetailedText: "Added advanced features based on user feedback and expanded the platform capabilities.",
+    cardDetailedText: "Added advanced features based on user feedback.",
   },
 ];
 
@@ -40,12 +46,52 @@ const Timeline = () => {
   return (
     <Chrono
       items={data}
-      mode="VERTICAL"
-      fontSizes={{
-        cardTitle: '1.25rem',    // Larger card titles
-        cardSubtitle: '1rem',    // Larger subtitles
-        cardText: '0.9rem',      // Slightly larger text
-        title: '1.1rem',         // Larger timeline titles
+      mode="vertical"
+      style={{
+        fontSizes: {
+          cardTitle: '1.25rem',
+          cardSubtitle: '1rem',
+          cardText: '0.9rem',
+          title: '1.1rem',
+        }
+      }}
+    />
+  );
+};
+```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={data}
+  mode="VERTICAL"
+  fontSizes={{
+    cardTitle: '1.25rem',
+    cardSubtitle: '1rem',
+    cardText: '0.9rem',
+    title: '1.1rem',
+  }}
+/>
+```
+:::
+
+### Google Fonts Integration (v3.0 New Feature)
+
+```jsx
+const Timeline = () => {
+  return (
+    <Chrono
+      items={data}
+      style={{
+        googleFonts: {
+          fontFamily: 'Roboto',
+          weights: [400, 500, 700],
+          elements: {
+            cardTitle: { weight: 700, size: '1.25rem' },
+            cardSubtitle: { weight: 500, size: '1rem' },
+            cardText: { weight: 400, size: '0.9rem' },
+          }
+        }
       }}
     />
   );

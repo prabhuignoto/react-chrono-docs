@@ -1,58 +1,112 @@
 # Slideshow Mode
 
-React Chrono includes a slideshow feature that automatically transitions through timeline cards. This is available in all timeline modes: `VERTICAL`, `VERTICAL_ALTERNATING`, and `HORIZONTAL`.
+React Chrono includes a slideshow feature that automatically transitions through timeline cards. This is available in all timeline modes.
 
-## Enabling Slideshow
+## Enabling Slideshow (v3.0 Grouped API)
 
-To activate the slideshow, add the `slideShow` boolean prop to the `<Chrono>` component and set it to `true`.
-
-```jsx
-<Chrono items={items} slideShow={true} />
-```
-
-## Configuring Slide Duration
-
-The `slideItemDuration` prop controls how long each timeline card is displayed before transitioning to the next. This value is specified in milliseconds.
-
-```jsx
-<Chrono items={items} slideShow={true} slideItemDuration={3000} /> // Each card shows for 3 seconds
-```
-
-## Slideshow Animation Types
-
-React Chrono offers different animation types for slideshow transitions. The component automatically selects a default type based on the active timeline `mode`:
-
--   **`reveal`**: (Default for `VERTICAL` and `HORIZONTAL` modes)
-    Timeline cards are revealed one after another, typically with a fade-in effect.
--   **`slide_from_sides`**: (Default for `VERTICAL_ALTERNATING` mode)
-    Timeline cards animate in from alternating sides of the screen, complementing the alternating layout.
--   **`slide_in`**: (Alternative animation type)
-    Cards slide into view.
-
-You can override the default animation type by setting the `slideShowType` prop:
-
-```jsx
-<Chrono 
-  items={items} 
-  slideShow={true} 
-  slideShowType="slide_from_sides" 
-/>
-```
-
-## Overall Progress Bar
-
-React Chrono includes an overall progress bar that shows the global progress across all timeline items during slideshow mode. This can be controlled with the `showOverallSlideshowProgress` prop:
+Use the `animation.slideshow` configuration to enable and customize slideshow behavior:
 
 ```jsx
 <Chrono
   items={items}
-  slideShow={true}
-  slideItemDuration={3000}
-  showOverallSlideshowProgress={true} // Default: true when slideShow is enabled
+  animation={{
+    slideshow: {
+      enabled: true,
+      duration: 3000  // Each card shows for 3 seconds
+    }
+  }}
 />
 ```
 
-The progress bar appears at the top of the screen and can be disabled by setting `showOverallSlideshowProgress={false}`.
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono items={items} slideShow={true} slideItemDuration={3000} />
+```
+:::
+
+## Configuring Slide Duration
+
+The `duration` property (or `slideItemDuration` in v2.x) controls how long each timeline card is displayed before transitioning to the next. This value is specified in milliseconds.
+
+```jsx
+<Chrono
+  items={items}
+  animation={{
+    slideshow: {
+      enabled: true,
+      duration: 4000  // 4 seconds per card
+    }
+  }}
+/>
+```
+
+## Slideshow Animation Types
+
+React Chrono offers different animation types for slideshow transitions:
+
+-   **`reveal`**: Timeline cards are revealed one after another with a fade-in effect
+-   **`fade`**: Cards animate in from alternating sides (previously `slide_from_sides` in v2.x)
+-   **`slide`**: Cards slide into view (previously `slide_in` in v2.x)
+
+### v3.0 Syntax
+
+```jsx
+<Chrono
+  items={items}
+  animation={{
+    slideshow: {
+      enabled: true,
+      type: 'fade'  // or 'reveal', 'slide'
+    }
+  }}
+/>
+```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={items}
+  slideShow={true}
+  slideShowType="slide_from_sides"  // Old values still work
+/>
+```
+
+**Note:** v2.x values are automatically converted:
+- `'slide_in'` → `'slide'`
+- `'slide_from_sides'` → `'fade'`
+- `'reveal'` → `'reveal'` (unchanged)
+:::
+
+## Overall Progress Bar
+
+React Chrono includes an overall progress bar that shows the global progress across all timeline items during slideshow mode.
+
+### v3.0 Syntax
+
+```jsx
+<Chrono
+  items={items}
+  animation={{
+    slideshow: {
+      enabled: true,
+      duration: 3000,
+      showOverallProgress: true  // Default: true when enabled
+    }
+  }}
+/>
+```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={items}
+  slideShow={true}
+  showOverallSlideshowProgress={true}
+/>
+```
+:::
+
+The progress bar appears at the top of the screen and can be disabled by setting `showOverallProgress: false`.
 
 ## Controlling the Slideshow
 
@@ -62,7 +116,7 @@ Users can typically control the slideshow via the control panel (if enabled):
 
 ## Example Usage
 
-Here’s how to set up a basic slideshow:
+### v3.0 Syntax (Recommended)
 
 ```jsx
 import React from "react";
@@ -77,7 +131,7 @@ const slideshowItems = [
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/id/1018/1000/600", // Placeholder image
+        url: "https://picsum.photos/id/1018/1000/600",
       },
     },
   },
@@ -89,7 +143,7 @@ const slideshowItems = [
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/id/1015/1000/600", // Placeholder image
+        url: "https://picsum.photos/id/1015/1000/600",
       },
     },
   },
@@ -101,7 +155,7 @@ const slideshowItems = [
     media: {
       type: "IMAGE",
       source: {
-        url: "https://picsum.photos/id/1016/1000/600", // Placeholder image
+        url: "https://picsum.photos/id/1016/1000/600",
       },
     },
   },
@@ -111,9 +165,15 @@ function MyTimelineSlideshow() {
   return (
     <Chrono
       items={slideshowItems}
-      mode="HORIZONTAL" // Example mode
-      slideShow={true}
-      slideItemDuration={4000} // Each item displays for 4 seconds
+      mode="horizontal"
+      animation={{
+        slideshow: {
+          enabled: true,
+          duration: 4000,
+          type: 'fade',
+          showProgress: true
+        }
+      }}
     />
   );
 }
@@ -121,6 +181,18 @@ function MyTimelineSlideshow() {
 export default MyTimelineSlideshow;
 ```
 
-In this example, the timeline will automatically cycle through `slideshowItems`, displaying each for 4 seconds.
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={slideshowItems}
+  mode="HORIZONTAL"
+  slideShow={true}
+  slideItemDuration={4000}
+  slideShowType="slide_from_sides"
+/>
+```
+:::
+
+The timeline will automatically cycle through `slideshowItems`, displaying each for 4 seconds.
 
 The slideshow feature is excellent for creating automated presentations or guided tours of timeline events, making your content more dynamic and engaging.

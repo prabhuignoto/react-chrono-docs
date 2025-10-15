@@ -1,6 +1,10 @@
 # Button Texts
 
-The `buttonTexts` prop allows you to customize the text and accessibility labels for various buttons and UI elements throughout the timeline component. This includes navigation buttons, control panel buttons, search interface text, and accessibility labels.
+Customize the text and accessibility labels for various buttons and UI elements throughout the timeline component.
+
+::: tip v3.0 Grouped API
+In v3.0, button texts are configured through `accessibility.buttonTexts`. The old `buttonTexts` prop still works for backward compatibility.
+:::
 
 All button text properties are optional and will fall back to their default values if not specified.
 
@@ -71,6 +75,8 @@ The library also supports customizing the text for control panel options:
 
 ## Basic Usage
 
+### v3.0 Syntax (Recommended)
+
 ```jsx
 import { Chrono } from "react-chrono";
 
@@ -78,19 +84,36 @@ const Timeline = () => {
   return (
     <Chrono
       items={data}
-      mode="HORIZONTAL"
-      buttonTexts={{
-        first: "Jump to First",
-        last: "Jump to Last",
-        next: "Next Event",
-        previous: "Previous Event",
-        play: "Start Auto-play",
-        stop: "Stop Auto-play",
+      mode="horizontal"
+      accessibility={{
+        buttonTexts: {
+          first: "Jump to First",
+          last: "Jump to Last",
+          next: "Next Event",
+          previous: "Previous Event",
+          play: "Start Auto-play",
+          stop: "Stop Auto-play",
+        }
       }}
     />
   );
 };
 ```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={data}
+  mode="HORIZONTAL"
+  buttonTexts={{
+    first: "Jump to First",
+    last: "Jump to Last",
+    next: "Next Event",
+    previous: "Previous Event",
+  }}
+/>
+```
+:::
 
 ## Advanced Search Customization
 

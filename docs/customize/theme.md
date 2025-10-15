@@ -88,20 +88,37 @@ The library provides default themes optimized for both light and dark modes. All
 
 ## Dark Mode Support
 
-React-Chrono includes built-in dark mode themes with optimized colors for better contrast and readability in dark environments. The dark theme uses darker backgrounds with lighter text colors:
+React-Chrono includes built-in dark mode themes with optimized colors for better contrast and readability in dark environments.
+
+### v3.0 Syntax
 
 ```jsx
-// Dark mode is automatically applied when enableDarkToggle is true
 <Chrono
   items={items}
-  enableDarkToggle={true}
+  darkMode={{
+    enabled: false,
+    showToggle: true  // Show dark mode toggle button
+  }}
   theme={{
-    // Your custom theme properties will be merged with dark mode defaults
+    // Your custom theme properties work in both light and dark modes
     primary: "#3b82f6",
     secondary: "#fbbf24",
   }}
 />
 ```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={items}
+  enableDarkToggle={true}
+  theme={{
+    primary: "#3b82f6",
+    secondary: "#fbbf24",
+  }}
+/>
+```
+:::
 
 ## Example Usage
 

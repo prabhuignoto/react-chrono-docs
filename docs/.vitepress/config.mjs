@@ -20,7 +20,7 @@ export default defineConfig({
     ],
     footer: {
       message: "Released under the MIT License.",
-      copyright: "Copyright © 2020-present Prabhu Murthy",
+      copyright: "Copyright © " + new Date().getFullYear() + " Prabhu Murthy",
     },
     editLink: {
       text: "Edit this page on GitHub",
@@ -34,6 +34,10 @@ export default defineConfig({
           {
             text: "Getting Started",
             link: "/introduction/getting-started",
+          },
+          {
+            text: "Migrating to v3.0",
+            link: "/introduction/migration-v3",
           },
         ],
       },
@@ -134,6 +138,10 @@ export default defineConfig({
           {
             text: "Props",
             link: "/api/props",
+          },
+          {
+            text: "Grouped Configuration",
+            link: "/api/grouped-config",
           },
         ],
       },

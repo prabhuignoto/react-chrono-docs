@@ -81,19 +81,17 @@ It is important to ensure that the array of Timeline objects passed to the compo
 
 ## Timeline Modes
 
-React-Chrono offers three distinct timeline modes: `HORIZONTAL`, `VERTICAL`, and `VERTICAL_ALTERNATING`. By default, the component operates in `HORIZONTAL` mode. However, if you prefer to display timeline cards vertically, you can select `VERTICAL` or `VERTICAL_ALTERNATING` mode.
+React-Chrono offers four distinct timeline modes: `horizontal`, `vertical`, `alternating`, and `horizontal-all`. By default, the component operates in `vertical` mode.
 
-Simply specify the desired mode as a prop when rendering the React-Chrono component. This flexibility makes it easy to customize your timeline to fit your project's specific layout requirements.
+::: tip v3.0 Mode Values
+In v3.0, mode values are lowercase (`'horizontal'`, `'vertical'`, `'alternating'`). The old uppercase values (`'HORIZONTAL'`, `'VERTICAL'`, `'VERTICAL_ALTERNATING'`) still work for backward compatibility.
+:::
 
 ## Building the Timeline
 
 To build the timeline, you need to pass in an array of [Timeline](#timeline-object-properties) objects to the `items` prop.
 
-Let's build a simple vertical timeline with 3 items.
-
-::: info
-The default mode of the component is `HORIZONTAL`. To use vertical mode, explicitly set `mode="VERTICAL"`.
-:::
+Let's build a simple vertical timeline with 3 items using the v3.0 grouped API:
 
 ```jsx
 import { Chrono } from "react-chrono";
@@ -126,10 +124,22 @@ const Timeline = () => {
         On 5/6 December, the Red Army launched a counter-offensive which removed the immediate threat to the Soviet capital. It also brought the German high command to the brink of a catastrophic military crisis. Hitler stepped in and took personal command. His intervention was decisive and he later boasted, “That we overcame this winter and are today in a position again to proceed victoriously… is solely attributable to the bravery of the soldiers at the front and my firm will to hold out…”`,
         },
       ]}
-      mode="VERTICAL"
+      mode="vertical"
     />
   );
 };
 
 export default Timeline;
 ```
+
+::: details Using v2.x Syntax (Still Supported)
+The old API also works:
+```jsx
+<Chrono
+  items={items}
+  mode="VERTICAL"  // Uppercase still works
+/>
+```
+:::
+
+For more customization options, check out the [Grouped Configuration API](/api/grouped-config).

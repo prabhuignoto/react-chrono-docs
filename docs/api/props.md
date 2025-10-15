@@ -1,5 +1,11 @@
 # Properties
 
+:::tip New in v3.0
+React Chrono v3.0 introduces a new **[Grouped Configuration API](/api/grouped-config)** for better organization. All v2.x props listed below still work, but we recommend using the new grouped API for new projects.
+
+[See Migration Guide →](/introduction/migration-v3)
+:::
+
 ## Core Props
 
 ### activeItemIndex

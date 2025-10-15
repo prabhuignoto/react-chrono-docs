@@ -7,12 +7,15 @@ layout: home
 hero:
   name: React Chrono
   text: Smart timeline component for React
-  tagline: Build beautiful timelines
+  tagline: Build beautiful timelines with v3.0
 
   actions:
     - theme: brand
       text: Get Started
       link: /introduction/getting-started
+    - theme: alt
+      text: What's New in v3.0
+      link: /introduction/migration-v3
     - theme: alt
       text: View on GitHub
       link: https://github.com/prabhuignoto/react-chrono
