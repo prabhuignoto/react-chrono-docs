@@ -83,6 +83,8 @@ It is important to ensure that the array of Timeline objects passed to the compo
 
 React-Chrono offers four distinct timeline modes: `horizontal`, `vertical`, `alternating`, and `horizontal-all`. By default, the component operates in `vertical` mode.
 
+![getting-started-basic](getting-started-basic.png)
+
 ::: tip v3.0 Mode Values
 In v3.0, mode values are lowercase (`'horizontal'`, `'vertical'`, `'alternating'`). The old uppercase values (`'HORIZONTAL'`, `'VERTICAL'`, `'VERTICAL_ALTERNATING'`) still work for backward compatibility.
 :::

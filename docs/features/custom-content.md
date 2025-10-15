@@ -86,6 +86,6 @@ In this example:
 Custom rendering is a powerful feature for tailoring the visual appearance and structure of your timeline cards. It allows for the integration of complex components or specific layouts that go beyond the default card structure.
 :::
 
-![Vertical Timeline with Custom Content](../assets/vertical_custom.png)
+![custom-content-basic](custom-content-basic.png)
 
 [![Edit react-chrono-vertical-custom](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-chrono-vertical-custom-qepnm?fontsize=14&hidenavigation=1&theme=dark)

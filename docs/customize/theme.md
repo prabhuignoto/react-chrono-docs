@@ -90,6 +90,8 @@ The library provides default themes optimized for both light and dark modes. All
 
 React-Chrono includes built-in dark mode themes with optimized colors for better contrast and readability in dark environments.
 
+![theme-custom](theme-custom.png)
+
 ### v3.0 Syntax
 
 ```jsx

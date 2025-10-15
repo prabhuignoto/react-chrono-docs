@@ -85,7 +85,7 @@ function ImageTimeline() {
 export default ImageTimeline;
 ```
 
-![Timeline with Embedded Images](../assets/media-images.png)
+![embed-media-vertical](embed-media-vertical.png)
 
 ## Embedding Videos
 

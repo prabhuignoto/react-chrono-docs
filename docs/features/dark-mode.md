@@ -34,6 +34,14 @@ When dark mode is enabled, React Chrono automatically applies dark theme colors 
 - Timeline points and lines use dark theme colors
 - Toolbar and controls adapt to dark theme
 
+**Light Mode:**
+
+![dark-mode-light](dark-mode-light.png)
+
+**Dark Mode:**
+
+![dark-mode-dark](dark-mode-dark.png)
+
 ### Toggle Button
 
 When `showToggle` is set to `true`, a toggle button appears in the toolbar allowing users to switch between light and dark themes dynamically.

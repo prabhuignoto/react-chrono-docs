@@ -2,6 +2,8 @@
 
 React Chrono includes a slideshow feature that automatically transitions through timeline cards. This is available in all timeline modes.
 
+![slideshow-active](slideshow-active.png)
+
 ## Enabling Slideshow (v3.0 Grouped API)
 
 Use the `animation.slideshow` configuration to enable and customize slideshow behavior:

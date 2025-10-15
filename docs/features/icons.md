@@ -72,7 +72,7 @@ export default TimelineWithCustomIcons;
 
 Using custom icons can significantly personalize your timeline:
 
-![Timeline with Custom Icons](../assets/icons.png)
+![custom-content-icons](custom-content-icons.png)
 
 [![Edit react-chrono-custom-icons](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-chrono-custom-icons-x9s2k?fontsize=14&hidenavigation=1&theme=dark)
 

@@ -2,7 +2,7 @@
 
 The Control Panel in React Chrono offers a suite of intuitive controls for customizing the timeline's behavior and appearance. This panel enhances user interaction by providing easy navigation and display adjustments.
 
-![Control Panel](./assets/control-panel.png)
+![control-panel-toolbar](control-panel-toolbar.png)
 
 ## Available Controls
 
