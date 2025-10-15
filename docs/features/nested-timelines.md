@@ -1,6 +1,6 @@
 # Nested Timelines
 
-React Chrono supports creating nested timelines, allowing you to embed a timeline within a card of a parent timeline. This feature is available in all timeline modes (`VERTICAL`, `VERTICAL_ALTERNATING`, `HORIZONTAL`) and is ideal for organizing and displaying complex, hierarchical data.
+React Chrono supports creating nested timelines, allowing you to embed a timeline within a card of a parent timeline. This feature is available in all timeline modes (`vertical`, `alternating`, `horizontal`, `horizontal-all`) and is ideal for organizing and displaying complex, hierarchical data.
 
 ## Data-Driven Nesting
 
@@ -60,7 +60,7 @@ function MyNestedTimeline() {
   return (
     <Chrono
       items={mainTimelineItems}
-      mode="VERTICAL"
+      mode="vertical"
       nestedCardHeight={250} // Optional: Adjust height of cards within the nested timeline
     />
   );
@@ -68,6 +68,16 @@ function MyNestedTimeline() {
 
 export default MyNestedTimeline;
 ```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={mainTimelineItems}
+  mode="VERTICAL"
+  nestedCardHeight={250}
+/>
+```
+:::
 
 In this example:
 - The "Project Alpha Kickoff" card in the main timeline will contain a nested timeline defined by its `items` property.
@@ -78,8 +88,14 @@ In this example:
 You can control the height of the cards within the nested timeline using the `nestedCardHeight` prop on the main `<Chrono>` component. This prop accepts a numerical value representing the height in pixels.
 
 ```jsx
+<Chrono items={items} mode="vertical" nestedCardHeight={200} />
+```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
 <Chrono items={items} mode="VERTICAL" nestedCardHeight={200} />
 ```
+:::
 
 ## Derived Attributes
 

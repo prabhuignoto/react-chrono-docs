@@ -74,6 +74,18 @@ export default defineConfig({
             link: "/features/embed-media",
           },
           {
+            text: "Dark Mode",
+            link: "/features/dark-mode",
+          },
+          {
+            text: "Google Fonts",
+            link: "/features/google-fonts",
+          },
+          {
+            text: "Internationalization (i18n)",
+            link: "/features/internationalization",
+          },
+          {
             text: "Outline",
             link: "/features/outline",
           },
@@ -115,12 +127,16 @@ export default defineConfig({
         text: "Customize",
         items: [
           {
-            text: "Font sizes",
-            link: "/customize/font-sizes",
-          },
-          {
             text: "Theme",
             link: "/customize/theme",
+          },
+          {
+            text: "Complete Theme Properties",
+            link: "/customize/theme-properties",
+          },
+          {
+            text: "Font sizes",
+            link: "/customize/font-sizes",
           },
           {
             text: "Button Texts",
@@ -136,7 +152,11 @@ export default defineConfig({
         text: "API",
         items: [
           {
-            text: "Props",
+            text: "Complete Props Reference",
+            link: "/api/props-reference",
+          },
+          {
+            text: "Props (Legacy)",
             link: "/api/props",
           },
           {

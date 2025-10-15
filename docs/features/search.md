@@ -25,10 +25,30 @@ Several props are available to customize the appearance and accessibility of the
 
 ## Disabling the Toolbar (and Search)
 
-If you need to hide the search functionality along with the entire toolbar (which also includes navigation controls), you can use the `disableToolbar` prop.
+If you need to hide the search functionality along with the entire toolbar (which also includes navigation controls), you can use the `display.toolbar.enabled` configuration.
 
+### v3.0 Syntax (Recommended)
+
+```jsx
+<Chrono
+  items={items}
+  mode="vertical"
+  display={{
+    toolbar: {
+      enabled: false  // Hides the entire toolbar
+    }
+  }}
+/>
+```
+
+::: details Using v2.x Syntax (Still Supported)
 -   **`disableToolbar`**: (boolean) When set to `true`, the entire toolbar, including the search input and navigation buttons, will be hidden.
     *   Default: `false`
+
+```jsx
+<Chrono items={items} mode="VERTICAL" disableToolbar={true} />
+```
+:::
 
 ## Example: Customizing Search
 
@@ -56,7 +76,7 @@ function SearchableTimeline() {
   return (
     <Chrono
       items={items}
-      mode="VERTICAL"
+      mode="vertical"
       searchPlaceholder="Find events..."
       searchAriaLabel="Search through timeline events and details"
       clearSearch="Reset"
@@ -67,9 +87,23 @@ function SearchableTimeline() {
 export default SearchableTimeline;
 ```
 
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={items}
+  mode="VERTICAL"
+  searchPlaceholder="Find events..."
+  searchAriaLabel="Search through timeline events and details"
+  clearSearch="Reset"
+/>
+```
+:::
+
 ### Example: Disabling the Toolbar
 
 To hide the search input and all other toolbar controls:
+
+#### v3.0 Syntax (Recommended)
 
 ```jsx
 import React from "react";
@@ -81,13 +115,27 @@ function TimelineWithoutToolbar() {
   return (
     <Chrono
       items={items}
-      mode="VERTICAL"
-      disableToolbar={true} // Hides the entire toolbar
+      mode="vertical"
+      display={{
+        toolbar: {
+          enabled: false  // Hides the entire toolbar
+        }
+      }}
     />
   );
 }
 
 export default TimelineWithoutToolbar;
 ```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={items}
+  mode="VERTICAL"
+  disableToolbar={true}
+/>
+```
+:::
 
 The search functionality provides a powerful way for users to interact with and navigate through the information presented in your React Chrono timelines.

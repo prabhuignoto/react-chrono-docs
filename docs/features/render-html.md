@@ -1,10 +1,10 @@
 # Rendering HTML in Card Details
 
-React Chrono provides the `parseDetailsAsHTML` prop to render HTML content directly within the `cardDetailedText` section of timeline cards. This allows for rich text formatting, embedding links, lists, and other HTML elements.
+React Chrono provides the ability to render HTML content directly within the `cardDetailedText` section of timeline cards. This allows for rich text formatting, embedding links, lists, and other HTML elements.
 
-## Enabling HTML Rendering
+## Enabling HTML Rendering (v3.0 Grouped API)
 
-To enable this feature, set the `parseDetailsAsHTML` prop to `true` on the `<Chrono>` component.
+To enable this feature, use the `content.allowHTML` configuration:
 
 ```jsx
 import React from "react";
@@ -44,8 +44,10 @@ function TimelineWithHTMLContent() {
   return (
     <Chrono
       items={eventsWithHTML}
-      mode="VERTICAL"
-      parseDetailsAsHTML={true} // Enable HTML parsing
+      mode="vertical"
+      content={{
+        allowHTML: true  // Enable HTML parsing
+      }}
       enableOutline // Example of combining with other features
     />
   );
@@ -54,9 +56,19 @@ function TimelineWithHTMLContent() {
 export default TimelineWithHTMLContent;
 ```
 
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={eventsWithHTML}
+  mode="VERTICAL"
+  parseDetailsAsHTML={true}
+/>
+```
+:::
+
 ## How It Works
 
-When `parseDetailsAsHTML` is `true`:
+When `content.allowHTML` is `true`:
 - The content of `cardDetailedText` (whether a single string or an array of strings) is parsed as HTML.
 - You can use various HTML tags like `<a>`, `<strong>`, `<em>`, `<ul>`, `<li>`, `<br>`, `<p>`, etc.
 
@@ -66,10 +78,32 @@ React Chrono uses the `xss` library to sanitize the HTML content before renderin
 
 ## Important Considerations
 
--   **Default Behavior**: By default, `parseDetailsAsHTML` is `false`. If not enabled, HTML tags in `cardDetailedText` will be rendered as plain text.
+-   **Default Behavior**: By default, `content.allowHTML` is `false`. If not enabled, HTML tags in `cardDetailedText` will be rendered as plain text.
 -   **Content Source**: Ensure that the HTML content you provide is well-formed.
 -   **Styling**: You might need to add custom CSS to style the rendered HTML elements to match your timeline's design.
 
 ![Timeline Card with Rendered HTML Content](../assets/render-html.png)
 
-Using `parseDetailsAsHTML` offers a flexible way to include richly formatted descriptions, links to external resources, or any other HTML-based information directly within your timeline cards.
+## Complete Example with v3.0 Syntax
+
+```jsx
+<Chrono
+  items={eventsWithHTML}
+  mode="vertical"
+  content={{
+    allowHTML: true
+  }}
+/>
+```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={eventsWithHTML}
+  mode="VERTICAL"
+  parseDetailsAsHTML={true}
+/>
+```
+:::
+
+This feature offers a flexible way to include richly formatted descriptions, links to external resources, or any other HTML-based information directly within your timeline cards.

@@ -61,7 +61,7 @@ const items = [
 function MyTimeline() {
   // Pass items and customContent as children
   return (
-    <Chrono items={items} mode="VERTICAL">
+    <Chrono items={items} mode="vertical">
       {customContent}
     </Chrono>
   );
@@ -69,6 +69,14 @@ function MyTimeline() {
 
 export default MyTimeline;
 ```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono items={items} mode="VERTICAL">
+  {customContent}
+</Chrono>
+```
+:::
 
 In this example:
 - The first two timeline cards will render `customContent[0]` and `customContent[1]`.

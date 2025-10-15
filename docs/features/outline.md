@@ -2,11 +2,11 @@
 
 React Chrono includes an outline feature that allows users to quickly navigate to specific items within the timeline. This is particularly useful for long timelines with many events.
 
-The outline functionality is supported in `VERTICAL` and `VERTICAL_ALTERNATING` modes. When enabled, an outline button appears in the top-left corner of the timeline (or top-right if the layout is [flipped](./flip-layout.md)). Clicking this button reveals a popover menu listing all timeline items.
+The outline functionality is **automatically available** in `vertical` and `alternating` modes. An outline button appears in the top-left corner of the timeline (or top-right if the layout is [flipped](./flip-layout.md)). Clicking this button reveals a popover menu listing all timeline items.
 
-## Enabling the Outline
+## Using the Outline
 
-To activate the outline feature, add the `enableOutline` prop to your `<Chrono>` component and set it to `true`.
+The outline feature is enabled by default in vertical and alternating modes - no configuration needed:
 
 ```jsx
 import React from "react";
@@ -35,8 +35,7 @@ function TimelineWithOutline() {
   return (
     <Chrono
       items={events}
-      mode="VERTICAL" // Or VERTICAL_ALTERNATING
-      enableOutline={true} // Enable the outline feature
+      mode="vertical" // Outline is automatically available
     />
   );
 }
@@ -44,8 +43,17 @@ function TimelineWithOutline() {
 export default TimelineWithOutline;
 ```
 
-::: warning Note
-The outline functionality is **only** supported in `VERTICAL` and `VERTICAL_ALTERNATING` modes. If `enableOutline` is used with the `HORIZONTAL` mode, it will be ignored, and no outline button will be displayed.
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={events}
+  mode="VERTICAL" // Or VERTICAL_ALTERNATING
+/>
+```
+:::
+
+::: tip Note
+The outline functionality is **only** available in `vertical` and `alternating` modes. In `horizontal` or `horizontal-all` modes, the outline button is not displayed.
 :::
 
 ## Using the Popover Menu
@@ -56,5 +64,32 @@ Once enabled, the outline button (often a hamburger icon or similar) will be vis
 -   **Navigation**: Clicking on an item in the popover menu will smoothly scroll the timeline to that specific item.
 
 ![Timeline Outline Popover Menu](../assets/outline.png)
+
+## Listening to Outline Selections
+
+You can listen to outline selection events using the `onOutlineSelection` callback:
+
+```jsx
+function TimelineWithOutlineCallback() {
+  const handleOutlineSelection = (index) => {
+    console.log(`User selected item ${index} from the outline`);
+    // You can track analytics, update state, etc.
+  };
+
+  return (
+    <Chrono
+      items={events}
+      mode="vertical"
+      onOutlineSelection={handleOutlineSelection}
+    />
+  );
+}
+```
+
+### Callback Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `index` | `number` | Zero-based index of the selected timeline item |
 
 The outline feature significantly improves navigation for extensive timelines, providing users with a quick overview and direct access to any event.

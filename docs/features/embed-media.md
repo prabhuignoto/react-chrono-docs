@@ -18,6 +18,27 @@ The `media` object has the following structure:
 | :------- | :----- | :----------------------- |
 | `url`    | string | The URL of the media file. |
 
+## Configuring Media Display (v3.0)
+
+React Chrono v3.0 provides additional configuration options for media display:
+
+```jsx
+<Chrono
+  items={items}
+  media={{
+    height: 300,        // Minimum height in pixels
+    align: 'center',    // 'left' | 'center' | 'right'
+    fit: 'cover'        // 'cover' | 'contain' | 'fill' | 'none' | 'scale-down'
+  }}
+/>
+```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono items={items} mediaHeight={300} />
+```
+:::
+
 ## Embedding Images
 
 To display an image in a timeline card, provide a valid image URL within the `media.source.url` property and set `media.type` to `IMAGE`.
@@ -58,7 +79,7 @@ const itemsWithImages = [
 ];
 
 function ImageTimeline() {
-  return <Chrono items={itemsWithImages} mode="VERTICAL" />;
+  return <Chrono items={itemsWithImages} mode="vertical" />;
 }
 
 export default ImageTimeline;
@@ -93,7 +114,7 @@ const itemsWithVideo = [
 ];
 
 function VideoTimeline() {
-  return <Chrono items={itemsWithVideo} mode="VERTICAL" />;
+  return <Chrono items={itemsWithVideo} mode="vertical" />;
 }
 
 export default VideoTimeline;

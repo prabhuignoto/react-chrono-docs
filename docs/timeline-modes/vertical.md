@@ -2,9 +2,9 @@
 
 ## Vertical Timeline
 
-In VERTICAL mode, events are displayed in a vertical orientation. Each event is represented by a card that contains a title, subtitle, and content. The cards are stacked on top of each other, with the latest event at the top.
+In vertical mode, events are displayed in a vertical orientation. Each event is represented by a card that contains a title, subtitle, and content. The cards are stacked on top of each other, with the latest event at the top.
 
-Example:
+Example (v3.0):
 
 ```jsx
 import { Chrono } from 'react-chrono';
@@ -34,7 +34,7 @@ const VerticalTimeline = () => {
   return (
     <Chrono
       items={items}
-      mode="VERTICAL"
+      mode="vertical"
     />
   );
 };
@@ -42,13 +42,22 @@ const VerticalTimeline = () => {
 export default VerticalTimeline;
 ```
 
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={items}
+  mode="VERTICAL"
+/>
+```
+:::
+
 ![vertical](vertical.png)
 
 ## Vertically Alternating Timeline
 
-In VERTICAL_ALTERNATING mode, events are displayed in a vertical orientation, but with alternating positions. This creates a zigzag pattern that can be visually appealing. Each event is represented by a card that contains a title, subtitle, and content. The cards are stacked on top of each other, with the latest event at the top.
+In alternating mode, events are displayed in a vertical orientation with alternating positions. This creates a zigzag pattern that can be visually appealing. Each event is represented by a card that contains a title, subtitle, and content. The cards are stacked on top of each other with cards alternating between left and right sides.
 
-Example:
+Example (v3.0):
 
 ```jsx
 import { Chrono } from "react-chrono";
@@ -78,13 +87,25 @@ const VerticalAlternatingTimeline = () => {
   return (
     <Chrono
       items={items}
-      mode="VERTICAL_ALTERNATING"
-      itemWidth={150}
+      mode="alternating"
+      layout={{
+        itemWidth: 150
+      }}
     />
   );
 };
 
 export default VerticalAlternatingTimeline;
 ```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={items}
+  mode="VERTICAL_ALTERNATING"
+  itemWidth={150}
+/>
+```
+:::
 
 ![vertical_alternating](vertical_alternating.png)

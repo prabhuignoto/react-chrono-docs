@@ -4,7 +4,7 @@
 
 `React-Chrono` is a versatile timeline component that allows developers to render beautiful timelines with ease. It is designed to be data-driven and  is flexible and straightforward to use, making it ideal for developers who want to create visually stunning timelines quickly. 
 
-Additionally, React-Chrono is fully customizable, allowing developers to tailor the component to their specific needs. It offers three unique modes, including horizontal, vertical, and vertical_alternating, which can adapt to a wide range of project layouts. 
+Additionally, React-Chrono is fully customizable, allowing developers to tailor the component to their specific needs. It offers four unique modes, including horizontal, vertical, alternating, and horizontal-all, which can adapt to a wide range of project layouts. 
 
 ## Installation
 
@@ -26,19 +26,19 @@ To generate a timeline, you must provide an array of Timeline objects, each of w
 
 | Name             | Description                                                                    | Type                       |
 | :--------------- | :----------------------------------------------------------------------------- | :------------------------- |
-| title            | The title of the timeline item (often a date or short label).                  | String or ReactNode        |
-| cardTitle        | The title displayed on the timeline card.                                      | String or ReactNode        |
-| cardSubtitle     | The subtitle text displayed on the timeline card.                              | String or ReactNode        |
-| cardDetailedText | Detailed text for the card. An array of strings will render each string as a separate paragraph. | String, String[], ReactNode, or ReactNode[] |
-| media            | Object to configure image or video display.                                    | TimelineMediaModel         |
-| url              | URL associated with the timeline item's title. Clicking the title will navigate to this URL. | String |
-| date             | Date to be used in the title. If provided, this will override the title property for display purposes. | Date or String |
-| timelineContent  | Custom React content to render inside the card. Overrides cardDetailedText.    | ReactNode                  |
-| items            | Array of timeline items for creating Nested Timelines.                         | TimelineItemModel[]        |
-| hasNestedItems   | Automatically set to indicate if this item contains nested sub-items.          | Boolean                    |
-| active           | If true, this item will be initially active (only for the first matching item). | Boolean                   |
-| id               | A unique identifier for the timeline item.                                     | String                     |
-| visible          | Controls the visibility of the timeline item.                                  | Boolean                    |
+| title            | The title of the timeline item (often a date or short label).                  | `string` or `ReactNode`        |
+| cardTitle        | The title displayed on the timeline card.                                      | `string` or `ReactNode`        |
+| cardSubtitle     | The subtitle text displayed on the timeline card.                              | `string` or `ReactNode`        |
+| cardDetailedText | Detailed text for the card. An array of strings will render each string as a separate paragraph. | `string`, `string[]`, `ReactNode`, or `ReactNode[]` |
+| media            | Object to configure image or video display.                                    | `TimelineMediaModel`         |
+| url              | URL associated with the timeline item's title. Clicking the title will navigate to this URL. | `string` |
+| date             | Date to be used in the title. If provided, this will override the title property for display purposes. | `Date` or `string` |
+| timelineContent  | Custom React content to render inside the card. Overrides cardDetailedText.    | `ReactNode`                  |
+| items            | Array of timeline items for creating Nested Timelines.                         | `TimelineItemModel[]`        |
+| hasNestedItems   | Automatically set to indicate if this item contains nested sub-items.          | `boolean`                    |
+| active           | If true, this item will be initially active (only for the first matching item). | `boolean`                   |
+| id               | A unique identifier for the timeline item.                                     | `string`                     |
+| visible          | Controls the visibility of the timeline item.                                  | `boolean`                    |
 
 ### Media Object Structure
 
@@ -46,11 +46,11 @@ The `media` object within a Timeline Item configures images or videos:
 
 | Property | Type | Description |
 | :------- | :--- | :---------- |
-| type     | 'IMAGE' or 'VIDEO' | Specifies the type of media |
-| source   | { url: string, type?: string } | url: URL of the image or video. type (for video): e.g., 'mp4', 'webm' |
-| name     | string | Alt text for images or a descriptive name for videos |
-| active   | boolean | (Video only) If true, video will attempt to play when its card becomes active |
-| id       | string | A unique ID for the media element |
+| type     | `'IMAGE'` or `'VIDEO'` | Specifies the type of media |
+| source   | `{ url: string, type?: string }` | url: URL of the image or video. type (for video): e.g., 'mp4', 'webm' |
+| name     | `string` | Alt text for images or a descriptive name for videos |
+| active   | `boolean` | (Video only) If true, video will attempt to play when its card becomes active |
+| id       | `string` | A unique ID for the media element |
 
 **Image Example:**
 ```javascript

@@ -31,10 +31,10 @@ An array of Timeline Item objects to display. Each item can contain properties l
 
 ### mode
 
-**Type:** `'HORIZONTAL' | 'VERTICAL' | 'VERTICAL_ALTERNATING'`  
-**Default:** `'HORIZONTAL'`
+**Type:** `'HORIZONTAL' | 'VERTICAL' | 'VERTICAL_ALTERNATING' | 'HORIZONTAL_ALL'`
+**Default:** `'VERTICAL_ALTERNATING'`
 
-Sets the layout mode of the timeline. Changed to HORIZONTAL from VERTICAL_ALTERNATING for new projects.
+Sets the layout mode of the timeline. In v3.0, use lowercase values: `'horizontal'`, `'vertical'`, `'alternating'`, `'horizontal-all'`. The old uppercase values still work for backward compatibility.
 
 ### theme
 
@@ -406,52 +406,8 @@ Positions the toolbar at the top or bottom of the timeline.
 
 Enables the layout switcher for the timeline. Switches the vertical timeline to vertical_alternating and vice versa. Switches the horizontal timeline to horizontal_all and vice versa.
 
-This property sets the dimensions of the circular points on the timeline.
+---
 
-## useReadMore
-
-Enabling this property displays the "read more" button, which is only available if the text content on the card is taller than the card itself.
-
-## fontSizes
-
-This property is used to customize the font sizes.
-
-## buttonTexts
-
-This property is used to customize the alt text for all buttons.
-
-## highlightCardsOnHover
-
-Enabling this property highlights the timeline card on hover.
-
-## disableInteraction
-
-Enabling this property disables all interactions with the timeline.
-
-## parseDetailsAsHTML
-
-Enabling this property parses the details text as HTML.
-
-## toolbarPosition
-
-This property sets the position of the toolbar. The value can be either `TOP` or `BOTTOM`.
-
-## enableBreakPoint
-
-Enabling this property enables the breakpoint for the timeline. This only applies for the vertical and vertical_alternating mode.
-
-## responsiveBreakPoint
-
-Responsive breakpoint in pixels. This only applies for the vertical and vertical_alternating mode. This works only if the `enableBreakPoint` is set to true.
-
-## enableLayoutSwitch
-
-Enabling this property enables the layout switcher for the timeline. Switches the vertical timeline to vertical_alternating and vice versa. Switches the horizontal timeline to horizontal_all and vice versa.
-
-## enableQuickJump
-
-Enabling this property enables the quick jump feature for the timeline. When enabled, the user can jump to a specific timeline item.
-
-## disableToolbar
-
-Enabling this property disables and hide the toolbar.
+:::tip Migrating to v3.0?
+For a complete reference of all props including the new grouped API, see the [Complete Props Reference](/api/props-reference) or the [Migration Guide](/introduction/migration-v3).
+:::

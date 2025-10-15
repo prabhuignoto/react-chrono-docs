@@ -31,7 +31,7 @@ import contactsIcon from "./path/to/contacts.png";
 
 function TimelineWithCustomIcons() {
   return (
-    <Chrono items={data} mode="VERTICAL_ALTERNATING">
+    <Chrono items={data} mode="alternating">
       <div className="chrono-icons">
         {/* Ensure the number of icons matches the number of items for full customization */}
         <img src={twitterIcon} alt="Twitter" />
@@ -49,6 +49,17 @@ function TimelineWithCustomIcons() {
 
 export default TimelineWithCustomIcons;
 ```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono items={data} mode="VERTICAL_ALTERNATING">
+  <div className="chrono-icons">
+    <img src={twitterIcon} alt="Twitter" />
+    {/* ... more icons */}
+  </div>
+</Chrono>
+```
+:::
 
 ### Key Points:
 

@@ -1,12 +1,12 @@
 # Flip Layout
 
-The `flipLayout` prop provides the ability to reverse the orientation of the timeline in `VERTICAL` and `VERTICAL_ALTERNATING` modes. This is particularly useful for right-to-left (RTL) language support or when a reversed chronological display is preferred.
+The flip layout feature provides the ability to reverse the orientation of the timeline in `vertical` and `alternating` modes. This is particularly useful for right-to-left (RTL) language support or when a reversed chronological display is preferred.
 
-By default, timelines are rendered left-to-right (or top-to-bottom for vertical modes). Enabling `flipLayout` reverses this orientation.
+By default, timelines are rendered left-to-right (or top-to-bottom for vertical modes). Enabling flip layout reverses this orientation.
 
-## Usage
+## Usage (v3.0 Grouped API)
 
-To flip the timeline layout, add the `flipLayout` boolean prop to the `<Chrono>` component and set it to `true`.
+To flip the timeline layout, use the `layout.positioning.flipLayout` configuration:
 
 ```jsx
 import React from 'react';
@@ -32,8 +32,12 @@ function FlippedTimeline() {
   return (
     <Chrono
       items={events}
-      mode="VERTICAL" // Or VERTICAL_ALTERNATING
-      flipLayout={true} // Enable flipped layout
+      mode="vertical"
+      layout={{
+        positioning: {
+          flipLayout: true
+        }
+      }}
     />
   );
 }
@@ -41,22 +45,54 @@ function FlippedTimeline() {
 export default FlippedTimeline;
 ```
 
-When `flipLayout` is `true`:
-- In `VERTICAL` mode, the timeline content (cards) will appear on the right side of the timeline bar (or left, if it was originally right).
-- In `VERTICAL_ALTERNATING` mode, the alternating pattern will be mirrored. For example, if cards normally start on the left, they will start on the right.
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={events}
+  mode="VERTICAL"
+  flipLayout={true}
+/>
+```
+:::
+
+When flip layout is enabled:
+- In `vertical` mode, the timeline content (cards) will appear on the right side of the timeline bar (or left, if it was originally right).
+- In `alternating` mode, the alternating pattern will be mirrored. For example, if cards normally start on the left, they will start on the right.
 
 ## Visual Examples
 
 ### Vertical Mode Flipped
 
-In `VERTICAL` mode, if the cards are typically on the left of the central line, `flipLayout` will move them to the right.
+In `vertical` mode, if the cards are typically on the left of the central line, flip layout will move them to the right.
 
 ![Flipped Vertical Layout](../assets/flip-layout.png)
 
-### Vertical Alternating Mode Flipped
+### Alternating Mode Flipped
 
-In `VERTICAL_ALTERNATING` mode, the sequence of card placement is reversed. If the first card is usually on the left, `flipLayout` will place it on the right, and subsequent cards will alternate accordingly.
+In `alternating` mode, the sequence of card placement is reversed. If the first card is usually on the left, flip layout will place it on the right, and subsequent cards will alternate accordingly.
+
+```jsx
+<Chrono
+  items={events}
+  mode="alternating"
+  layout={{
+    positioning: {
+      flipLayout: true
+    }
+  }}
+/>
+```
+
+::: details Using v2.x Syntax (Still Supported)
+```jsx
+<Chrono
+  items={events}
+  mode="VERTICAL_ALTERNATING"
+  flipLayout={true}
+/>
+```
+:::
 
 ![Flipped Vertical Alternating Layout](../assets/flip_layout_vertical_alternating.png)
 
-The `flipLayout` prop offers a simple way to adapt the timeline's visual flow to different layout requirements or preferences.
+The flip layout feature offers a simple way to adapt the timeline's visual flow to different layout requirements or preferences.
