@@ -464,6 +464,251 @@ function SpanishTimeline() {
 export default SpanishTimeline;
 ```
 
+## Complete i18n Text Keys Reference
+
+All 60+ available i18n text keys organized by category with their default English values:
+
+### Navigation Texts (8 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `first` | `'Go to first item'` | First item button label |
+| `last` | `'Go to last item'` | Last item button label |
+| `next` | `'Next item'` | Next item button label |
+| `previous` | `'Previous item'` | Previous item button label |
+| `play` | `'Start slideshow'` | Play slideshow button label |
+| `stop` | `'Stop slideshow'` | Stop slideshow button label |
+| `pause` | `'Pause slideshow'` | Pause slideshow button label |
+| `resume` | `'Resume slideshow'` | Resume slideshow button label |
+
+### Search Texts (8 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `placeholder` | `'Search Timeline'` | Search input placeholder text |
+| `ariaLabel` | `'Search timeline content'` | ARIA label for search input |
+| `clearLabel` | `'Clear Search'` | Clear search button label |
+| `nextMatch` | `'Next Match (Enter)'` | Next search match button label |
+| `previousMatch` | `'Previous Match (Shift+Enter)'` | Previous search match button label |
+| `resultsCount` | `'{current} of {total}'` | Search results count template (uses `{current}` and `{total}`) |
+| `noResults` | `'No results found'` | Message when no search results |
+| `navigationLabel` | `'Search navigation'` | ARIA label for search navigation controls |
+
+### Theme Texts (3 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `darkMode` | `'Switch to dark mode'` | Dark mode button label |
+| `lightMode` | `'Switch to light mode'` | Light mode button label |
+| `toggleTheme` | `'Toggle theme'` | Theme toggle button label |
+
+### Layout Texts (6 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `vertical` | `'Vertical layout'` | Vertical layout mode label |
+| `horizontal` | `'Horizontal layout'` | Horizontal layout mode label |
+| `alternating` | `'Alternating layout'` | Alternating layout mode label |
+| `horizontalAll` | `'Horizontal all layout'` | Horizontal-all layout mode label |
+| `switchLayout` | `'Switch layout'` | Layout switcher button label |
+| `layoutSelection` | `'Layout selection'` | ARIA label for layout selection |
+
+### Fullscreen Texts (4 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `enterFullscreen` | `'Enter fullscreen'` | Enter fullscreen button label |
+| `exitFullscreen` | `'Exit fullscreen'` | Exit fullscreen button label |
+| `notSupported` | `'Fullscreen not supported'` | Error when fullscreen unsupported |
+| `errorMessage` | `'Failed to enter fullscreen mode'` | Generic fullscreen error message |
+
+### Quick Jump Texts (3 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `jumpTo` | `'Jump to item'` | Quick jump dropdown label |
+| `jumpToAriaLabel` | `'Quick navigation to timeline items'` | ARIA label for quick jump |
+| `itemTemplate` | `'{index}: {title}'` | Template for dropdown items (uses `{index}` and `{title}`) |
+
+### Content Texts (5 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `readMore` | `'Read More'` | Read more button label |
+| `showLess` | `'Show Less'` | Show less button label |
+| `expand` | `'Expand'` | Expand content button label |
+| `collapse` | `'Collapse'` | Collapse content button label |
+| `cardInteraction` | `'Timeline card content'` | ARIA label for card interactions |
+
+### Status Texts (4 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `loading` | `'Loading timeline...'` | Loading state message |
+| `error` | `'Error loading timeline'` | Error state message |
+| `noItems` | `'No timeline items available'` | Message when no items provided |
+| `empty` | `'Timeline is empty'` | Message when timeline is empty |
+
+### Accessibility Texts (8 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `timelineNavigation` | `'Timeline Navigation'` | ARIA label for navigation group |
+| `timelineContainer` | `'Timeline Container'` | ARIA label for timeline container |
+| `timelineItem` | `'Timeline Item'` | ARIA label for timeline items |
+| `activeItem` | `'Active Timeline Item'` | ARIA label for active item |
+| `timelinePoint` | `'Timeline Point'` | ARIA label for timeline points |
+| `timelineCard` | `'Timeline Card'` | ARIA label for timeline cards |
+| `nestedItems` | `'Nested Timeline Items'` | ARIA label for nested items |
+| `itemPosition` | `'Item {current} of {total}'` | Position template (uses `{current}` and `{total}`) |
+
+### View Texts (4 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `compact` | `'Compact view'` | Compact view mode label |
+| `detailed` | `'Detailed view'` | Detailed view mode label |
+| `toggleDensity` | `'Toggle view density'` | View density toggle label |
+| `densitySelection` | `'View density selection'` | ARIA label for density selection |
+
+### Keyboard Texts (7 keys)
+
+| Key | Default Value | Description |
+|-----|---------------|-------------|
+| `arrowKeys` | `'Use arrow keys to navigate between items'` | Arrow key navigation help |
+| `homeKey` | `'Press Home to go to first item'` | Home key help text |
+| `endKey` | `'Press End to go to last item'` | End key help text |
+| `enterKey` | `'Press Enter to select item'` | Enter key help text |
+| `escapeKey` | `'Press Escape to exit fullscreen or pause slideshow'` | Escape key help text |
+| `tabNavigation` | `'Use Tab to navigate controls'` | Tab navigation help text |
+| `keyboardHelp` | `'Keyboard navigation available'` | General keyboard help message |
+
+### Template String Variables
+
+Some text keys support template variables that are automatically replaced:
+
+**Available Variables:**
+- `{current}` - Current index or position
+- `{total}` - Total count
+- `{index}` - Item index number
+- `{title}` - Item title text
+
+**Example Usage:**
+
+```jsx
+i18n: {
+  texts: {
+    search: {
+      resultsCount: '{current} de {total}'  // Spanish: "1 de 5"
+    },
+    accessibility: {
+      itemPosition: 'Élément {current} sur {total}'  // French: "Élément 1 sur 5"
+    },
+    quickJump: {
+      itemTemplate: '#{index} - {title}'  // "#1 - My Title"
+    }
+  }
+}
+```
+
+### Complete Configuration Example
+
+```jsx
+<Chrono
+  items={items}
+  i18n={{
+    texts: {
+      navigation: {
+        first: 'Go to first item',
+        last: 'Go to last item',
+        next: 'Next item',
+        previous: 'Previous item',
+        play: 'Start slideshow',
+        stop: 'Stop slideshow',
+        pause: 'Pause slideshow',
+        resume: 'Resume slideshow'
+      },
+      search: {
+        placeholder: 'Search Timeline',
+        ariaLabel: 'Search timeline content',
+        clearLabel: 'Clear Search',
+        nextMatch: 'Next Match (Enter)',
+        previousMatch: 'Previous Match (Shift+Enter)',
+        resultsCount: '{current} of {total}',
+        noResults: 'No results found',
+        navigationLabel: 'Search navigation'
+      },
+      theme: {
+        darkMode: 'Switch to dark mode',
+        lightMode: 'Switch to light mode',
+        toggleTheme: 'Toggle theme'
+      },
+      layout: {
+        vertical: 'Vertical layout',
+        horizontal: 'Horizontal layout',
+        alternating: 'Alternating layout',
+        horizontalAll: 'Horizontal all layout',
+        switchLayout: 'Switch layout',
+        layoutSelection: 'Layout selection'
+      },
+      fullscreen: {
+        enterFullscreen: 'Enter fullscreen',
+        exitFullscreen: 'Exit fullscreen',
+        notSupported: 'Fullscreen not supported',
+        errorMessage: 'Failed to enter fullscreen mode'
+      },
+      quickJump: {
+        jumpTo: 'Jump to item',
+        jumpToAriaLabel: 'Quick navigation to timeline items',
+        itemTemplate: '{index}: {title}'
+      },
+      content: {
+        readMore: 'Read More',
+        showLess: 'Show Less',
+        expand: 'Expand',
+        collapse: 'Collapse',
+        cardInteraction: 'Timeline card content'
+      },
+      status: {
+        loading: 'Loading timeline...',
+        error: 'Error loading timeline',
+        noItems: 'No timeline items available',
+        empty: 'Timeline is empty'
+      },
+      accessibility: {
+        timelineNavigation: 'Timeline Navigation',
+        timelineContainer: 'Timeline Container',
+        timelineItem: 'Timeline Item',
+        activeItem: 'Active Timeline Item',
+        timelinePoint: 'Timeline Point',
+        timelineCard: 'Timeline Card',
+        nestedItems: 'Nested Timeline Items',
+        itemPosition: 'Item {current} of {total}'
+      },
+      view: {
+        compact: 'Compact view',
+        detailed: 'Detailed view',
+        toggleDensity: 'Toggle view density',
+        densitySelection: 'View density selection'
+      },
+      keyboard: {
+        arrowKeys: 'Use arrow keys to navigate between items',
+        homeKey: 'Press Home to go to first item',
+        endKey: 'Press End to go to last item',
+        enterKey: 'Press Enter to select item',
+        escapeKey: 'Press Escape to exit fullscreen or pause slideshow',
+        tabNavigation: 'Use Tab to navigate controls',
+        keyboardHelp: 'Keyboard navigation available'
+      }
+    },
+    locale: 'en',
+    direction: 'ltr'
+  }}
+/>
+```
+
+---
+
 ## Legacy Compatibility
 
 The new i18n system is fully compatible with the older `accessibility.buttonTexts` configuration:

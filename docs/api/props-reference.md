@@ -312,7 +312,7 @@ animation?: {
 | `slideshow.duration` | `number` | `2000` | Duration each slide is displayed (milliseconds) |
 | `slideshow.type` | `SlideshowType` | `'fade'` | Type of transition animation |
 | `slideshow.autoStart` | `boolean` | `false` | Auto-start slideshow on load |
-| `slideshow.showProgress` | `boolean` | `false` | Show progress indicator on cards |
+| `slideshow.showProgress` | `boolean` | `true` | Show progress indicator on cards |
 | `slideshow.showOverallProgress` | `boolean` | `true` | Show overall progress bar |
 
 ### Slideshow Animation Types

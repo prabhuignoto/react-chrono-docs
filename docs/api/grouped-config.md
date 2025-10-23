@@ -48,7 +48,7 @@ interface LayoutConfig {
 
 #### `cardWidth`
 - **Type:** `number`
-- **Default:** `400`
+- **Default:** _No default_ (uses auto-calculated width based on container)
 - Maximum width of timeline cards in pixels
 
 #### `cardHeight`
@@ -77,7 +77,7 @@ interface LayoutConfig {
 
 #### `responsive.breakpoint`
 - **Type:** `number`
-- **Default:** `768`
+- **Default:** `1024`
 - Viewport width in pixels for responsive mode switching
 
 #### `responsive.enabled`
@@ -324,7 +324,17 @@ interface DisplayConfig {
 
 #### `toolbar.search`
 - **Type:** `object`
-- Configure search input sizing (CSS length strings)
+- Configure search input sizing and layout
+
+**Search Configuration Properties:**
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `width` | `string` | Default width of entire search section (CSS length) |
+| `maxWidth` | `string` | Maximum width of search section (CSS length) |
+| `minWidth` | `string` | Minimum width of search section (CSS length) |
+| `inputWidth` | `string` | Width of the actual search input field (CSS length) |
+| `inputMaxWidth` | `string` | Maximum width of the search input field (CSS length) |
 
 #### `scrollable`
 - **Type:** `boolean | { scrollbar: boolean }`

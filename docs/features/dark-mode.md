@@ -167,7 +167,7 @@ export default DarkModeTimeline;
 ```jsx
 <Chrono
   items={items}
-  mode="VERTICAL"
+  mode="vertical"
   enableDarkToggle={true}
   theme={{ /* dark theme colors */ }}
 />
