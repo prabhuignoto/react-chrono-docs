@@ -67,7 +67,7 @@ export default TimelineWithTextOverlay;
 ```jsx
 <Chrono
   items={itemsWithMediaForOverlay}
-  mode="VERTICAL"
+  mode="vertical"
   textOverlay={true}
 />
 ```
@@ -98,7 +98,7 @@ export default TimelineWithTextOverlay;
 ```jsx
 <Chrono
   items={itemsWithMediaForOverlay}
-  mode="HORIZONTAL"
+  mode="horizontal"
   textOverlay={true}
 />
 ```

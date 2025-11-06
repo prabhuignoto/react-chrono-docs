@@ -48,7 +48,7 @@ interface LayoutConfig {
 
 #### `cardWidth`
 - **Type:** `number`
-- **Default:** _No default_ (uses auto-calculated width based on container)
+- **Default:** `400`
 - Maximum width of timeline cards in pixels
 
 #### `cardHeight`

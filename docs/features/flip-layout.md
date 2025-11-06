@@ -49,7 +49,7 @@ export default FlippedTimeline;
 ```jsx
 <Chrono
   items={events}
-  mode="VERTICAL"
+  mode="vertical"
   flipLayout={true}
 />
 ```
@@ -87,7 +87,7 @@ In `alternating` mode, the sequence of card placement is reversed. If the first 
 ```jsx
 <Chrono
   items={events}
-  mode="VERTICAL_ALTERNATING"
+  mode="alternating"
   flipLayout={true}
 />
 ```

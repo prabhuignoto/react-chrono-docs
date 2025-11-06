@@ -60,7 +60,7 @@ export default TimelineWithHTMLContent;
 ```jsx
 <Chrono
   items={eventsWithHTML}
-  mode="VERTICAL"
+  mode="vertical"
   parseDetailsAsHTML={true}
 />
 ```
@@ -100,7 +100,7 @@ React Chrono uses the `xss` library to sanitize the HTML content before renderin
 ```jsx
 <Chrono
   items={eventsWithHTML}
-  mode="VERTICAL"
+  mode="vertical"
   parseDetailsAsHTML={true}
 />
 ```

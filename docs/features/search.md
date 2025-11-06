@@ -46,7 +46,7 @@ If you need to hide the search functionality along with the entire toolbar (whic
     *   Default: `false`
 
 ```jsx
-<Chrono items={items} mode="VERTICAL" disableToolbar={true} />
+<Chrono items={items} mode="vertical" disableToolbar={true} />
 ```
 :::
 
@@ -91,7 +91,7 @@ export default SearchableTimeline;
 ```jsx
 <Chrono
   items={items}
-  mode="VERTICAL"
+  mode="vertical"
   searchPlaceholder="Find events..."
   searchAriaLabel="Search through timeline events and details"
   clearSearch="Reset"
@@ -132,7 +132,7 @@ export default TimelineWithoutToolbar;
 ```jsx
 <Chrono
   items={items}
-  mode="VERTICAL"
+  mode="vertical"
   disableToolbar={true}
 />
 ```

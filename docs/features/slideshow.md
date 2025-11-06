@@ -187,7 +187,7 @@ export default MyTimelineSlideshow;
 ```jsx
 <Chrono
   items={slideshowItems}
-  mode="HORIZONTAL"
+  mode="horizontal"
   slideShow={true}
   slideItemDuration={4000}
   slideShowType="slide_from_sides"

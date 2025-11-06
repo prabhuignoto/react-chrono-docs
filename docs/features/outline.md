@@ -47,7 +47,7 @@ export default TimelineWithOutline;
 ```jsx
 <Chrono
   items={events}
-  mode="VERTICAL" // Or VERTICAL_ALTERNATING
+  mode="vertical" // Or "alternating"
 />
 ```
 :::

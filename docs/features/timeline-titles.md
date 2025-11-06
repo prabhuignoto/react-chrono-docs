@@ -81,7 +81,7 @@ export default TimelineWithDateTitles;
 ```jsx
 <Chrono
   items={itemsWithDates}
-  mode="VERTICAL"
+  mode="vertical"
   titleDateFormat={customDateFormat}
 />
 ```

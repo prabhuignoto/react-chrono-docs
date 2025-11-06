@@ -87,7 +87,7 @@ layout?: {
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
-| `cardWidth` | `number` | `450` | Maximum width of timeline cards in pixels |
+| `cardWidth` | `number` | `400` | Maximum width of timeline cards in pixels |
 | `cardHeight` | `number` | `200` | Minimum height of timeline cards in pixels |
 | `pointSize` | `number` | `16` | Size of timeline points/circles in pixels |
 | `lineWidth` | `number` | `3` | Width of the timeline track line in pixels |
@@ -98,7 +98,7 @@ layout?: {
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
-| `responsive.breakpoint` | `number` | `768` | Viewport width breakpoint for mode switching (px) |
+| `responsive.breakpoint` | `number` | `1024` | Viewport width breakpoint for mode switching (px) |
 | `responsive.enabled` | `boolean` | `true` | Enable automatic responsive mode switching |
 
 ### Positioning Configuration
@@ -185,8 +185,8 @@ content?: {
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
-| `semanticTags.title` | `HTMLTag` | `'h3'` | HTML tag for timeline item titles |
-| `semanticTags.subtitle` | `HTMLTag` | `'h4'` | HTML tag for timeline card subtitles |
+| `semanticTags.title` | `HTMLTag` | `'span'` | HTML tag for timeline item titles |
+| `semanticTags.subtitle` | `HTMLTag` | `'span'` | HTML tag for timeline card subtitles |
 
 #### Supported HTML Tags
 `'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div'`

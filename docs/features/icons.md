@@ -52,7 +52,7 @@ export default TimelineWithCustomIcons;
 
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx
-<Chrono items={data} mode="VERTICAL_ALTERNATING">
+<Chrono items={data} mode="alternating">
   <div className="chrono-icons">
     <img src={twitterIcon} alt="Twitter" />
     {/* ... more icons */}

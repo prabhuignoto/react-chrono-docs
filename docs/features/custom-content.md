@@ -72,7 +72,7 @@ export default MyTimeline;
 
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx
-<Chrono items={items} mode="VERTICAL">
+<Chrono items={items} mode="vertical">
   {customContent}
 </Chrono>
 ```

@@ -109,7 +109,7 @@ export default CustomizedTimelinePoints;
 ```jsx
 <Chrono
   items={sampleItems}
-  mode="VERTICAL_ALTERNATING"
+  mode="alternating"
   timelinePointShape="diamond"
   timelinePointDimension={24}
 />

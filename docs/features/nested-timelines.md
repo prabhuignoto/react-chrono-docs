@@ -73,7 +73,7 @@ export default MyNestedTimeline;
 ```jsx
 <Chrono
   items={mainTimelineItems}
-  mode="VERTICAL"
+  mode="vertical"
   nestedCardHeight={250}
 />
 ```
@@ -93,7 +93,7 @@ You can control the height of the cards within the nested timeline using the `ne
 
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx
-<Chrono items={items} mode="VERTICAL" nestedCardHeight={200} />
+<Chrono items={items} mode="vertical" nestedCardHeight={200} />
 ```
 :::
 
