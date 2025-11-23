@@ -24,16 +24,20 @@ const items = [
 
 export default function AlternatingTimelineDemo() {
   return (
-    <div style={{ width: '100%', height: '500px', margin: '20px 0' }}>
+    <div style={{ width: '100%', minHeight: '900px', margin: '20px 0' }}>
       <Chrono
         items={items}
         mode="alternating"
         layout={{
           itemWidth: 150
         }}
+        interaction={{
+          focusOnLoad: false
+        }}
       />
     </div>
   );
 }
+
 
 

@@ -45,7 +45,7 @@ const items = [
 
 export default function TextOverlayDemo() {
     return (
-        <div style={{ width: '100%', height: '700px', margin: '20px 0 40px 0' }}>
+        <div style={{ width: '100%', minHeight: '700px', margin: '20px 0 40px 0' }}>
             <Chrono
                 items={items}
                 mode="vertical"

@@ -24,16 +24,20 @@ const items = [
 
 export default function HorizontalTimelineDemo() {
   return (
-    <div style={{ width: '100%', height: '400px', margin: '20px 0' }}>
+    <div style={{ width: '100%', minHeight: '400px', margin: '20px 0' }}>
       <Chrono
         items={items}
         mode="horizontal"
         layout={{
           itemWidth: 150
         }}
+        interaction={{
+          focusOnLoad: false
+        }}
       />
     </div>
   );
 }
+
 
 

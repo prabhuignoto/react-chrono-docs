@@ -24,8 +24,14 @@ const items = [
 
 export default function IconsDemo() {
   return (
-    <div style={{ width: '100%', height: '600px', margin: '20px 0 40px 0' }}>
-      <Chrono items={items} mode="alternating">
+    <div style={{ width: '100%', minHeight: '600px', margin: '20px 0 40px 0' }}>
+      <Chrono
+        items={items}
+        mode="alternating"
+        interaction={{
+          focusOnLoad: false
+        }}
+      >
         <div className="chrono-icons">
           <img src="https://img.icons8.com/ios-filled/100/000000/rocket.png" alt="Rocket" />
           <img src="https://img.icons8.com/ios-filled/100/000000/code.png" alt="Code" />
@@ -35,5 +41,6 @@ export default function IconsDemo() {
     </div>
   );
 }
+
 
 

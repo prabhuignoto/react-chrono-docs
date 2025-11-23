@@ -30,7 +30,7 @@ const items = [
 
 export default function NestedTimelineDemo() {
     return (
-        <div style={{ width: '100%', height: '600px', margin: '20px 0 40px 0' }}>
+        <div style={{ width: '100%', minHeight: '600px', margin: '20px 0 40px 0' }}>
             <Chrono
                 items={items}
                 mode="vertical"

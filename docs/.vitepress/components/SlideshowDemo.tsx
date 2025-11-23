@@ -24,7 +24,7 @@ const items = [
 
 export default function SlideshowDemo() {
   return (
-    <div style={{ width: '100%', height: '400px', margin: '20px 0' }}>
+    <div style={{ width: '100%', minHeight: '400px', margin: '20px 0' }}>
       <Chrono
         items={items}
         mode="horizontal"
@@ -35,9 +35,13 @@ export default function SlideshowDemo() {
             type: 'fade'
           }
         }}
+        interaction={{
+          focusOnLoad: false
+        }}
       />
     </div>
   );
 }
+
 
 
