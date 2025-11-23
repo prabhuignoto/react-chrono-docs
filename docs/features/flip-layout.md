@@ -65,7 +65,7 @@ When flip layout is enabled:
 
 In `vertical` mode, if the cards are typically on the left of the central line, flip layout will move them to the right.
 
-![Flipped Vertical Layout](../assets/flip-layout.png)
+<FlipLayoutVerticalDemo />
 
 ### Alternating Mode Flipped
 
@@ -93,6 +93,8 @@ In `alternating` mode, the sequence of card placement is reversed. If the first 
 ```
 :::
 
-![Flipped Vertical Alternating Layout](../assets/flip_layout_vertical_alternating.png)
+### Interactive Demo
+
+<FlipLayoutAlternatingDemo />
 
 The flip layout feature offers a simple way to adapt the timeline's visual flow to different layout requirements or preferences.

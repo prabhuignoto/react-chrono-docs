@@ -163,6 +163,10 @@ function DarkModeTimeline() {
 export default DarkModeTimeline;
 ```
 
+### Interactive Demo
+
+<DarkModeDemo />
+
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx
 <Chrono

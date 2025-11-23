@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   lang: "en-US",
@@ -6,6 +7,20 @@ export default defineConfig({
   description: "Smart timeline component for React",
 
   lastUpdated: true,
+
+  vite: {
+    plugins: [
+      react({
+        include: /\.(jsx|tsx|vue)$/,
+        babel: {
+          plugins: []
+        }
+      })
+    ],
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react-chrono']
+    }
+  },
 
   themeConfig: {
     socialLinks: [

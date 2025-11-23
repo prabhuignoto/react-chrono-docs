@@ -4,9 +4,9 @@ React Chrono offers a text overlay mode, which enhances the presentation of time
 
 This mode provides a modern and immersive user experience, especially for media-rich timelines.
 
-![Text Overlay Example 1](./assets/text-overlay.png)
+### Interactive Demo
 
-## Key Features of Text Overlay Mode
+<TextOverlayDemo />
 
 -   **Integrated Display**: Text content is rendered on top of the media, creating a cohesive visual unit. This is particularly effective for visually striking images or videos where the text can provide context without distracting from the media itself.
 -   **Enhanced User Experience**: Offers a more engaging way to present information, allowing users to consume both media and text simultaneously.
@@ -73,12 +73,10 @@ export default TimelineWithTextOverlay;
 ```
 :::
 
-## How It Affects Presentation
-
 -   When text overlay is active, the layout of the card changes significantly. Instead of text appearing beside or below the media, it's layered on top.
 -   The feature is designed to be responsive and visually appealing, but you may need to consider the contrast between your text color and media content for readability. Theme customizations might be necessary.
 
-![Text Overlay Example 2 with UI Controls](./assets/text-overlay-2.png)
+## Key Features of Text Overlay Mode
 
 ## Complete Example
 

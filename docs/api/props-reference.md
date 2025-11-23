@@ -168,6 +168,10 @@ content?: {
     title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
     subtitle?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
   };
+  alignment?: {
+    horizontal?: 'left' | 'center' | 'right';
+    vertical?: 'top' | 'center' | 'bottom';
+  };
 }
 ```
 
@@ -180,6 +184,7 @@ content?: {
 | `textOverlay` | `boolean` | `false` | Display text as overlay on media |
 | `dateFormat` | `string` | `'MMM DD, YYYY'` | Date format for timeline titles (Day.js format) |
 | `compactText` | `boolean` | `false` | Use compact text display mode |
+| `alignment` | `object` | - | Configure content alignment within cards |
 
 ### Semantic Tags Configuration
 
@@ -967,6 +972,7 @@ These props are maintained for backward compatibility but are deprecated in favo
 | `titleDateFormat` | `content.dateFormat` | `string` | ⚠️ **Deprecated** |
 | `textDensity` | `content.compactText` | `'LOW' \| 'HIGH'` | ⚠️ **Deprecated** |
 | `semanticTags` | `content.semanticTags` | `SemanticTags` | ⚠️ **Deprecated** |
+| `contentAlignment` | `content.alignment` | `ContentAlignment` | ⚠️ **Deprecated** |
 
 ### Display Props (Use `display` config instead)
 

@@ -50,6 +50,10 @@ function TimelineWithCustomIcons() {
 export default TimelineWithCustomIcons;
 ```
 
+### Interactive Demo
+
+<IconsDemo />
+
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx
 <Chrono items={data} mode="alternating">

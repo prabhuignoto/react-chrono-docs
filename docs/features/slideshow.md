@@ -183,6 +183,10 @@ function MyTimelineSlideshow() {
 export default MyTimelineSlideshow;
 ```
 
+### Interactive Demo
+
+<SlideshowDemo />
+
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx
 <Chrono
