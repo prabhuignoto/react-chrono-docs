@@ -14,6 +14,7 @@ import NestedTimelineDemo from '../components/NestedTimelineDemo.vue'
 import FlipLayoutVerticalDemo from '../components/FlipLayoutVerticalDemo.vue'
 import FlipLayoutAlternatingDemo from '../components/FlipLayoutAlternatingDemo.vue'
 import TextOverlayDemo from '../components/TextOverlayDemo.vue'
+import SearchDemo from '../components/SearchDemo.vue'
 
 export default {
   extends: DefaultTheme,
@@ -31,6 +32,7 @@ export default {
     app.component('FlipLayoutVerticalDemo', FlipLayoutVerticalDemo)
     app.component('FlipLayoutAlternatingDemo', FlipLayoutAlternatingDemo)
     app.component('TextOverlayDemo', TextOverlayDemo)
+    app.component('SearchDemo', SearchDemo)
   }
 }
 

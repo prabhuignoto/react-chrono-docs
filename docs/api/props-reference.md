@@ -897,8 +897,9 @@ Handle user interactions and timeline state changes.
 |----------|------|-------------|
 | `onItemSelected` | `ItemSelectedCallback` | Fired when a timeline item is selected |
 | `onScrollEnd` | `() => void` | Fired when scrolling reaches the end |
-| `onThemeChange` | `(theme: Theme) => void` | Fired when theme changes |
+| `onThemeChange` | `() => void` | Fired when theme changes |
 | `onRestartSlideshow` | `() => void` | Fired when slideshow restarts |
+| `onOutlineSelection` | `(index: number) => void` | Fired when an item is selected from the outline menu |
 
 ### ItemSelected Callback
 
@@ -917,10 +918,10 @@ const handleItemSelected = ({ item, index }) => {
   console.log('Item index:', index);
 };
 
-const handleThemeChange = (newTheme) => {
-  console.log('Theme changed:', newTheme);
-  // Save theme preference
-  localStorage.setItem('theme', JSON.stringify(newTheme));
+const handleThemeChange = () => {
+  console.log('Theme changed');
+  // Note: Callback doesn't receive theme parameter
+  // Track theme state separately if needed
 };
 
 <Chrono

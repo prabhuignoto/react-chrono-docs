@@ -2,6 +2,10 @@
 
 React Chrono v3.0 includes comprehensive internationalization support, allowing you to customize every piece of user-facing text for any language or locale.
 
+> [!NOTE]
+> The comprehensive i18n system with 60+ customizable text elements is a **v3.0+ feature**. v2.x supported basic text customization through `buttonTexts` prop with limited keys.
+
+
 ## Overview
 
 The i18n system provides:

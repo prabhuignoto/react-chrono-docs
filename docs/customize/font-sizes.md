@@ -105,11 +105,13 @@ const Timeline = () => {
   return (
     <Chrono
       items={data}
-      fontSizes={{
-        cardTitle: 'clamp(1rem, 2.5vw, 1.5rem)',    // Responsive title
-        cardSubtitle: 'clamp(0.875rem, 2vw, 1.125rem)', // Responsive subtitle
-        cardText: 'clamp(0.75rem, 1.5vw, 1rem)',    // Responsive text
-        title: 'clamp(0.875rem, 2vw, 1.25rem)',     // Responsive timeline title
+      style={{
+        fontSizes: {
+          cardTitle: 'clamp(1rem, 2.5vw, 1.5rem)',    // Responsive title
+          cardSubtitle: 'clamp(0.875rem, 2vw, 1.125rem)', // Responsive subtitle
+          cardText: 'clamp(0.75rem, 1.5vw, 1rem)',    // Responsive text
+          title: 'clamp(0.875rem, 2vw, 1.25rem)',     // Responsive timeline title
+        }
       }}
     />
   );

@@ -155,7 +155,6 @@ These properties provide fine-grained control over dark mode appearance:
 |----------|------|-------------|
 | `shadowColor` | `string` | Color for shadows and depth effects |
 | `glowColor` | `string` | Color for glow effects and focus states |
-| `searchHighlightColor` | `string` | Color for search result highlighting |
 
 ### Dark Mode Toggle Specific
 
@@ -195,7 +194,6 @@ These properties provide fine-grained control over dark mode appearance:
     // Visual effects
     shadowColor: 'rgba(0, 0, 0, 0.3)',
     glowColor: 'rgba(96, 165, 250, 0.5)',
-    searchHighlightColor: '#fbbf24',
 
     // Dark toggle
     darkToggleActiveBgColor: '#60a5fa',
@@ -267,7 +265,6 @@ function ThemedTimeline() {
         buttonActiveBorderColor: '#0070f3',
         shadowColor: 'rgba(0, 0, 0, 0.5)',
         glowColor: 'rgba(0, 112, 243, 0.4)',
-        searchHighlightColor: '#fbbf24',
         darkToggleActiveBgColor: '#0070f3',
         darkToggleActiveIconColor: '#ffffff',
         darkToggleActiveBorderColor: '#0070f3',
@@ -404,8 +401,8 @@ function DynamicThemedTimeline() {
       <Chrono
         items={items}
         theme={themes[currentTheme]}
-        onThemeChange={(theme) => {
-          console.log('Theme changed:', theme);
+        onThemeChange={() => {
+          console.log('Theme changed');
         }}
       />
     </div>

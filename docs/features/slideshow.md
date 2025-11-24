@@ -173,7 +173,7 @@ function MyTimelineSlideshow() {
           enabled: true,
           duration: 4000,
           type: 'fade',
-          showProgress: true
+          showOverallProgress: true
         }
       }}
     />
