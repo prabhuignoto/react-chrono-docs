@@ -24,7 +24,7 @@ const items = [
 
 export default function HorizontalTimelineDemo() {
   return (
-    <div style={{ width: '100%', minHeight: '400px', margin: '20px 0' }}>
+    <div style={{ width: '100%', height: '350px', margin: '20px 0' }}>
       <Chrono
         items={items}
         mode="horizontal"

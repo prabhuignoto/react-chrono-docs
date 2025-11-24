@@ -24,9 +24,9 @@ const items = [
 
 export default function VerticalTimelineDemo() {
   return (
-    <div style={{ width: '100%', minHeight: '900px', margin: '20px 0' }}>
-      <Chrono 
-        items={items} 
+    <div style={{ width: '100%', minHeight: '700px', margin: '20px 0' }}>
+      <Chrono
+        items={items}
         mode="vertical"
         interaction={{
           focusOnLoad: false
