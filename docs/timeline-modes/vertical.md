@@ -42,6 +42,10 @@ const VerticalTimeline = () => {
 export default VerticalTimeline;
 ```
 
+### Interactive Demo
+
+<VerticalTimelineDemo />
+
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx
 <Chrono
@@ -97,6 +101,10 @@ const VerticalAlternatingTimeline = () => {
 
 export default VerticalAlternatingTimeline;
 ```
+
+### Interactive Demo
+
+<AlternatingTimelineDemo />
 
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx

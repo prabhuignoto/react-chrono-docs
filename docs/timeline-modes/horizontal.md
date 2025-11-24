@@ -54,6 +54,10 @@ const HorizontalTimeline = () => {
 export default HorizontalTimeline;
 ```
 
+### Interactive Demo
+
+<HorizontalTimelineDemo />
+
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx
 <Chrono

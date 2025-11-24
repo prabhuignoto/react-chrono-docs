@@ -198,6 +198,10 @@ interface ContentConfig {
     title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
     subtitle?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
   };
+  alignment?: {
+    horizontal?: 'left' | 'center' | 'right';
+    vertical?: 'top' | 'center' | 'bottom';
+  };
 }
 ```
 
@@ -231,6 +235,17 @@ interface ContentConfig {
 #### `semanticTags`
 - **Type:** `object`
 - Configure semantic HTML tags for accessibility
+
+#### `alignment`
+- **Type:** `object`
+- Configure content alignment within cards
+
+**Alignment Properties:**
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `horizontal` | `'left' \| 'center' \| 'right'` | `'left'` | Horizontal alignment of content |
+| `vertical` | `'top' \| 'center' \| 'bottom'` | `'top'` | Vertical alignment of content |
 
 ### Example
 

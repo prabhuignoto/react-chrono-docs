@@ -6,7 +6,10 @@ React Chrono supports creating nested timelines, allowing you to embed a timelin
 
 Nested timelines are configured directly within your data. To create a nested timeline, include an `items` array property within a specific timeline item object of the parent timeline. This inner `items` array will define the events for the nested timeline, which will then be rendered inside the corresponding parent card.
 
-![Nested Timelines Example](./assets/nested.png)
+### Interactive Demo
+
+<NestedTimelineDemo />
+
 
 ## Example Usage
 
@@ -83,19 +86,7 @@ In this example:
 - The "Project Alpha Kickoff" card in the main timeline will contain a nested timeline defined by its `items` property.
 - The "Project Beta Launch" card will render as a standard card since it does not have an `items` property.
 
-## Height Adjustment for Nested Cards
 
-You can control the height of the cards within the nested timeline using the `nestedCardHeight` prop on the main `<Chrono>` component. This prop accepts a numerical value representing the height in pixels.
-
-```jsx
-<Chrono items={items} mode="vertical" nestedCardHeight={200} />
-```
-
-::: details Using v2.x Syntax (Still Supported)
-```jsx
-<Chrono items={items} mode="vertical" nestedCardHeight={200} />
-```
-:::
 
 ## Derived Attributes
 

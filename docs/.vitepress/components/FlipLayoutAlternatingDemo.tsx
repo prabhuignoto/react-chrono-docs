@@ -1,0 +1,42 @@
+import React from 'react';
+import { Chrono } from 'react-chrono';
+
+const items = [
+    {
+        title: "2024-01",
+        cardTitle: "Event 1",
+        cardSubtitle: "First Event",
+        cardDetailedText: "This is the first event on the timeline.",
+    },
+    {
+        title: "2024-06",
+        cardTitle: "Event 2",
+        cardSubtitle: "Second Event",
+        cardDetailedText: "This is the second event on the timeline.",
+    },
+    {
+        title: "2024-12",
+        cardTitle: "Event 3",
+        cardSubtitle: "Third Event",
+        cardDetailedText: "This is the third event on the timeline.",
+    },
+];
+
+export default function FlipLayoutAlternatingDemo() {
+    return (
+        <div style={{ width: '100%', minHeight: '600px', margin: '20px 0 40px 0' }}>
+            <Chrono
+                items={items}
+                mode="alternating"
+                interaction={{
+                    focusOnLoad: false
+                }}
+                layout={{
+                    positioning: {
+                        flipLayout: true
+                    }
+                }}
+            />
+        </div>
+    );
+}

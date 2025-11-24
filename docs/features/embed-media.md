@@ -87,6 +87,10 @@ export default ImageTimeline;
 
 ![embed-media-vertical](embed-media-vertical.png)
 
+### Interactive Demo
+
+<EmbedMediaDemo />
+
 ## Embedding Videos
 
 React Chrono allows embedding videos from YouTube or local video files. To embed a video, provide the video URL (e.g., a YouTube embed URL or a direct link to a video file) in `media.source.url` and set `media.type` to `VIDEO`.

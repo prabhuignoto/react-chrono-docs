@@ -22,21 +22,30 @@ hero:
 
 features:
 - icon: ⚡️
-  title: Three Unique Timeline Modes
-  details: Render your timelines in three distinct modes - Horizontal, Vertical, and Tree - to suit your needs and enhance the user experience.
+  title: Four Flexible Timeline Modes
+  details: Choose from horizontal, vertical, alternating, or horizontal-all layouts to perfectly match your design needs.
 - icon: 🖖
-  title: Intuitive Data-Driven API
-  details: With React-Chrono's simple yet powerful API, you can easily create and customize your timeline with data-driven components.
+  title: Simple Data-Driven API
+  details: Pass an array of timeline items and let React Chrono handle the rest. No complex configuration required.
 - icon: 🎨
-  title:  Customizable Themes
-  details: Change the colors and styles of the timeline components to match your brand or project's aesthetic.
+  title: Fully Customizable Themes
+  details: Customize colors, fonts, and styles with 36+ theme properties to match your brand identity perfectly.
 - icon: 💪
-  title: Built with Typescript
-  details: Benefit from enhanced code quality, improved developer productivity, and better documentation.
+  title: Built with TypeScript
+  details: Enjoy full type safety, IntelliSense support, and better developer experience with comprehensive TypeScript definitions.
 - icon: 🌿
   title: Nested Timelines
-  details: Create timelines within timelines for a more detailed and organized view of your data with nested timelines
+  details: Create multi-level timelines to represent complex hierarchical data with unlimited nesting depth.
 - icon: 🎬
-  title: Slideshow Support
-  details: Display your data as a slideshow with multiple animation types to choose from, such as reveal, slide
+  title: Automated Slideshow Mode
+  details: Transform your timeline into an engaging presentation with configurable transitions and progress indicators.
+- icon: 🔍
+  title: Built-in Search
+  details: Instantly find timeline items with integrated search that scans titles, subtitles, and detailed content.
+- icon: 🌐
+  title: Comprehensive Internationalization
+  details: Localize your timeline with 60+ customizable text elements supporting RTL languages and custom date formats.
+- icon: 📱
+  title: Fully Responsive
+  details: Works flawlessly across all devices with adaptive layouts and configurable breakpoints for mobile, tablet, and desktop.
 ---

@@ -134,6 +134,10 @@ const Timeline = () => {
 export default Timeline;
 ```
 
+### Try it out
+
+<BasicTimelineDemo />
+
 ::: details Using v2.x Syntax (Still Supported)
 The old API also works:
 ```jsx

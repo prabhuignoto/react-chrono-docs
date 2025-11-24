@@ -173,7 +173,7 @@ function MyTimelineSlideshow() {
           enabled: true,
           duration: 4000,
           type: 'fade',
-          showProgress: true
+          showOverallProgress: true
         }
       }}
     />
@@ -182,6 +182,10 @@ function MyTimelineSlideshow() {
 
 export default MyTimelineSlideshow;
 ```
+
+### Interactive Demo
+
+<SlideshowDemo />
 
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx

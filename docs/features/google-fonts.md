@@ -2,6 +2,10 @@
 
 React Chrono v3.0 includes seamless Google Fonts integration with dynamic font loading, per-element styling, and intelligent caching.
 
+> [!NOTE]
+> Google Fonts integration is a **v3.0+ feature**. There is no v2.x equivalent for this functionality.
+
+
 ## Basic Usage
 
 Load a Google Font and apply it to your timeline:

@@ -168,6 +168,10 @@ content?: {
     title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
     subtitle?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
   };
+  alignment?: {
+    horizontal?: 'left' | 'center' | 'right';
+    vertical?: 'top' | 'center' | 'bottom';
+  };
 }
 ```
 
@@ -180,6 +184,7 @@ content?: {
 | `textOverlay` | `boolean` | `false` | Display text as overlay on media |
 | `dateFormat` | `string` | `'MMM DD, YYYY'` | Date format for timeline titles (Day.js format) |
 | `compactText` | `boolean` | `false` | Use compact text display mode |
+| `alignment` | `object` | - | Configure content alignment within cards |
 
 ### Semantic Tags Configuration
 
@@ -892,8 +897,9 @@ Handle user interactions and timeline state changes.
 |----------|------|-------------|
 | `onItemSelected` | `ItemSelectedCallback` | Fired when a timeline item is selected |
 | `onScrollEnd` | `() => void` | Fired when scrolling reaches the end |
-| `onThemeChange` | `(theme: Theme) => void` | Fired when theme changes |
+| `onThemeChange` | `() => void` | Fired when theme changes |
 | `onRestartSlideshow` | `() => void` | Fired when slideshow restarts |
+| `onOutlineSelection` | `(index: number) => void` | Fired when an item is selected from the outline menu |
 
 ### ItemSelected Callback
 
@@ -912,10 +918,10 @@ const handleItemSelected = ({ item, index }) => {
   console.log('Item index:', index);
 };
 
-const handleThemeChange = (newTheme) => {
-  console.log('Theme changed:', newTheme);
-  // Save theme preference
-  localStorage.setItem('theme', JSON.stringify(newTheme));
+const handleThemeChange = () => {
+  console.log('Theme changed');
+  // Note: Callback doesn't receive theme parameter
+  // Track theme state separately if needed
 };
 
 <Chrono
@@ -967,6 +973,7 @@ These props are maintained for backward compatibility but are deprecated in favo
 | `titleDateFormat` | `content.dateFormat` | `string` | ⚠️ **Deprecated** |
 | `textDensity` | `content.compactText` | `'LOW' \| 'HIGH'` | ⚠️ **Deprecated** |
 | `semanticTags` | `content.semanticTags` | `SemanticTags` | ⚠️ **Deprecated** |
+| `contentAlignment` | `content.alignment` | `ContentAlignment` | ⚠️ **Deprecated** |
 
 ### Display Props (Use `display` config instead)
 

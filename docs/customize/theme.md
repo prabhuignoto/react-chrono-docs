@@ -60,7 +60,6 @@ The library provides default themes optimized for both light and dark modes. All
 | --------------------------- | -------- | -------------------- | -------------------------------------------------------------- |
 | shadowColor                 | `string` | `rgba(0, 0, 0, 0.1)` | Color for shadows and depth effects                            |
 | glowColor                   | `string` | `rgba(0, 127, 255, 0.2)` | Color for glow effects on focus/hover                     |
-| searchHighlightColor        | `string` | `rgba(0, 127, 255, 0.2)` | Background color for search result highlights             |
 
 ### Nested Timeline Cards
 | Property                    | Type     | Default (Light)      | Description                                                    |

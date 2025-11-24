@@ -2,6 +2,10 @@
 
 React Chrono includes a built-in search feature, allowing users to quickly find specific content within the timeline. This functionality is part of the default toolbar and enhances the usability of timelines with extensive data.
 
+### Interactive Demo
+
+<SearchDemo />
+
 ## How Search Works
 
 The search feature scans through the textual content of all timeline items, including:
@@ -14,14 +18,22 @@ When a search query matches content in one or more items, users can navigate thr
 
 ## Customizing the Search Interface
 
-Several props are available to customize the appearance and accessibility of the search input field and related controls:
+### v3.0 API (Recommended)
 
--   **`searchPlaceholder`**: (string) Sets the placeholder text displayed in the search input field.
-    *   Default: `"Search"`
--   **`searchAriaLabel`**: (string) Provides an ARIA label for the search input, improving accessibility for screen readers.
-    *   Default: `"Search"`
--   **`clearSearch`**: (string) Sets the text or label for the button that clears the current search query.
+Use the `i18n.texts.search` configuration to customize search text:
+
+-   **`i18n.texts.search.placeholder`**: (string) Sets the placeholder text displayed in the search input field.
+    *   Default: `"Search Timeline"`
+-   **`i18n.texts.search.ariaLabel`**: (string) Provides an ARIA label for the search input, improving accessibility for screen readers.
+    *   Default: `"Search timeline content"`
+-   **`i18n.texts.search.clearLabel`**: (string) Sets the text or label for the button that clears the current search query.
     *   Default: `"Clear Search"`
+
+### v2.x Legacy Props (Still Supported)
+
+-   **`searchPlaceholder`**: (string) Sets the placeholder text (deprecated, use i18n API)
+-   **`searchAriaLabel`**: (string) Provides an ARIA label (deprecated, use i18n API)
+-   **`clearSearch`**: (string) Sets the clear button label (deprecated, use i18n API)
 
 ## Disabling the Toolbar (and Search)
 
@@ -52,6 +64,8 @@ If you need to hide the search functionality along with the entire toolbar (whic
 
 ## Example: Customizing Search
 
+### v3.0 Syntax (Recommended)
+
 ```jsx
 import React from "react";
 import { Chrono } from "react-chrono";
@@ -77,9 +91,15 @@ function SearchableTimeline() {
     <Chrono
       items={items}
       mode="vertical"
-      searchPlaceholder="Find events..."
-      searchAriaLabel="Search through timeline events and details"
-      clearSearch="Reset"
+      i18n={{
+        texts: {
+          search: {
+            placeholder: "Find events...",
+            ariaLabel: "Search through timeline events and details",
+            clearLabel: "Reset"
+          }
+        }
+      }}
     />
   );
 }
