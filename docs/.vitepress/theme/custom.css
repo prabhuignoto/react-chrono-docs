@@ -1,4 +1,14 @@
 /* Custom styles for react-chrono demos */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --vp-font-family-base: 'Inter', sans-serif;
+}
+
+html,
+body {
+    font-family: var(--vp-font-family-base);
+}
 
 /* Reduce gap between timeline items using data-testid selectors */
 ul[data-testid="tree-main"] li[data-testid="vertical-item-row"] {
