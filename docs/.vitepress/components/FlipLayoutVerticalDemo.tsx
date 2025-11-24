@@ -28,6 +28,9 @@ export default function FlipLayoutVerticalDemo() {
             <Chrono
                 items={items}
                 mode="vertical"
+                interaction={{
+                    focusOnLoad: false
+                }}
                 layout={{
                     positioning: {
                         flipLayout: true

@@ -1,0 +1,11 @@
+/* Custom styles for react-chrono demos */
+
+/* Reduce gap between timeline items using data-testid selectors */
+ul[data-testid="tree-main"] li[data-testid="vertical-item-row"] {
+    margin-bottom: 2rem !important;
+}
+
+/* Also target alternating mode items */
+ul[data-testid="tree-main"] li[data-testid="timeline-item-row"] {
+    margin-bottom: 2rem !important;
+}

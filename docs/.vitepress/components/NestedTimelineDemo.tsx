@@ -34,6 +34,9 @@ export default function NestedTimelineDemo() {
             <Chrono
                 items={items}
                 mode="vertical"
+                interaction={{
+                    focusOnLoad: false
+                }}
                 nestedCardHeight={150}
             />
         </div>

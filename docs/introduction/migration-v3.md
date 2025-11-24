@@ -216,7 +216,7 @@ Note: Old uppercase values still work.
 | `slideShow` | `animation.slideshow.enabled` |
 | `slideItemDuration` | `animation.slideshow.duration` |
 | `slideShowType` | `animation.slideshow.type` |
-| `showProgressOnSlideshow` | `animation.slideshow.showProgress` |
+| `showProgressOnSlideshow` | `animation.slideshow.showOverallProgress` |
 | `showOverallSlideshowProgress` | `animation.slideshow.showOverallProgress` |
 
 **Note:** `slideShowType` values changed:

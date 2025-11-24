@@ -28,6 +28,9 @@ export default function FlipLayoutAlternatingDemo() {
             <Chrono
                 items={items}
                 mode="alternating"
+                interaction={{
+                    focusOnLoad: false
+                }}
                 layout={{
                     positioning: {
                         flipLayout: true

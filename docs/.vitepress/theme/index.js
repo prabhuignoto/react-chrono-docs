@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import 'react-chrono/dist/style.css'
+import './custom.css'
 
 // Import all Vue wrapper components
 import BasicTimelineDemo from '../components/BasicTimelineDemo.vue'
