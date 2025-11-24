@@ -91,7 +91,7 @@ You can customize the dark mode appearance using enhanced theme properties:
 
 ## Enhanced Dark Mode Theme Properties
 
-React Chrono v3.0 provides 25+ theme properties specifically designed for dark mode:
+React Chrono v3.0 provides 36 comprehensive theme properties, including 13 specifically designed for enhanced dark mode customization:
 
 ### Button States
 - `buttonHoverBgColor` - Button background on hover
@@ -105,7 +105,6 @@ React Chrono v3.0 provides 25+ theme properties specifically designed for dark m
 - `iconColor` - Color for icons in dark mode
 - `shadowColor` - Color for shadows and depth effects
 - `glowColor` - Color for glow effects and focus states
-- `searchHighlightColor` - Color for search result highlighting
 
 ### Dark Toggle Specific
 - `darkToggleActiveBgColor` - Background when toggle is active
@@ -153,6 +152,7 @@ function DarkModeTimeline() {
           timelineBgColor: '#111827',
           iconColor: '#60a5fa',
           buttonActiveBgColor: '#60a5fa',
+          shadowColor: 'rgba(0, 0, 0, 0.3)',
           glowColor: 'rgba(96, 165, 250, 0.5)'
         }}
       />
@@ -172,7 +172,8 @@ export default DarkModeTimeline;
 <Chrono
   items={items}
   mode="vertical"
-  enableDarkToggle={true}
+  darkMode={true}              // Enable dark mode (v2 boolean)
+  enableDarkToggle={true}      // Show toggle button (v2 boolean)
   theme={{ /* dark theme colors */ }}
 />
 ```
@@ -189,10 +190,10 @@ You can listen to theme changes using the `onThemeChange` callback:
     enabled: true,
     showToggle: true
   }}
-  onThemeChange={(theme) => {
-    console.log('Theme changed:', theme);
-    // Save user preference to localStorage
-    localStorage.setItem('timeline-theme', JSON.stringify(theme));
+  onThemeChange={() => {
+    console.log('Theme changed');
+    // Note: Callback doesn't receive theme parameter
+    // Track theme state separately if needed
   }}
 />
 ```
