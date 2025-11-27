@@ -1,10 +1,6 @@
 /* Custom styles for react-chrono demos */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
     --vp-font-family-base: 'Inter', sans-serif;
 }
@@ -19,7 +15,32 @@ ul[data-testid="tree-main"] li[data-testid="vertical-item-row"] {
     margin-bottom: 2rem !important;
 }
 
+ul[data-testid="tree-main"] {
+    padding-left: 3rem !important;
+    padding-right: 1rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    width: 95% !important;
+}
+
+/* Center custom icons within timeline circles */
+.chrono-icons>div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.timeline-vertical-circle .using-icon svg {
+    margin: 0 auto !important;
+}
+
 /* Also target alternating mode items */
 ul[data-testid="tree-main"] li[data-testid="timeline-item-row"] {
     margin-bottom: 2rem !important;
+}
+
+.timeline-item-title {
+    margin-bottom: 0 !important;
 }

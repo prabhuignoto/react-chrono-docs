@@ -3,31 +3,31 @@ import { Chrono } from "react-chrono";
 
 const items = [
     {
-        title: "Step 1",
+        title: "1",
         cardTitle: "Install Package",
         cardSubtitle: "npm install react-chrono",
         cardDetailedText: "Start by installing the package in your Next.js project.",
     },
     {
-        title: "Step 2",
+        title: "2",
         cardTitle: "Dynamic Import",
         cardSubtitle: "next/dynamic",
         cardDetailedText: "Use dynamic imports with ssr: false to load the component on the client side only.",
     },
     {
-        title: "Step 3",
+        title: "3",
         cardTitle: "Render",
         cardSubtitle: "<Chrono />",
         cardDetailedText: "Render the component in your page or component. It will now work seamlessly without hydration errors.",
     },
     {
-        title: "Step 4",
+        title: "4",
         cardTitle: "Customize",
         cardSubtitle: "Props & Theme",
         cardDetailedText: "Pass props and theme objects to customize the look and feel of your timeline.",
     },
     {
-        title: "Step 5",
+        title: "5",
         cardTitle: "Deploy",
         cardSubtitle: "Vercel / Netlify",
         cardDetailedText: "Deploy your Next.js application with confidence, knowing your timeline works perfectly.",
