@@ -16,6 +16,8 @@ import FlipLayoutVerticalDemo from '../components/FlipLayoutVerticalDemo.vue'
 import FlipLayoutAlternatingDemo from '../components/FlipLayoutAlternatingDemo.vue'
 import TextOverlayDemo from '../components/TextOverlayDemo.vue'
 import SearchDemo from '../components/SearchDemo.vue'
+import TailwindTimelineDemo from '../components/TailwindTimelineDemo.vue'
+import NextJsTimelineDemo from '../components/NextJsTimelineDemo.vue'
 
 export default {
   extends: DefaultTheme,
@@ -34,6 +36,8 @@ export default {
     app.component('FlipLayoutAlternatingDemo', FlipLayoutAlternatingDemo)
     app.component('TextOverlayDemo', TextOverlayDemo)
     app.component('SearchDemo', SearchDemo)
+    app.component('TailwindTimelineDemo', TailwindTimelineDemo)
+    app.component('NextJsTimelineDemo', NextJsTimelineDemo)
   }
 }
 

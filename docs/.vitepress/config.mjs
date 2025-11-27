@@ -182,6 +182,19 @@ export default defineConfig({
           },
         ],
       },
+      {
+        text: "Integration",
+        items: [
+          {
+            text: "Tailwind CSS",
+            link: "/integration/tailwind",
+          },
+          {
+            text: "Next.js",
+            link: "/integration/nextjs",
+          },
+        ],
+      },
     ],
     carbonAds: {
       code: "CEAI427Y",
