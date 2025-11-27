@@ -1,5 +1,6 @@
 import React from 'react';
 import { Chrono } from 'react-chrono';
+import type { ContentConfig, DisplayConfig, InteractionConfig, LayoutConfig } from 'react-chrono';
 
 const items = [
   {
@@ -22,18 +23,41 @@ const items = [
   },
 ];
 
+const layoutConfig: LayoutConfig = {
+  cardHeight: 180,
+  timelineHeight: '700px',
+  responsive: {
+    enabled: false
+  }
+};
+
+const interactionConfig: InteractionConfig = {
+  focusOnLoad: false,
+  keyboardNavigation: true,
+  pointClick: true
+};
+
+const displayConfig: DisplayConfig = {
+  toolbar: {
+    enabled: false
+  },
+  scrollable: true
+};
+
+const contentConfig: ContentConfig = {
+  compactText: true
+};
+
 export default function VerticalTimelineDemo() {
   return (
     <div style={{ width: '100%', minHeight: '700px', margin: '20px 0' }}>
       <Chrono
         items={items}
         mode="vertical"
-        interaction={{
-          focusOnLoad: false
-        }}
-        layout={{
-          cardHeight: 180
-        }}
+        layout={layoutConfig}
+        interaction={interactionConfig}
+        display={displayConfig}
+        content={contentConfig}
       />
     </div>
   );
