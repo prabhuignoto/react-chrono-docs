@@ -2,11 +2,11 @@
 
 In horizontal mode, React-Chrono displays timeline cards horizontally, providing users with a new and visually distinct way to display events. By default, only one timeline card is displayed at a time. Users can navigate through the cards using the navigation arrows or the keyboard.
 
-![horizontal-mode](horizontal-mode.png)
+![horizontal-mode](horizontal-mode.jpg)
 
 To display all the timeline cards at once, use the `horizontal-all` mode. This enables users to scroll through the entire timeline horizontally and view all the timeline cards simultaneously.
 
-![horizontal-all](horizontal-all.png)
+![horizontal-all](horizontal-all.jpg)
 
 ## Adjusting the Space Between Timeline Cards
 

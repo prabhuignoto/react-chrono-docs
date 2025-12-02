@@ -6,6 +6,7 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { createRoot } from 'react-dom/client'
 import React, { createElement } from 'react'
+import chronoStyles from 'react-chrono/dist/style.css?raw'
 
 const props = defineProps({
   component: {
@@ -16,6 +17,8 @@ const props = defineProps({
 
 const containerRef = ref(null)
 let root = null
+let mountNode = null
+let shadowRoot = null
 let Component = null
 
 const renderComponent = () => {
@@ -28,6 +31,42 @@ const renderComponent = () => {
     if (containerRef.value) {
       containerRef.value.innerHTML = `<div style="padding: 20px; color: red; border: 1px solid red; border-radius: 4px;">Error rendering component: ${error.message}</div>`
     }
+  }
+}
+
+const ensureChronoStyles = (targetRoot) => {
+  if (!targetRoot || targetRoot.querySelector('[data-react-chrono-shadow-style]')) return
+  const styleEl = document.createElement('style')
+  styleEl.setAttribute('data-react-chrono-shadow-style', '')
+  styleEl.textContent = chronoStyles
+  targetRoot.appendChild(styleEl)
+}
+
+const ensureReactRoot = () => {
+  if (!containerRef.value) return
+
+  const host = containerRef.value
+  const supportsShadowDom = typeof host.attachShadow === 'function'
+
+  if (supportsShadowDom) {
+    if (!shadowRoot) {
+      shadowRoot = host.attachShadow({ mode: 'open' })
+    }
+
+    if (!mountNode) {
+      mountNode = document.createElement('div')
+      shadowRoot.appendChild(mountNode)
+    }
+
+    ensureChronoStyles(shadowRoot)
+  } else {
+    if (!mountNode) {
+      mountNode = host
+    }
+  }
+
+  if (!root && mountNode) {
+    root = createRoot(mountNode)
   }
 }
 
@@ -55,6 +94,8 @@ const loadComponent = async () => {
       Component = resolvedComponent
     }
     
+    ensureReactRoot()
+
     if (Component) {
       renderComponent()
     } else {
@@ -69,10 +110,7 @@ const loadComponent = async () => {
 }
 
 onMounted(async () => {
-  if (containerRef.value) {
-    root = createRoot(containerRef.value)
-    await loadComponent()
-  }
+  await loadComponent()
 })
 
 onUnmounted(() => {
