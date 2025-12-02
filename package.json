@@ -8,7 +8,7 @@
   "type": "module",
   "devDependencies": {
     "@types/react": "^19.2.7",
-    "autoprefixer": "10.4.17",
+    "autoprefixer": "^10.4.22",
     "fast-glob": "^3.3.3",
     "postcss": "8.4.35",
     "react": "^19.2.0",
@@ -25,6 +25,6 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.1",
-    "react-chrono": "^3.3.0"
+    "react-chrono": "^3.3.1"
   }
 }
