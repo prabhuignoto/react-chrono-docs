@@ -4,6 +4,8 @@
 
 In vertical mode, events are displayed in a vertical orientation. Each event is represented by a card that contains a title, subtitle, and content. The cards are stacked on top of each other, with the latest event at the top.
 
+![vertical](vertical.png)
+
 Example (v3.0):
 
 ```jsx
@@ -12,19 +14,19 @@ import { Chrono } from 'react-chrono';
 const items = [
   {
     title: "January 2022",
-    cardTitle: "Event 1",
+    cardTitle: "1",
     cardSubtitle: "Event 1 Subtitle",
     cardDetailedText: "This is the first event on the timeline.",
   },
   {
     title: "February 2022",
-    cardTitle: "Event 2",
+    cardTitle: "2",
     cardSubtitle: "Event 2 Subtitle",
     cardDetailedText: "This is the second event on the timeline.",
   },
   {
     title: "March 2022",
-    cardTitle: "Event 3",
+    cardTitle: "3",
     cardSubtitle: "Event 3 Subtitle",
     cardDetailedText: "This is the third event on the timeline.",
   }
@@ -55,7 +57,8 @@ export default VerticalTimeline;
 ```
 :::
 
-![vertical](vertical.png)
+
+
 
 ## Vertically Alternating Timeline
 
@@ -116,4 +119,4 @@ export default VerticalAlternatingTimeline;
 ```
 :::
 
-![vertical_alternating](vertical_alternating.png)
+<!-- ![vertical_alternating](vertical_alternating.png) -->
