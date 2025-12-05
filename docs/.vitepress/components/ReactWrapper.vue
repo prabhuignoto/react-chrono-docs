@@ -6,7 +6,8 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { createRoot } from 'react-dom/client'
 import React, { createElement } from 'react'
-import chronoStyles from 'react-chrono/dist/style.css?raw'
+// Styles are imported globally in theme/index.js, no need to import here
+// import chronoStyles from 'react-chrono/dist/style.css?raw'
 
 const props = defineProps({
   component: {
@@ -18,7 +19,8 @@ const props = defineProps({
 const containerRef = ref(null)
 let root = null
 let mountNode = null
-let shadowRoot = null
+// Shadow DOM removed to fix popover event handling
+// let shadowRoot = null
 let Component = null
 
 const renderComponent = () => {
@@ -34,35 +36,26 @@ const renderComponent = () => {
   }
 }
 
-const ensureChronoStyles = (targetRoot) => {
-  if (!targetRoot || targetRoot.querySelector('[data-react-chrono-shadow-style]')) return
-  const styleEl = document.createElement('style')
-  styleEl.setAttribute('data-react-chrono-shadow-style', '')
-  styleEl.textContent = chronoStyles
-  targetRoot.appendChild(styleEl)
-}
+// Styles are now handled globally via theme/index.js, so this function is no longer needed
+// const ensureChronoStyles = (targetRoot) => {
+//   if (!targetRoot || targetRoot.querySelector('[data-react-chrono-shadow-style]')) return
+//   const styleEl = document.createElement('style')
+//   styleEl.setAttribute('data-react-chrono-shadow-style', '')
+//   styleEl.textContent = chronoStyles
+//   targetRoot.appendChild(styleEl)
+// }
 
 const ensureReactRoot = () => {
   if (!containerRef.value) return
 
   const host = containerRef.value
-  const supportsShadowDom = typeof host.attachShadow === 'function'
+  // Disable Shadow DOM to fix popover menu click-outside detection
+  // Shadow DOM isolates events and prevents document-level event listeners from working
+  // const supportsShadowDom = typeof host.attachShadow === 'function'
 
-  if (supportsShadowDom) {
-    if (!shadowRoot) {
-      shadowRoot = host.attachShadow({ mode: 'open' })
-    }
-
-    if (!mountNode) {
-      mountNode = document.createElement('div')
-      shadowRoot.appendChild(mountNode)
-    }
-
-    ensureChronoStyles(shadowRoot)
-  } else {
-    if (!mountNode) {
-      mountNode = host
-    }
+  // Always use regular DOM mounting instead of Shadow DOM
+  if (!mountNode) {
+    mountNode = host
   }
 
   if (!root && mountNode) {

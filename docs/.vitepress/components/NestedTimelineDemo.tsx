@@ -3,7 +3,7 @@ import { Chrono } from 'react-chrono';
 
 const items = [
     {
-        title: "Q1 2024",
+        title: "1",
         cardTitle: "Project Alpha",
         cardSubtitle: "Major Initiative",
         cardDetailedText: "Launched our flagship project with multiple phases.",
@@ -21,7 +21,7 @@ const items = [
         ],
     },
     {
-        title: "Q2 2024",
+        title: "2",
         cardTitle: "Project Beta",
         cardSubtitle: "Product Launch",
         cardDetailedText: "Successfully launched to market.",

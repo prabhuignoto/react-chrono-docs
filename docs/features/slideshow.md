@@ -183,7 +183,7 @@ function MyTimelineSlideshow() {
 export default MyTimelineSlideshow;
 ```
 
-### Interactive Demo
+<!-- ### Interactive Demo
 
 <SlideshowDemo />
 
@@ -201,4 +201,4 @@ export default MyTimelineSlideshow;
 
 The timeline will automatically cycle through `slideshowItems`, displaying each for 4 seconds.
 
-The slideshow feature is excellent for creating automated presentations or guided tours of timeline events, making your content more dynamic and engaging.
+The slideshow feature is excellent for creating automated presentations or guided tours of timeline events, making your content more dynamic and engaging. -->
