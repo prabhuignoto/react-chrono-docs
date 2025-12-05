@@ -343,7 +343,7 @@ Adds a toggle switch to the toolbar for enabling dark mode (if dark theme is con
 
 **Type:** `function`
 
-Callback invoked when the theme changes, e.g., via the dark mode toggle. Passes the new theme object.
+Callback invoked when the theme changes, e.g., via the dark mode toggle. Note: This callback does not receive any parameters.
 
 ### fontSizes
 

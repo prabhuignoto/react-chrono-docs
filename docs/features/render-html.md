@@ -48,7 +48,6 @@ function TimelineWithHTMLContent() {
       content={{
         allowHTML: true  // Enable HTML parsing
       }}
-      enableOutline // Example of combining with other features
     />
   );
 }

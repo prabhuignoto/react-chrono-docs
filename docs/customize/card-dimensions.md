@@ -66,8 +66,6 @@ For nested timeline cards, you can use the `nestedCardHeight` prop:
 const Timeline2 = () => {
   return (
     <Chrono
-      cardTitle="Nested Timeline"
-      cardSubtitle="Nested Timeline Card"
       items={nestedItems}
       mode="vertical"
       nestedCardHeight={150}  // Height of nested timeline cards

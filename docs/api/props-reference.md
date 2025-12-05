@@ -1266,7 +1266,7 @@ interface TimelinePropsV2 {
   // Event callbacks
   onItemSelected?: (data: { item: TimelineItem; index: number }) => void;
   onScrollEnd?: () => void;
-  onThemeChange?: (theme: Theme) => void;
+  onThemeChange?: () => void;
   onRestartSlideshow?: () => void;
 }
 
@@ -1398,8 +1398,8 @@ const App = () => {
           console.log(`Selected: ${item.cardTitle} at index ${index}`);
         }}
         
-        onThemeChange={(theme) => {
-          console.log('Theme updated:', theme);
+        onThemeChange={() => {
+          console.log('Theme changed');
         }}
       />
     </div>
