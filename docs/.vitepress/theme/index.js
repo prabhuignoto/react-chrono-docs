@@ -1,4 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
+// Import CSS files globally - these will be available to all components including React
 import 'react-chrono/dist/style.css'
 import './custom.css'
 
