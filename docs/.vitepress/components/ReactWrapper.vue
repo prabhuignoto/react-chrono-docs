@@ -1,5 +1,5 @@
 <template>
-  <div ref="containerRef" style="width: 100%;"></div>
+  <div ref="containerRef" class="react-chrono-wrapper" style="width: 100%;"></div>
 </template>
 
 <script setup>

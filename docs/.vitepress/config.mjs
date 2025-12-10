@@ -103,10 +103,6 @@ export default defineConfig({
             link: "/features/internationalization",
           },
           {
-            text: "Outline",
-            link: "/features/outline",
-          },
-          {
             text: "Flip layout",
             link: "/features/flip-layout",
           },

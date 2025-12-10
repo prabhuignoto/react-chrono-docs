@@ -105,9 +105,9 @@ const VerticalAlternatingTimeline = () => {
 export default VerticalAlternatingTimeline;
 ```
 
-### Interactive Demo
+<!-- ### Interactive Demo -->
 
-<AlternatingTimelineDemo />
+<!-- <AlternatingTimelineDemo /> -->
 
 ::: details Using v2.x Syntax (Still Supported)
 ```jsx

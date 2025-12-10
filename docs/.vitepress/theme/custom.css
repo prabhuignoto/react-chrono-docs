@@ -10,212 +10,300 @@ body {
     font-family: var(--vp-font-family-base);
 }
 
-/* Fix spacing between timeline items - let react-chrono handle spacing */
-.vertical-item-row {
-    margin-bottom: 0 !important;
+/* Define CSS Layers - order matters: later layers override earlier ones */
+@layer react-chrono-reset, react-chrono-base, react-chrono-overrides;
+
+/* Layer 1: Reset VitePress styles within react-chrono wrapper */
+@layer react-chrono-reset {
+    /* Reset ALL VitePress styles for ul/li within wrapper */
+    .react-chrono-wrapper ul,
+    .react-chrono-wrapper li {
+        all: unset;
+        display: revert;
+        box-sizing: border-box;
+    }
+    
+    /* More specific resets for common VitePress ul/li styles */
+    .react-chrono-wrapper ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .react-chrono-wrapper li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    /* Reset VitePress text styles */
+    .react-chrono-wrapper * {
+        text-overflow: clip;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    
+    /* Reset VitePress spacing */
+    .react-chrono-wrapper ul,
+    .react-chrono-wrapper li,
+    .react-chrono-wrapper ul li {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        gap: 0;
+    }
 }
 
-ul[data-testid="tree-main"] li[data-testid="vertical-item-row"],
-ul[data-testid="tree-main"] > li[data-testid="vertical-item-row"] {
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-top: 0 !important;
+/* Layer 2: Base react-chrono styles */
+@layer react-chrono-base {
+    .react-chrono-wrapper {
+        contain: layout style paint;
+        width: 100%;
+    }
+    
+    /* Timeline containers */
+    .react-chrono-wrapper ul[data-testid="tree-main"] {
+        list-style: none;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: visible;
+        padding-left: 3rem;
+        padding-right: 1rem;
+        gap: 0;
+    }
+    
+    /* Alternating mode needs symmetric padding for cards on both sides */
+    .react-chrono-wrapper ul[data-testid="tree-main"]:has(li[data-testid="timeline-item-row"]):not(:has(li[data-testid="vertical-item-row"])) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    
+    /* Remove width constraints for horizontal timelines */
+    .react-chrono-wrapper ul[data-testid="tree-main"]:not(:has(li[data-testid="vertical-item-row"])):not(:has(li[data-testid="timeline-item-row"])) {
+        padding-left: 0;
+        padding-right: 0;
+        width: auto;
+        max-width: none;
+    }
+    
+    /* Vertical timelines get width constraints */
+    .react-chrono-wrapper ul[data-testid="tree-main"]:has(li[data-testid="vertical-item-row"]),
+    .react-chrono-wrapper ul[data-testid="tree-main"]:has(li[data-testid="timeline-item-row"]) {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Timeline item rows */
+    .react-chrono-wrapper [data-testid*="vertical-item"],
+    .react-chrono-wrapper [data-testid*="timeline-item-row"] {
+        overflow: visible;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+    
+    /* Remove spacing from timeline items */
+    .react-chrono-wrapper ul[data-testid="tree-main"] li[data-testid="vertical-item-row"],
+    .react-chrono-wrapper ul[data-testid="tree-main"] > li[data-testid="vertical-item-row"],
+    .react-chrono-wrapper ul[data-testid="tree-main"] li[data-testid="timeline-item-row"],
+    .react-chrono-wrapper ul[data-testid="tree-main"] > li[data-testid="timeline-item-row"] {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Remove spacing from timeline card containers - exclude popover menus */
+    .react-chrono-wrapper [data-testid*="timeline-item"] > div:not([role="menu"]):not([role="listbox"]),
+    .react-chrono-wrapper [data-testid*="vertical-item"] > div:not([role="menu"]):not([role="listbox"]),
+    .react-chrono-wrapper [data-testid*="item-row"] > div:not([role="menu"]):not([role="listbox"]) {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        gap: 0;
+    }
+    
+    /* Card styles */
+    .react-chrono-wrapper [data-testid*="timeline"] [class*="card"],
+    .react-chrono-wrapper [data-testid*="chrono"] [class*="card"],
+    .react-chrono-wrapper .chrono-card,
+    .react-chrono-wrapper .timeline-card {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    /* Title styles */
+    .react-chrono-wrapper .timeline-item-title {
+        margin-bottom: 0;
+        overflow: visible;
+        text-overflow: clip;
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: none;
+        width: auto;
+    }
+    
+    /* Ensure timeline titles are not cut off */
+    .react-chrono-wrapper [data-testid*="timeline"] [class*="title"]:not([role="menu"]):not([role="listbox"]):not([data-testid*="popover"]):not([data-testid*="dropdown"]):not([data-testid*="menu"]),
+    .react-chrono-wrapper [data-testid*="chrono"] [class*="title"]:not([role="menu"]):not([role="listbox"]):not([data-testid*="popover"]):not([data-testid*="dropdown"]):not([data-testid*="menu"]),
+    .react-chrono-wrapper .timeline-item-title:not([role="menu"]):not([role="listbox"]):not([data-testid*="popover"]):not([data-testid*="dropdown"]):not([data-testid*="menu"]),
+    .react-chrono-wrapper .chrono-title:not([role="menu"]):not([role="listbox"]):not([data-testid*="popover"]):not([data-testid*="dropdown"]):not([data-testid*="menu"]) {
+        overflow: visible;
+        text-overflow: clip;
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: none;
+        width: auto;
+        display: block;
+    }
+    
+    /* Icons */
+    .react-chrono-wrapper .chrono-icons > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .react-chrono-wrapper .timeline-vertical-circle .using-icon svg {
+        margin: 0 auto;
+    }
+    
+    /* Timeline containers allow event propagation */
+    .react-chrono-wrapper [data-testid*="timeline"],
+    .react-chrono-wrapper [data-testid*="chrono"],
+    .react-chrono-wrapper .react-chrono-container {
+        position: relative;
+        overflow: visible;
+    }
+    
+    /* Toolbar container */
+    .react-chrono-wrapper [data-testid="chrono-toolbar"],
+    .react-chrono-wrapper .react-chrono-toolbar {
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
+    }
+    
+    /* Popover menus and dropdowns */
+    .react-chrono-wrapper [role="menu"],
+    .react-chrono-wrapper [role="listbox"],
+    .react-chrono-wrapper [data-testid*="popover"],
+    .react-chrono-wrapper [data-testid*="dropdown"],
+    .react-chrono-wrapper [data-testid*="menu"],
+    .react-chrono-wrapper .react-chrono-popover,
+    .react-chrono-wrapper .react-chrono-dropdown,
+    .react-chrono-wrapper .chrono-popover,
+    .react-chrono-wrapper .chrono-dropdown {
+        z-index: 9999;
+        pointer-events: auto;
+        overflow: visible;
+    }
+    
+    /* Popover menu content */
+    .react-chrono-wrapper [role="menu"] > *,
+    .react-chrono-wrapper [role="listbox"] > *,
+    .react-chrono-wrapper [data-testid*="popover"] > *,
+    .react-chrono-wrapper [data-testid*="dropdown"] > *,
+    .react-chrono-wrapper [data-testid*="menu"] > *,
+    .react-chrono-wrapper .react-chrono-popover > *,
+    .react-chrono-wrapper .react-chrono-dropdown > *,
+    .react-chrono-wrapper .chrono-popover > *,
+    .react-chrono-wrapper .chrono-dropdown > * {
+        overflow: visible;
+    }
+    
+    /* Toolbar buttons */
+    .react-chrono-wrapper .chrono-toolbar-container,
+    .react-chrono-wrapper [data-testid="chrono-toolbar"] > *,
+    .react-chrono-wrapper [data-testid="chrono-toolbar"] button,
+    .react-chrono-wrapper .react-chrono-toolbar > *,
+    .react-chrono-wrapper .react-chrono-toolbar button {
+        pointer-events: auto;
+    }
+    
+    /* Horizontal timeline items */
+    .react-chrono-wrapper [data-testid*="horizontal"] [data-testid*="timeline-item"],
+    .react-chrono-wrapper [data-testid*="horizontal"] [data-testid*="item"] {
+        overflow: visible;
+    }
 }
 
-/* Timeline containers - base styles for all timelines */
-ul[data-testid="tree-main"] {
-    list-style: none !important;
-    margin: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    overflow: visible !important;
+/* Layer 3: Override VitePress styles that leak in (higher specificity) */
+@layer react-chrono-overrides {
+    /* Override VitePress doc styles for ul/li */
+    .vp-doc .react-chrono-wrapper ul,
+    .vp-doc .react-chrono-wrapper li {
+        all: unset;
+        display: revert;
+        box-sizing: border-box;
+    }
+    
+    .vp-doc .react-chrono-wrapper ul {
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .vp-doc .react-chrono-wrapper li {
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+    
+    /* Ensure VitePress doesn't add spacing */
+    .vp-doc .react-chrono-wrapper ul[data-testid="tree-main"] li,
+    .vp-doc .react-chrono-wrapper ul[data-testid="tree-main"] > li,
+    .vp-doc .react-chrono-wrapper [data-testid*="timeline-item"],
+    .vp-doc .react-chrono-wrapper [data-testid*="vertical-item"],
+    .vp-doc .react-chrono-wrapper [data-testid*="item-row"] {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        gap: 0 !important;
+    }
+    
+    /* Remove VitePress default spacing on timeline containers */
+    .vp-doc .react-chrono-wrapper ul[data-testid="tree-main"] {
+        gap: 0 !important;
+        row-gap: 0 !important;
+        column-gap: 0 !important;
+    }
+    
+    /* Prevent VitePress from truncating timeline titles */
+    .vp-doc .react-chrono-wrapper [data-testid*="timeline"],
+    .vp-doc .react-chrono-wrapper [data-testid*="chrono"],
+    .vp-doc .react-chrono-wrapper .react-chrono-container {
+        overflow: visible !important;
+    }
+    
+    /* Prevent text truncation */
+    .vp-doc .react-chrono-wrapper [data-testid*="title"],
+    .vp-doc .react-chrono-wrapper .timeline-item-title,
+    .vp-doc .react-chrono-wrapper [class*="chrono"][class*="title"] {
+        text-overflow: clip !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        max-width: none !important;
+    }
+    
+    /* Popover z-index fixes within wrapper */
+    .vp-doc .react-chrono-wrapper [role="menu"],
+    .vp-doc .react-chrono-wrapper [role="listbox"],
+    .vp-doc .react-chrono-wrapper [data-testid*="popover"] {
+        z-index: 9999 !important;
+        pointer-events: auto !important;
+        overflow: visible !important;
+    }
 }
 
-/* Only apply padding/width constraints to vertical timelines */
-/* Use a fallback approach: apply to all, but horizontal will override if needed */
-ul[data-testid="tree-main"] {
-    padding-left: 3rem !important;
-    padding-right: 1rem !important;
-    gap: 0 !important;
-}
-
-/* Remove width constraints for horizontal timelines - let react-chrono handle it */
-/* Horizontal timelines don't have vertical-item-row, so we can exclude them */
-ul[data-testid="tree-main"]:not(:has(li[data-testid="vertical-item-row"])):not(:has(li[data-testid="timeline-item-row"])) {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    width: auto !important;
-    max-width: none !important;
-}
-
-/* Vertical timelines get width constraints */
-ul[data-testid="tree-main"]:has(li[data-testid="vertical-item-row"]),
-ul[data-testid="tree-main"]:has(li[data-testid="timeline-item-row"]) {
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
-/* Center custom icons within timeline circles */
-.chrono-icons>div {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.timeline-vertical-circle .using-icon svg {
-    margin: 0 auto !important;
-}
-
-/* Also target alternating mode items - remove gap */
-ul[data-testid="tree-main"] li[data-testid="timeline-item-row"],
-ul[data-testid="tree-main"] > li[data-testid="timeline-item-row"] {
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* Remove spacing from vertical timeline item wrappers only */
-ul[data-testid="tree-main"] li[data-testid="vertical-item-row"],
-ul[data-testid="tree-main"] > li[data-testid="vertical-item-row"],
-ul[data-testid="tree-main"] li[data-testid="timeline-item-row"],
-ul[data-testid="tree-main"] > li[data-testid="timeline-item-row"] {
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* Remove spacing from timeline card containers - exclude popover menus by being more specific */
-[data-testid*="timeline-item"] > div:not([role="menu"]):not([role="listbox"]),
-[data-testid*="vertical-item"] > div:not([role="menu"]):not([role="listbox"]),
-[data-testid*="item-row"] > div:not([role="menu"]):not([role="listbox"]) {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-/* Fix title cutoff - ensure titles are fully visible */
-.timeline-item-title {
-    margin-bottom: 0 !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    max-width: none !important;
-    width: auto !important;
-}
-
-/* Ensure timeline titles (year labels) are not cut off - but not popover content */
-[data-testid*="timeline"] [class*="title"]:not([role="menu"]):not([role="listbox"]):not([data-testid*="popover"]):not([data-testid*="dropdown"]):not([data-testid*="menu"]),
-[data-testid*="chrono"] [class*="title"]:not([role="menu"]):not([role="listbox"]):not([data-testid*="popover"]):not([data-testid*="dropdown"]):not([data-testid*="menu"]),
-.timeline-item-title:not([role="menu"]):not([role="listbox"]):not([data-testid*="popover"]):not([data-testid*="dropdown"]):not([data-testid*="menu"]),
-.chrono-title:not([role="menu"]):not([role="listbox"]):not([data-testid*="popover"]):not([data-testid*="dropdown"]):not([data-testid*="menu"]) {
-    overflow: visible !important;
-    text-overflow: clip !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    max-width: none !important;
-    width: auto !important;
-    display: block !important;
-}
-
-/* Fix popover menu z-index and event handling */
-/* Ensure popovers appear above VitePress content and work correctly */
-
-/* Toolbar container - ensure it's interactive */
-[data-testid="chrono-toolbar"],
-.react-chrono-toolbar {
-    position: relative !important;
-    z-index: 10 !important;
-    pointer-events: auto !important;
-}
-
-/* Popover menus and dropdowns - ensure high z-index and proper positioning */
-/* Don't force position/display - let react-chrono handle it */
-[role="menu"],
-[role="listbox"],
-[data-testid*="popover"],
-[data-testid*="dropdown"],
-[data-testid*="menu"],
-.react-chrono-popover,
-.react-chrono-dropdown,
-.chrono-popover,
-.chrono-dropdown {
-    z-index: 9999 !important;
-    pointer-events: auto !important;
-    overflow: visible !important;
-}
-
-/* Ensure popover menu content is visible - but don't force display */
-[role="menu"] > *,
-[role="listbox"] > *,
-[data-testid*="popover"] > *,
-[data-testid*="dropdown"] > *,
-[data-testid*="menu"] > *,
-.react-chrono-popover > *,
-.react-chrono-dropdown > *,
-.chrono-popover > *,
-.chrono-dropdown > * {
-    overflow: visible !important;
-}
-
-/* Ensure popover containers and toolbar buttons don't block pointer events */
-.chrono-toolbar-container,
-[data-testid="chrono-toolbar"],
-[data-testid="chrono-toolbar"] > *,
-[data-testid="chrono-toolbar"] button,
-.react-chrono-toolbar,
-.react-chrono-toolbar > *,
-.react-chrono-toolbar button {
-    pointer-events: auto !important;
-}
-
-/* Fix for VitePress content area - ensure it doesn't block events */
-.vp-doc {
-    position: relative !important;
-    z-index: 1 !important;
-    overflow: visible !important;
-}
-
-/* Ensure timeline containers allow event propagation and don't clip popovers or titles */
-[data-testid*="timeline"],
-[data-testid*="chrono"],
-.react-chrono-container {
-    position: relative !important;
-    overflow: visible !important;
-}
-
-/* Only apply width constraints when vertical items are present */
-body:has([data-testid*="vertical-item"]) [data-testid*="timeline"],
-body:has([data-testid*="vertical-item"]) [data-testid*="chrono"],
-body:has([data-testid*="vertical-item"]) .react-chrono-container {
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
-/* Ensure timeline item containers don't clip titles and remove spacing - only for vertical */
-[data-testid*="vertical-item"],
-[data-testid*="timeline-item-row"] {
-    overflow: visible !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-top: 0 !important;
-    gap: 0 !important;
-}
-
-/* Horizontal timeline items - minimal interference */
-[data-testid*="horizontal"] [data-testid*="timeline-item"],
-[data-testid*="horizontal"] [data-testid*="item"] {
-    overflow: visible !important;
-}
-
-/* Fix for any portal-rendered popovers (rendered at body level) */
+/* Global styles that need to work outside wrapper (for popovers rendered at body level) */
 body > [data-testid*="popover"],
 body > [data-testid*="dropdown"],
 body > [data-testid*="menu"],
@@ -228,7 +316,7 @@ body > .chrono-dropdown {
     overflow: visible !important;
 }
 
-/* Fix for fullscreen mode - ensure popovers work correctly */
+/* Fix for fullscreen mode */
 :fullscreen [data-testid*="popover"],
 :fullscreen [data-testid*="dropdown"],
 :fullscreen [data-testid*="menu"],
@@ -254,78 +342,27 @@ body > .chrono-dropdown {
     overflow: visible !important;
 }
 
-/* Ensure VitePress sidebar and other elements don't interfere */
+/* VitePress sidebar z-index */
 .vp-sidebar,
 .VPSidebar {
     z-index: 200 !important;
 }
 
-/* Fix for content wrapper that might have overflow hidden */
+/* Fix for VitePress content area */
+.vp-doc {
+    position: relative !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+}
+
+/* Fix for content wrapper */
 main,
 .vp-content {
     overflow: visible !important;
     position: relative !important;
 }
 
-/* Prevent VitePress from truncating timeline titles */
-.vp-doc [data-testid*="timeline"],
-.vp-doc [data-testid*="chrono"],
-.vp-doc .react-chrono-container {
-    overflow: visible !important;
-}
-
-/* Ensure VitePress doesn't add text truncation to timeline elements */
-.vp-doc [data-testid*="title"],
-.vp-doc .timeline-item-title,
-.vp-doc [class*="chrono"][class*="title"] {
-    text-overflow: clip !important;
-    overflow: visible !important;
-    white-space: normal !important;
-    word-break: normal !important;
-    max-width: none !important;
-}
-
-/* Prevent VitePress from adding spacing to timeline items */
-.vp-doc ul[data-testid="tree-main"] li,
-.vp-doc ul[data-testid="tree-main"] > li,
-.vp-doc [data-testid*="timeline-item"],
-.vp-doc [data-testid*="vertical-item"],
-.vp-doc [data-testid*="item-row"] {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    gap: 0 !important;
-}
-
-/* Remove any VitePress default spacing on timeline containers */
-.vp-doc ul[data-testid="tree-main"] {
-    gap: 0 !important;
-    row-gap: 0 !important;
-    column-gap: 0 !important;
-}
-
-/* Remove spacing from timeline card elements and wrappers */
-[data-testid*="timeline"] [class*="card"],
-[data-testid*="chrono"] [class*="card"],
-.chrono-card,
-.timeline-card {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-/* Remove spacing from wrapper divs - exclude popovers by targeting specific containers only */
-[data-testid*="timeline-item"] > div:not([role="menu"]):not([role="listbox"]):not([class*="popover"]):not([class*="dropdown"]),
-[data-testid*="vertical-item"] > div:not([role="menu"]):not([role="listbox"]):not([class*="popover"]):not([class*="dropdown"]),
-[data-testid*="item-row"] > div:not([role="menu"]):not([role="listbox"]):not([class*="popover"]):not([class*="dropdown"]) {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    gap: 0 !important;
-}
-
-
+/* Legacy class support */
 .chzdnoc {
     font-size: unset;
 }
